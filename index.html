@@ -52,15 +52,15 @@
                     <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
                         Guiding Your Success Journey Through Expertise and Innovation
                     </p>
-                    <div class="hero-cta-group">
+                    <form class="hero-cta-group">
                         <div class="hero-input-box">
                             <svg class="mail-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                             </svg>
-                            <input type="email" placeholder="Enter your email to get started">
+                            <input type="email" placeholder="Enter your email to get started" required>
                         </div>
-                        <button class="hero-cta-btn">
+                        <button type="submit" class="hero-cta-btn">
                             <span>GET STARTED</span>
                             <span class="btn-arrow-circle">
                                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -69,7 +69,7 @@
                                 </svg>
                             </span>
                         </button>
-                    </div>
+                    </form>
                 </div>
                 <div class="hero-graphics">
                     <!-- Dashed orbit circle behind cards -->
@@ -553,7 +553,7 @@
                         </div>
                         <h2 class="cta-title">Get Start For Free No<br>Credit Card Required</h2>
                         
-                        <form class="cta-form-box" onsubmit="event.preventDefault();">
+                        <form class="cta-form-box">
                             <input type="email" class="cta-input" placeholder="Email address" required>
                             <button type="submit" class="cta-btn">Get Started</button>
                         </form>

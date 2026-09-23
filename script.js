@@ -133,4 +133,30 @@ document.addEventListener('DOMContentLoaded', () => {
         start: "top 85%",
         once: true
     });
+
+    // Global Link and Form Redirection Logic for 404 page
+    
+    // 1. Redirect all links to 404.html except navbar links
+    document.querySelectorAll('a').forEach(link => {
+        // Exclude links inside the header area (which includes .nav-list, .logo, and header-right CTA)
+        if (!link.closest('.header')) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = '404.html';
+            });
+        }
+    });
+
+    // 2. Add validation to forms and redirect to 404.html
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Check HTML5 validation
+            if (form.checkValidity()) {
+                window.location.href = '404.html';
+            } else {
+                form.reportValidity();
+            }
+        });
+    });
 });
