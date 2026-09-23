@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Client Dashboard | Syncy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-layout">
+        
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <img src="assets/Brand-logo.webp" alt="Syncy Logo">
+            </div>
+            
+            <nav class="sidebar-menu">
+                <div class="sidebar-menu-list">
+                    <a href="ClientDashboard.html" class="sidebar-link active">
+                        <i class="fas fa-home"></i> Overview
+                    </a>
+                    <a href="ClientProjects.html" class="sidebar-link">
+                        <i class="fas fa-layer-group"></i> My Projects
+                    </a>
+                    <a href="ClientInvoices.html" class="sidebar-link">
+                        <i class="fas fa-file-invoice-dollar"></i> Invoices
+                    </a>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Topbar -->
+            <header class="dashboard-topbar">
+                <button class="mobile-sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div style="flex:1"></div>
+                <div class="user-profile">
+                    <div class="user-details">
+                        <div class="user-name">Sarah Client</div>
+                        <div class="user-role">Premium Member</div>
+                    </div>
+                    <div class="user-avatar" style="background-color: var(--primary);">
+                        SC
+                    </div>
+                </div>
+            </header>
+
+            <!-- Scrollable Area -->
+            <div class="dashboard-content-area">
+                
+                <section class="dashboard-section active">
+                    
+                    <!-- 1. PERSONALIZED WELCOME HERO -->
+                    <div class="dash-hero" data-aos="fade-up" style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);">
+                        <div class="dash-hero-content">
+                            <h2>Welcome back to Syncy, Sarah!</h2>
+                            <p style="color:rgba(255,255,255,0.8); margin-bottom:20px;">Your Mobile App Development project is progressing perfectly.</p>
+                            <button class="btn btn-primary" style="background:white; color:#2563eb;">View Project Details</button>
+                        </div>
+                        <div class="dash-hero-icon" style="font-size: 5rem; opacity: 0.3; z-index: 2;">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+                        
+                        <!-- 2. SUBSCRIPTION/PLAN DETAILS CARD -->
+                        <div class="dash-card" style="flex: 1.5; min-width: 300px; display:flex; flex-direction:column; justify-content:center;" data-aos="fade-up" data-aos-delay="100">
+                            <h3 style="color:var(--text-light); font-size:0.8rem; text-transform:uppercase; margin-bottom:10px;">Current Plan</h3>
+                            <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                                <div>
+                                    <h2 style="font-size:2.5rem; margin:0; color:var(--dark-bg);">Premium Tier</h2>
+                                    <p style="margin:5px 0 0 0; color:var(--text-light); font-weight:bold;">Includes 24/7 Priority Support</p>
+                                </div>
+                                <div style="background:#fef3c7; color:#d97706; padding:8px 16px; border-radius:20px; font-weight:bold; font-size:0.9rem;">
+                                    <i class="fas fa-star"></i> VIP Client
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. OVERALL PROGRESS (CONIC CHART) -->
+                        <div class="dash-card" style="flex: 1; min-width: 250px; text-align:center;" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="dash-card-title">Project Completion</h3>
+                            <div class="conic-progress-wrap">
+                                <div class="conic-progress" style="background: conic-gradient(var(--primary) 75%, #e2e8f0 0deg);">
+                                    <div class="conic-inner">
+                                        <h3>75%</h3>
+                                    </div>
+                                </div>
+                                <p style="margin:0; font-weight:bold; color:var(--dark-bg);">Mobile App Build</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top:24px;">
+                        <!-- 4. QUICK ACTION LAUNCHPAD -->
+                        <div class="dash-card" style="flex: 2; min-width: 300px;" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="dash-card-title" style="margin-bottom: 20px;">What would you like to do?</h3>
+                            <div class="quick-actions-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+                                <div class="action-box" style="border:1px solid #e2e8f0;">
+                                    <i class="fas fa-ticket-alt" style="color: #8b5cf6;"></i>
+                                    <p>Submit Ticket</p>
+                                </div>
+                                <div class="action-box" style="border:1px solid #e2e8f0;">
+                                    <i class="fas fa-calendar-plus" style="color: #ec4899;"></i>
+                                    <p>Book a Call</p>
+                                </div>
+                                <div class="action-box" style="border:1px solid #e2e8f0;">
+                                    <i class="fas fa-file-signature" style="color: #06b6d4;"></i>
+                                    <p>Sign Contracts</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. ACCOUNT MANAGER CARD -->
+                        <div class="dash-card" style="flex: 1; min-width: 300px; background:var(--light-gray); border:none;" data-aos="fade-up" data-aos-delay="400">
+                            <div style="display:flex; gap:16px; align-items:center; margin-bottom:20px;">
+                                <div style="width:70px; height:70px; border-radius:50%; background:var(--secondary); color:white; display:flex; align-items:center; justify-content:center; font-size:1.8rem; font-weight:bold; box-shadow:0 4px 10px rgba(0,168,150,0.3);">YA</div>
+                                <div>
+                                    <h3 style="margin:0; color:var(--dark-bg);">Yukesh Admin</h3>
+                                    <p style="margin:0; color:var(--primary); font-weight:bold; font-size:0.9rem;">Your Account Manager</p>
+                                </div>
+                            </div>
+                            <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:20px;">I'm here to ensure your projects run smoothly. Let me know if you need anything!</p>
+                            <div style="display:flex; gap:12px;">
+                                <button class="btn btn-primary" style="flex:1;"><i class="fas fa-envelope"></i> Message</button>
+                                <button class="btn btn-outline" style="flex:1;"><i class="fas fa-phone"></i> Call</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+    <script src="script.js"></script>
+</body>
+</html>

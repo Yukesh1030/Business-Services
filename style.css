@@ -2104,3 +2104,604 @@ h1, h2, h3, h4 {
         filter: blur(60px);
     }
 }
+
+/* ==========================================================================
+   Dashboard Layout (Admin & Client)
+   ========================================================================== */
+.dashboard-body {
+    background-color: var(--light-gray);
+}
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.dashboard-sidebar {
+    width: 260px;
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.sidebar-header {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.sidebar-header img {
+    height: 30px;
+}
+
+.sidebar-menu {
+    flex: 1;
+    padding: 24px 0;
+    overflow-y: auto;
+}
+
+.sidebar-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 24px;
+    color: #a0aec0;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-link i {
+    width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.sidebar-link:hover, .sidebar-link.active {
+    background-color: rgba(0, 68, 255, 0.1);
+    color: var(--text-white);
+    border-left: 4px solid var(--primary);
+}
+
+.sidebar-footer {
+    padding: 24px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #f87171;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    color: #ef4444;
+}
+
+/* Dashboard Main */
+.dashboard-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 260px;
+    min-width: 0; /* CRITICAL FIX: Allows container to shrink below content width */
+}
+
+.dashboard-topbar {
+    background-color: #ffffff;
+    height: 80px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    z-index: 10;
+    position: sticky;
+    top: 0;
+}
+
+.mobile-sidebar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--dark-bg);
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-details {
+    text-align: right;
+}
+
+.user-name {
+    font-weight: 700;
+    color: var(--dark-bg);
+    line-height: 1.2;
+}
+
+.user-role {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Dashboard Content Area */
+.dashboard-content-area {
+    flex: 1;
+    padding: 40px;
+    position: relative;
+}
+
+.dashboard-section {
+    display: none;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.dashboard-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dash-header-title {
+    margin-bottom: 30px;
+}
+
+.dash-header-title h2 {
+    font-size: 2rem;
+    color: var(--dark-bg);
+    margin-bottom: 5px;
+}
+
+.dash-header-title p {
+    color: var(--text-light);
+}
+
+/* Unique Sub-sections (5 per page) */
+/* 1. Stats Row */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.dash-stat-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+}
+
+.dash-stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.icon-blue { background: rgba(0, 68, 255, 0.1); color: var(--primary); }
+.icon-teal { background: rgba(0, 168, 150, 0.1); color: var(--secondary); }
+.icon-coral { background: rgba(248, 113, 113, 0.1); color: #f87171; }
+.icon-gold { background: rgba(212, 175, 55, 0.1); color: #d4af37; }
+
+.stat-details h4 {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    color: var(--dark-bg);
+}
+
+.stat-details p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* 2. Main Tables / Lists */
+.dash-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    margin-bottom: 40px;
+}
+
+.dash-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.dash-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-bg);
+}
+
+.dash-table-wrap {
+    overflow-x: auto;
+}
+
+.dash-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dash-table th, .dash-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dash-table th {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.dash-table td {
+    font-weight: 500;
+    color: var(--dark-bg);
+}
+
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.status-active { background: rgba(0, 168, 150, 0.1); color: var(--secondary); }
+.status-pending { background: rgba(212, 175, 55, 0.1); color: #d4af37; }
+.status-closed { background: rgba(248, 113, 113, 0.1); color: #f87171; }
+
+/* 3. Forms */
+.dash-form-group {
+    margin-bottom: 20px;
+}
+.dash-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.dash-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+.dash-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* 4. Activity Feed */
+.activity-list {
+    list-style: none;
+}
+.activity-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.activity-time {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    min-width: 80px;
+}
+.activity-desc {
+    font-weight: 500;
+}
+.activity-icon {
+    color: var(--primary);
+}
+
+/* 5. Quick Actions Grid */
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+.action-box {
+    background: var(--light-gray);
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.action-box:hover {
+    border-color: var(--primary);
+    background: rgba(0, 68, 255, 0.05);
+}
+.action-box i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+.action-box p {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .dashboard-main {
+        margin-left: 0;
+    }
+
+    .dashboard-sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+    }
+    
+    .dashboard-sidebar.show {
+        transform: translateX(0);
+        box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    }
+
+    .mobile-sidebar-toggle {
+        display: block;
+    }
+
+    .dashboard-topbar {
+        padding: 0 20px;
+    }
+    
+    .dashboard-content-area {
+        padding: 20px;
+    }
+}
+
+/* ==========================================================================
+   Premium Dashboard Widgets (New Additions)
+   ========================================================================== */
+
+/* 1. Hero Banners */
+.dash-hero {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f71 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 68, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+.dash-hero::after {
+    content: '';
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+.dash-hero-content {
+    position: relative;
+    z-index: 2;
+}
+.dash-hero h2 { font-size: 2.2rem; margin-bottom: 10px; color: white; }
+.dash-hero p { color: #a0aec0; font-size: 1.1rem; }
+
+/* 2. Sparkline Stats */
+.spark-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.spark-trend { font-size: 0.9rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; }
+.spark-trend.positive { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.spark-trend.negative { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+
+/* 3. Top Clients List (Admin) */
+.client-avatar-list { display: flex; flex-direction: column; gap: 16px; }
+.client-row { display: flex; align-items: center; gap: 16px; padding: 12px; border-radius: 8px; background: var(--light-gray); transition: transform 0.2s;}
+.client-row:hover { transform: translateX(5px); }
+.client-row .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+.client-row .info { flex: 1; }
+.client-row .info h5 { margin: 0; font-size: 1rem; color: var(--dark-bg); }
+.client-row .info p { margin: 0; font-size: 0.8rem; color: var(--text-light); }
+.client-row .bar-wrap { width: 100px; display: flex; flex-direction: column; gap: 4px; align-items: flex-end;}
+.client-row .bar-bg { width: 100%; height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; }
+.client-row .bar-fill { height: 100%; background: var(--secondary); }
+.client-row .bar-wrap span { font-size: 0.75rem; font-weight: bold; color: var(--dark-bg); }
+
+/* 4. Kanban Board */
+.kanban-board { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 10px; }
+.kanban-col { flex: 1; min-width: 280px; background: #f8fafc; border-radius: 12px; padding: 16px; border: 1px solid var(--border-color); }
+.kanban-col-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-weight: bold; color: var(--dark-bg); }
+.kanban-card { background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 12px; border-left: 4px solid var(--primary); cursor: pointer; transition: transform 0.2s; }
+.kanban-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.kanban-card.green { border-left-color: var(--secondary); }
+.kanban-card.red { border-left-color: #f87171; }
+.kanban-card h5 { margin-bottom: 8px; font-size: 1rem; color: var(--dark-bg); }
+.kanban-card p { font-size: 0.8rem; color: var(--text-light); margin-bottom: 12px; }
+.kanban-tags { display: flex; gap: 8px; }
+.k-tag { padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; background: #e0e7ff; color: #4338ca; }
+
+/* 5. Team Workload Bars */
+.workload-item { margin-bottom: 20px; }
+.workload-header { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; font-weight: 600; color: var(--dark-bg); }
+.w-bar-bg { width: 100%; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+.w-bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary)); border-radius: 4px; }
+
+/* 6. Client Grid Cards (Admin Clients) */
+.client-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+.client-grid-card { background: white; border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; text-align: center; transition: all 0.3s; position: relative;}
+.client-grid-card:hover { border-color: var(--primary); box-shadow: 0 10px 20px rgba(0,68,255,0.05); transform: translateY(-5px); }
+.client-logo { width: 60px; height: 60px; border-radius: 12px; background: var(--light-gray); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--dark-bg); }
+.client-grid-card h4 { margin-bottom: 4px; color: var(--dark-bg); }
+.client-grid-card p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 20px; }
+.client-stats { display: flex; justify-content: space-around; border-top: 1px solid var(--border-color); padding-top: 16px; }
+.c-stat h5 { font-size: 1.1rem; margin-bottom: 0; color: var(--dark-bg); }
+.c-stat span { font-size: 0.75rem; color: var(--text-light); text-transform: uppercase; font-weight: bold; }
+
+/* 7. CSS Bar Chart (Reports) */
+.css-chart { display: flex; align-items: flex-end; justify-content: space-around; height: 250px; padding: 20px 0; border-bottom: 2px solid var(--border-color); margin-top: 20px; }
+.chart-bar-group { display: flex; justify-content: center; align-items: flex-end; gap: 6px; position: relative; height: 100%; width: 60px; }
+.c-bar { width: 20px; border-radius: 4px 4px 0 0; position: relative; transition: height 1s ease-out; }
+.c-bar.rev { background: var(--primary); }
+.c-bar.exp { background: #f87171; }
+.c-label { position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); font-weight: bold; color: var(--text-light); font-size: 0.85rem; }
+.c-tooltip { position: absolute; top: -35px; background: var(--dark-bg); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; opacity: 0; transition: opacity 0.2s; pointer-events: none; white-space: nowrap; z-index: 10; font-weight: bold;}
+.chart-bar-group:hover .c-tooltip { opacity: 1; }
+
+/* 8. Circular Progress (Client Dashboard) */
+.conic-progress-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 0;}
+.conic-progress { width: 140px; height: 140px; border-radius: 50%; background: conic-gradient(var(--secondary) 75%, #e2e8f0 0deg); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+.conic-inner { width: 110px; height: 110px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; flex-direction: column; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); }
+.conic-inner h3 { margin: 0; font-size: 2rem; color: var(--dark-bg); line-height: 1;}
+.conic-inner span { font-size: 0.75rem; color: var(--text-light); text-transform: uppercase; font-weight: bold; margin-top: 4px; }
+
+/* 9. Horizontal Timeline (Client Projects) */
+.h-timeline-wrap { overflow-x: auto; padding: 20px 0;}
+.h-timeline { display: flex; justify-content: space-between; position: relative; min-width: 600px; }
+.h-timeline::before { content: ''; position: absolute; top: 15px; left: 30px; right: 30px; height: 2px; background: var(--border-color); z-index: 1; }
+.h-step { position: relative; z-index: 2; text-align: center; flex: 1; }
+.h-dot { width: 32px; height: 32px; border-radius: 50%; background: white; border: 2px solid var(--border-color); margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; color: var(--text-light); font-weight: bold; transition: all 0.3s; }
+.h-step.active .h-dot { border-color: var(--primary); background: var(--primary); color: white; box-shadow: 0 0 0 6px rgba(0,68,255,0.1); }
+.h-step.completed .h-dot { border-color: var(--secondary); background: var(--secondary); color: white; }
+.h-step h5 { font-size: 0.95rem; color: var(--dark-bg); margin-bottom: 4px; font-weight: 700; }
+.h-step p { font-size: 0.75rem; color: var(--text-light); }
+
+/* 10. Digital Wallet (Client Invoices) */
+.wallet-card { background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: 16px; padding: 24px; color: white; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.15); margin-bottom: 20px; transition: transform 0.3s;}
+.wallet-card:hover { transform: translateY(-5px); }
+.wallet-card::before { content: ''; position: absolute; right: -30px; bottom: -30px; width: 150px; height: 150px; border: 2px solid rgba(255,255,255,0.1); border-radius: 50%; }
+.wallet-type { font-size: 1.5rem; font-style: italic; font-weight: 800; margin-bottom: 30px; display: block; }
+.wallet-number { font-family: monospace; font-size: 1.4rem; letter-spacing: 2px; margin-bottom: 20px; }
+.wallet-info { display: flex; justify-content: space-between; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #cbd5e1; }
+
+/* 11. Custom Split Form */
+.split-form { display: flex; gap: 24px; flex-wrap: wrap; }
+.split-col { flex: 1; min-width: 250px; }
+
+/* Dashboard Mobile Enhancements */
+@media (max-width: 768px) {
+    .dash-hero {
+        padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .dash-hero-content {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 16px;
+    }
+    
+    .dash-hero-content > div {
+        text-align: left !important;
+    }
+    
+    /* Make inline flex headers stack cleanly */
+    .dash-card > div[style*="justify-content:space-between"] {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 16px;
+    }
+
+    /* Force all dash-cards to never exceed screen width */
+    .dash-card {
+        min-width: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Allow charts to scroll if they exceed width */
+    .css-chart {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+    }
+    
+    .chart-bar-group {
+        min-width: 50px;
+    }
+
+    /* Reduce dashboard padding */
+    .dashboard-content-area {
+        padding: 16px;
+    }
+
+    /* Hide decorative background icons */
+    .dash-hero-icon {
+        display: none;
+    }
+
+    /* Ensure wallet fits */
+    .wallet-number {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+}

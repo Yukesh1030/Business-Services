@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Invoices & Billing | Syncy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-layout">
+        
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <img src="assets/Brand-logo.webp" alt="Syncy Logo">
+            </div>
+            
+            <nav class="sidebar-menu">
+                <div class="sidebar-menu-list">
+                    <a href="ClientDashboard.html" class="sidebar-link">
+                        <i class="fas fa-home"></i> Overview
+                    </a>
+                    <a href="ClientProjects.html" class="sidebar-link">
+                        <i class="fas fa-layer-group"></i> My Projects
+                    </a>
+                    <a href="ClientInvoices.html" class="sidebar-link active">
+                        <i class="fas fa-file-invoice-dollar"></i> Invoices
+                    </a>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Topbar -->
+            <header class="dashboard-topbar">
+                <button class="mobile-sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div style="flex:1"></div>
+                <div class="user-profile">
+                    <div class="user-details">
+                        <div class="user-name">Sarah Client</div>
+                        <div class="user-role">Premium Member</div>
+                    </div>
+                    <div class="user-avatar" style="background-color: var(--primary);">
+                        SC
+                    </div>
+                </div>
+            </header>
+
+            <!-- Scrollable Area -->
+            <div class="dashboard-content-area">
+                
+                <section class="dashboard-section active">
+                    
+                    <!-- 1. OUTSTANDING BALANCE ALERT BANNER -->
+                    <div class="dash-hero" data-aos="fade-up" style="background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%); margin-bottom: 24px;">
+                        <div class="dash-hero-content" style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+                            <div>
+                                <h2 style="font-size: 1.6rem; margin-bottom:5px;">Action Required: Outstanding Balance</h2>
+                                <p style="color:rgba(255,255,255,0.8); margin-bottom:0;">You have an unpaid invoice (INV-2026-002) that is due soon.</p>
+                            </div>
+                            <div style="text-align:right;">
+                                <h2 style="font-size: 2.2rem; margin-bottom:5px;">$2,200.00</h2>
+                                <button class="btn btn-outline" style="color:white; border-color:white;">Pay Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+                        <!-- 2. NEXT BILLING CYCLE INFO -->
+                        <div class="dash-card" style="flex: 1; min-width: 250px;" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="dash-card-title" style="margin-bottom: 20px;">Billing Cycle</h3>
+                            <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-color); padding-bottom:12px; margin-bottom:12px;">
+                                <span style="color:var(--text-light); font-weight:bold;">Current Plan</span>
+                                <span style="font-weight:bold; color:var(--dark-bg);">Premium Tier</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-color); padding-bottom:12px; margin-bottom:12px;">
+                                <span style="color:var(--text-light); font-weight:bold;">Next Charge</span>
+                                <span style="font-weight:bold; color:var(--dark-bg);">$1,500.00</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span style="color:var(--text-light); font-weight:bold;">Auto-renew Date</span>
+                                <span style="font-weight:bold; color:var(--dark-bg);">Nov 15, 2026</span>
+                            </div>
+                        </div>
+
+                        <!-- 3. DIGITAL WALLET UI -->
+                        <div class="dash-card" style="flex: 1.5; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 20px;">
+                                <h3 class="dash-card-title" style="margin:0;">Payment Methods</h3>
+                                <button class="btn btn-outline" style="padding: 4px 12px; font-size:0.75rem;"><i class="fas fa-plus"></i> Add Card</button>
+                            </div>
+                            
+                            <div class="wallet-card">
+                                <span class="wallet-type"><i class="fab fa-cc-visa"></i> VISA</span>
+                                <div class="wallet-number">**** **** **** 4242</div>
+                                <div class="wallet-info">
+                                    <span>Sarah Client</span>
+                                    <span>Exp: 12/28</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. INVOICE HISTORY TABLE -->
+                    <div class="dash-card" data-aos="fade-up" data-aos-delay="300" style="margin-top:24px;">
+                        <h3 class="dash-card-title" style="margin-bottom: 20px;">Invoice History</h3>
+                        <div class="dash-table-wrap">
+                            <table class="dash-table">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice ID</th>
+                                        <th>Description</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="font-weight:bold;">INV-2026-002</td>
+                                        <td>Mobile App Phase 3</td>
+                                        <td>Nov 05, 2026</td>
+                                        <td>$2,200.00</td>
+                                        <td><span class="status-badge status-closed">UNPAID</span></td>
+                                        <td><button class="btn btn-primary" style="padding: 4px 12px; font-size:0.75rem;">Pay</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight:bold;">INV-2026-001</td>
+                                        <td>Mobile App Phase 1 & 2</td>
+                                        <td>Oct 05, 2026</td>
+                                        <td>$4,500.00</td>
+                                        <td><span class="status-badge status-active">PAID</span></td>
+                                        <td><button class="btn btn-outline" style="padding: 4px 12px; font-size:0.75rem;"><i class="fas fa-download"></i> PDF</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 5. MAKE A PAYMENT FORM -->
+                    <div class="dash-card" data-aos="fade-up" data-aos-delay="400" style="margin-top:24px; max-width:600px;">
+                        <h3 class="dash-card-title" style="margin-bottom: 20px;">Make a Manual Payment</h3>
+                        <form>
+                            <div class="dash-form-group">
+                                <label>Amount to Pay ($)</label>
+                                <input type="number" class="dash-input" placeholder="0.00" required>
+                            </div>
+                            <div class="dash-form-group">
+                                <label>Payment Method</label>
+                                <select class="dash-input" required>
+                                    <option>Visa ending in 4242</option>
+                                    <option>Pay with PayPal</option>
+                                    <option>Bank Transfer</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width:100%;"><i class="fas fa-lock" style="margin-right:8px;"></i> Process Secure Payment</button>
+                        </form>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+    <script src="script.js"></script>
+</body>
+</html>

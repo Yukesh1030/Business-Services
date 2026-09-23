@@ -15,41 +15,45 @@ AOS.init({
 // Mobile Menu Toggle
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('.nav');
-const icon = hamburger.querySelector('i');
 
-hamburger.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    if(nav.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    }
-});
-
-// Close mobile menu on link click
-document.querySelectorAll('.nav-list a').forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+if (hamburger && nav) {
+    const icon = hamburger.querySelector('i');
+    
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        if(nav.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
     });
-});
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-list a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+}
 
 // Smooth row hover animation for what-we-do
 document.querySelectorAll('.wwd-row').forEach(row => {
     row.addEventListener('mouseenter', () => {
-        gsap.to(row.querySelector('.wwd-arrow'), { x: 3, y: 3, duration: 0.2 });
+        if (typeof gsap !== 'undefined') gsap.to(row.querySelector('.wwd-arrow'), { x: 3, y: 3, duration: 0.2 });
     });
     row.addEventListener('mouseleave', () => {
-        gsap.to(row.querySelector('.wwd-arrow'), { x: 0, y: 0, duration: 0.2 });
+        if (typeof gsap !== 'undefined') gsap.to(row.querySelector('.wwd-arrow'), { x: 0, y: 0, duration: 0.2 });
     });
 });
 
 // GSAP Animations
 document.addEventListener('DOMContentLoaded', () => {
-    // Ambient floating animations for badges and cards
+    if (typeof gsap !== 'undefined') {
+        // Ambient floating animations for badges and cards
     gsap.to('.badge-coral', { y: -7, duration: 2.3, repeat: -1, yoyo: true, ease: "sine.inOut" });
     gsap.to('.badge-cyan', { y: 6, duration: 2.7, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 0.3 });
     gsap.to('.badge-lime', { y: -8, duration: 2.5, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 0.6 });
@@ -133,14 +137,17 @@ document.addEventListener('DOMContentLoaded', () => {
         start: "top 85%",
         once: true
     });
+    }
 
     // Global Link and Form Redirection Logic for 404 page
     
     // 1. Redirect all links to 404.html except navbar links
     document.querySelectorAll('a').forEach(link => {
         // Exclude links inside the header area (which includes .nav-list, .logo, and header-right CTA)
-        if (!link.closest('.header')) {
+        if (!link.closest('.header') && !link.closest('.dashboard-sidebar')) {
             link.addEventListener('click', (e) => {
+                // Don't redirect dashboard internal links either
+                if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) return;
                 e.preventDefault();
                 window.location.href = '404.html';
             });
@@ -156,6 +163,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = '404.html';
             } else {
                 form.reportValidity();
+            }
+        });
+    });
+
+    // Dashboard Interactions
+    // Mobile Sidebar Toggle
+    const toggleBtn = document.querySelector('.mobile-sidebar-toggle');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    if (toggleBtn && sidebar) {
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('show');
+        });
+    }
+
+    // Dashboard Section Switching logic removed for multi-page approach
+    const dashLinks = document.querySelectorAll('.sidebar-menu-list .sidebar-link');
+    
+    dashLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Close mobile sidebar if open
+            if (window.innerWidth <= 992 && sidebar) {
+                sidebar.classList.remove('show');
             }
         });
     });

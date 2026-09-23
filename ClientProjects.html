@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Projects | Syncy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-layout">
+        
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <img src="assets/Brand-logo.webp" alt="Syncy Logo">
+            </div>
+            
+            <nav class="sidebar-menu">
+                <div class="sidebar-menu-list">
+                    <a href="ClientDashboard.html" class="sidebar-link">
+                        <i class="fas fa-home"></i> Overview
+                    </a>
+                    <a href="ClientProjects.html" class="sidebar-link active">
+                        <i class="fas fa-layer-group"></i> My Projects
+                    </a>
+                    <a href="ClientInvoices.html" class="sidebar-link">
+                        <i class="fas fa-file-invoice-dollar"></i> Invoices
+                    </a>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Topbar -->
+            <header class="dashboard-topbar">
+                <button class="mobile-sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div style="flex:1"></div>
+                <div class="user-profile">
+                    <div class="user-details">
+                        <div class="user-name">Sarah Client</div>
+                        <div class="user-role">Premium Member</div>
+                    </div>
+                    <div class="user-avatar" style="background-color: var(--primary);">
+                        SC
+                    </div>
+                </div>
+            </header>
+
+            <!-- Scrollable Area -->
+            <div class="dashboard-content-area">
+                
+                <section class="dashboard-section active">
+                    
+                    <!-- 1. PROJECT STATUS BANNER -->
+                    <div class="dash-hero" data-aos="fade-up" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); margin-bottom: 24px;">
+                        <div class="dash-hero-content" style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+                            <div>
+                                <h2 style="font-size: 1.6rem; margin-bottom:5px;">Mobile App Development</h2>
+                                <p style="color:rgba(255,255,255,0.7); margin-bottom:0;">Currently in Phase 3: UX/UI Design Mockups</p>
+                            </div>
+                            <div style="background:var(--secondary); padding:8px 20px; border-radius:20px; font-weight:bold; color:white;">
+                                IN PROGRESS
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. HORIZONTAL TIMELINE -->
+                    <div class="dash-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="dash-card-title">Project Roadmap</h3>
+                        <div class="h-timeline-wrap">
+                            <div class="h-timeline">
+                                <div class="h-step completed">
+                                    <div class="h-dot"><i class="fas fa-check"></i></div>
+                                    <h5>Discovery</h5>
+                                    <p>Oct 1st</p>
+                                </div>
+                                <div class="h-step completed">
+                                    <div class="h-dot"><i class="fas fa-check"></i></div>
+                                    <h5>Wireframing</h5>
+                                    <p>Oct 10th</p>
+                                </div>
+                                <div class="h-step active">
+                                    <div class="h-dot">3</div>
+                                    <h5>UI Design</h5>
+                                    <p>Current Phase</p>
+                                </div>
+                                <div class="h-step">
+                                    <div class="h-dot">4</div>
+                                    <h5>Development</h5>
+                                    <p>Pending</p>
+                                </div>
+                                <div class="h-step">
+                                    <div class="h-dot">5</div>
+                                    <h5>Launch</h5>
+                                    <p>Pending</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+                        <!-- 3. DOCUMENT VAULT -->
+                        <div class="dash-card" style="flex: 1.5; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="dash-card-title" style="margin-bottom: 20px;">Document Vault</h3>
+                            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap:16px;">
+                                <div style="border:1px solid var(--border-color); border-radius:8px; padding:16px; text-align:center; transition:0.3s; cursor:pointer;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                                    <i class="fas fa-file-pdf" style="font-size:2.5rem; color:#ef4444; margin-bottom:10px;"></i>
+                                    <p style="font-weight:bold; font-size:0.85rem; margin-bottom:4px; color:var(--dark-bg);">Contract.pdf</p>
+                                    <span style="font-size:0.7rem; color:var(--text-light);">Signed Oct 1</span>
+                                </div>
+                                <div style="border:1px solid var(--border-color); border-radius:8px; padding:16px; text-align:center; transition:0.3s; cursor:pointer;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                                    <i class="fas fa-file-image" style="font-size:2.5rem; color:#8b5cf6; margin-bottom:10px;"></i>
+                                    <p style="font-weight:bold; font-size:0.85rem; margin-bottom:4px; color:var(--dark-bg);">Wireframes.zip</p>
+                                    <span style="font-size:0.7rem; color:var(--text-light);">Added Oct 10</span>
+                                </div>
+                                <div style="border:1px solid var(--border-color); border-radius:8px; padding:16px; text-align:center; transition:0.3s; cursor:pointer;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                                    <i class="fas fa-file-alt" style="font-size:2.5rem; color:#10b981; margin-bottom:10px;"></i>
+                                    <p style="font-weight:bold; font-size:0.85rem; margin-bottom:4px; color:var(--dark-bg);">Project_Brief.docx</p>
+                                    <span style="font-size:0.7rem; color:var(--text-light);">Added Sep 28</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. RECENT DISCUSSIONS -->
+                        <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="dash-card-title" style="margin-bottom: 20px;">Recent Discussions</h3>
+                            <div style="display:flex; flex-direction:column; gap:16px;">
+                                <div style="display:flex; gap:12px; align-items:flex-start;">
+                                    <div style="width:35px; height:35px; border-radius:50%; background:var(--secondary); color:white; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">YA</div>
+                                    <div style="background:var(--light-gray); padding:12px; border-radius:0 8px 8px 8px;">
+                                        <p style="margin:0; font-weight:bold; font-size:0.85rem; color:var(--dark-bg);">Yukesh Admin <span style="font-weight:normal; color:var(--text-light); font-size:0.75rem;">• 10:45 AM</span></p>
+                                        <p style="margin:4px 0 0 0; font-size:0.85rem; color:var(--dark-bg);">The wireframes are uploaded to the vault. Let me know your thoughts!</p>
+                                    </div>
+                                </div>
+                                <div style="display:flex; gap:12px; align-items:flex-start; flex-direction:row-reverse;">
+                                    <div style="width:35px; height:35px; border-radius:50%; background:var(--primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">SC</div>
+                                    <div style="background:rgba(0,68,255,0.1); padding:12px; border-radius:8px 0 8px 8px; text-align:right;">
+                                        <p style="margin:0; font-weight:bold; font-size:0.85rem; color:var(--primary);">Sarah Client <span style="font-weight:normal; color:var(--text-light); font-size:0.75rem;">• 11:30 AM</span></p>
+                                        <p style="margin:4px 0 0 0; font-size:0.85rem; color:var(--dark-bg);">Looks great! Proceeding to the UI phase.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. REQUEST CHANGE FORM -->
+                    <div class="dash-card" data-aos="fade-up" data-aos-delay="400" style="margin-top:24px;">
+                        <h3 class="dash-card-title" style="margin-bottom: 20px;">Request a Change or Revision</h3>
+                        <form class="split-form">
+                            <div class="split-col">
+                                <div class="dash-form-group">
+                                    <label>What phase does this relate to?</label>
+                                    <select class="dash-input" required>
+                                        <option>Wireframing</option>
+                                        <option selected>UI Design</option>
+                                        <option>Functionality</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="split-col">
+                                <div class="dash-form-group">
+                                    <label>Detailed Revision Request</label>
+                                    <textarea class="dash-input" rows="3" placeholder="Please describe the changes required..." required></textarea>
+                                </div>
+                                <div style="text-align:right;">
+                                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane" style="margin-right:8px;"></i> Submit Request</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+    <script src="script.js"></script>
+</body>
+</html>

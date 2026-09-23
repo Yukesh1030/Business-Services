@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Admin Projects | Syncy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-layout">
+        
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <img src="assets/Brand-logo.webp" alt="Syncy Logo">
+            </div>
+            
+            <nav class="sidebar-menu">
+                <div class="sidebar-menu-list">
+                    <a href="AdminDashboard.html" class="sidebar-link">
+                        <i class="fas fa-th-large"></i> Overview
+                    </a>
+                    <a href="AdminProjects.html" class="sidebar-link active">
+                        <i class="fas fa-project-diagram"></i> Projects
+                    </a>
+                    <a href="AdminClients.html" class="sidebar-link">
+                        <i class="fas fa-users"></i> Clients
+                    </a>
+                    <a href="AdminReports.html" class="sidebar-link">
+                        <i class="fas fa-chart-line"></i> Reports
+                    </a>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Topbar -->
+            <header class="dashboard-topbar">
+                <button class="mobile-sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div style="flex:1"></div>
+                <div class="user-profile">
+                    <div class="user-details">
+                        <div class="user-name">Yukesh Admin</div>
+                        <div class="user-role">System Admin</div>
+                    </div>
+                    <div class="user-avatar">
+                        YA
+                    </div>
+                </div>
+            </header>
+
+            <!-- Scrollable Area -->
+            <div class="dashboard-content-area">
+                
+                <section class="dashboard-section active">
+                    
+                    <!-- 1. PROJECT HEALTH HEADER -->
+                    <div class="dash-card" style="background:var(--dark-bg); color:white;" data-aos="fade-up">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                            <div>
+                                <h2 style="margin:0; font-size:1.8rem; color:white;">Global Project Health</h2>
+                                <p style="margin:0; color:#cbd5e1; font-size:0.9rem;">75% of active projects are on track for Q4.</p>
+                            </div>
+                            <h2 style="margin:0; font-size:2.5rem; color:var(--primary);">75%</h2>
+                        </div>
+                        <div style="width:100%; height:8px; background:rgba(255,255,255,0.1); border-radius:4px; overflow:hidden;">
+                            <div style="width:75%; height:100%; background:var(--primary); border-radius:4px;"></div>
+                        </div>
+                    </div>
+
+                    <!-- 2. KANBAN BOARD -->
+                    <div style="margin: 40px 0;" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="dash-card-title" style="margin-bottom: 20px;">Active Workflows (Kanban)</h3>
+                        <div class="kanban-board">
+                            <!-- Column 1 -->
+                            <div class="kanban-col">
+                                <div class="kanban-col-header">
+                                    <span>To Do</span>
+                                    <span style="background:#e2e8f0; padding:2px 8px; border-radius:12px; font-size:0.8rem;">2</span>
+                                </div>
+                                <div class="kanban-card">
+                                    <h5>Website Revamp</h5>
+                                    <p>TechCorp Inc.</p>
+                                    <div class="kanban-tags"><span class="k-tag">Design</span></div>
+                                </div>
+                                <div class="kanban-card">
+                                    <h5>SEO Audit</h5>
+                                    <p>Finance Co.</p>
+                                    <div class="kanban-tags"><span class="k-tag" style="background:#fce7f3; color:#be185d;">Marketing</span></div>
+                                </div>
+                            </div>
+                            <!-- Column 2 -->
+                            <div class="kanban-col">
+                                <div class="kanban-col-header">
+                                    <span>In Progress</span>
+                                    <span style="background:#e2e8f0; padding:2px 8px; border-radius:12px; font-size:0.8rem;">1</span>
+                                </div>
+                                <div class="kanban-card">
+                                    <h5>Cloud Migration</h5>
+                                    <p>Retail Solutions</p>
+                                    <div class="kanban-tags"><span class="k-tag" style="background:#dcfce7; color:#166534;">Backend</span></div>
+                                </div>
+                            </div>
+                            <!-- Column 3 -->
+                            <div class="kanban-col">
+                                <div class="kanban-col-header">
+                                    <span>In Review</span>
+                                    <span style="background:#e2e8f0; padding:2px 8px; border-radius:12px; font-size:0.8rem;">1</span>
+                                </div>
+                                <div class="kanban-card green">
+                                    <h5>Security Audit Final</h5>
+                                    <p>Finance Co.</p>
+                                    <div class="kanban-tags"><span class="k-tag" style="background:#fef3c7; color:#b45309;">Review</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+                        
+                        <!-- 3. PROJECT HEALTH TABLE (RAG) -->
+                        <div class="dash-card" style="flex: 2; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="dash-card-title" style="margin-bottom: 20px;">Project Status (RAG)</h3>
+                            <div class="dash-table-wrap">
+                                <table class="dash-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Project</th>
+                                            <th>Timeline</th>
+                                            <th>Budget</th>
+                                            <th>Health</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Cloud Migration</td>
+                                            <td>On Track</td>
+                                            <td>Under Budget</td>
+                                            <td><div style="width:12px; height:12px; border-radius:50%; background:#10b981; box-shadow:0 0 8px rgba(16,185,129,0.5);"></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td>App Redesign</td>
+                                            <td>Delayed</td>
+                                            <td>On Budget</td>
+                                            <td><div style="width:12px; height:12px; border-radius:50%; background:#f59e0b; box-shadow:0 0 8px rgba(245,158,11,0.5);"></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Security Audit</td>
+                                            <td>Blocked</td>
+                                            <td>Over Budget</td>
+                                            <td><div style="width:12px; height:12px; border-radius:50%; background:#ef4444; box-shadow:0 0 8px rgba(239,68,68,0.5);"></div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 4. TEAM WORKLOAD -->
+                        <div class="dash-card" style="flex: 1; min-width: 250px;" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="dash-card-title" style="margin-bottom: 20px;">Team Workload</h3>
+                            <div class="workload-item">
+                                <div class="workload-header"><span>John Doe</span><span>85%</span></div>
+                                <div class="w-bar-bg"><div class="w-bar-fill" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="workload-item">
+                                <div class="workload-header"><span>Jane Smith</span><span>60%</span></div>
+                                <div class="w-bar-bg"><div class="w-bar-fill" style="width: 60%; background:linear-gradient(90deg, #10b981, #34d399);"></div></div>
+                            </div>
+                            <div class="workload-item">
+                                <div class="workload-header"><span>Mike Ross</span><span>95%</span></div>
+                                <div class="w-bar-bg"><div class="w-bar-fill" style="width: 95%; background:linear-gradient(90deg, #ef4444, #f87171);"></div></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- 5. SPLIT ADD PROJECT FORM -->
+                    <div class="dash-card" data-aos="fade-up" data-aos-delay="400" style="margin-top:24px;">
+                        <h3 class="dash-card-title" style="margin-bottom: 20px;">Initiate New Project</h3>
+                        <form class="split-form">
+                            <div class="split-col">
+                                <div class="dash-form-group">
+                                    <label>Project Title</label>
+                                    <input type="text" class="dash-input" placeholder="e.g. Server Upgrades" required>
+                                </div>
+                                <div class="dash-form-group">
+                                    <label>Client Details</label>
+                                    <select class="dash-input" required>
+                                        <option value="" disabled selected>Select an active client...</option>
+                                        <option>TechCorp Inc.</option>
+                                        <option>Finance Co.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="split-col">
+                                <div class="dash-form-group">
+                                    <label>Timeline Setup</label>
+                                    <div style="display:flex; gap:16px;">
+                                        <input type="date" class="dash-input" required style="flex:1;">
+                                        <input type="date" class="dash-input" required style="flex:1;">
+                                    </div>
+                                </div>
+                                <div class="dash-form-group">
+                                    <label>Initial Budget ($)</label>
+                                    <input type="number" class="dash-input" placeholder="0.00" required>
+                                </div>
+                            </div>
+                            <div style="width:100%; text-align:right;">
+                                <button type="submit" class="btn btn-primary">Launch Project</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+    <script src="script.js"></script>
+</body>
+</html>
