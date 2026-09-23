@@ -1,3 +1,14 @@
+// Preloader Logic
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('hide');
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }
+});
+
 // Remove data-aos from cards and images before AOS init to prevent conflict with GSAP
 document.querySelectorAll('.service-card, .impact-card, .testimonial-card, .cta-img-container, .cta-floating-card').forEach(el => {
     el.removeAttribute('data-aos');

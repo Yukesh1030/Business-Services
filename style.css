@@ -39,6 +39,37 @@ body {
     background-color: #ffffff;
 }
 
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#preloader img {
+    height: 50px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
 a {
     text-decoration: none;
     color: inherit;
