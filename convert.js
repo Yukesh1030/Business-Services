@@ -3,7 +3,14 @@ const fs = require('fs');
 const path = require('path');
 
 const inputFiles = [
-    "A focused first conversation-Contact-Page.jpg"
+    "Decision velocity without weaker governance-Blog-Page.jpg",
+    "hero-cover-image-Blog-Page.jpg",
+    "Modernization that customers can actually feel-Blog-Page.jpg",
+    "Resilience is a business capability, not a recovery plan-Blog-Page.jpg",
+    "The enterprise AI portfolio after the pilot phase-Blog-Page.jpg",
+    "The hidden cost of infrastructure decisions made in isolation-Blog-Page.jpg",
+    "The operating system for enterprise transformation-Blog-Page.jpg",
+    "Why transformation offices must own outcomes, not activity-Blog-Page.jpg"
 ];
 
 const assetsDir = path.join(__dirname, 'assets');

@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Syncy</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Blog Page Specific Styles */
+        body {
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+        
+        /* Hero Section */
+        .blog-hero {
+            padding: 140px 0 80px;
+            background: #ffffff;
+        }
+        
+        .bh-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+        
+        .bh-content {
+            flex: 1;
+            max-width: 550px;
+        }
+        
+        .bh-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+        
+        .bh-title {
+            font-size: clamp(2.8rem, 4vw, 3.8rem);
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+        }
+        
+        .bh-desc {
+            font-size: 1.1rem;
+            color: #475569;
+            line-height: 1.6;
+        }
+        
+        .bh-image-wrapper {
+            flex: 1;
+        }
+        
+        .bh-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            display: block;
+        }
+        
+        /* Featured Article Section */
+        .blog-featured {
+            padding: 80px 0;
+            background: #0b1120;
+        }
+        
+        .bf-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+        
+        .bf-left {
+            flex: 1;
+        }
+        
+        .bf-img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            display: block;
+        }
+        
+        .bf-right {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .bf-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .bf-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .bf-desc {
+            font-size: 1.05rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .bf-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .bf-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Filter Tabs */
+        .blog-filters {
+            padding: 40px 0 20px;
+            background: #f8fafc;
+        }
+        
+        .filter-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: #ffffff;
+            color: #64748b;
+            border: 1px solid #e2e8f0;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: #0f172a;
+            color: #ffffff;
+            border-color: #0f172a;
+        }
+        
+        /* Grid Section */
+        .blog-grid-section {
+            padding: 60px 0 100px;
+            background: #f8fafc;
+        }
+        
+        .bg-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .bg-header {
+            margin-bottom: 50px;
+        }
+        
+        .bg-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .bg-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+        
+        .b-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px 30px;
+        }
+        
+        .b-card {
+            background: transparent;
+        }
+        
+        .b-card-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        
+        .b-card-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        .b-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        
+        .b-card-desc {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .b-card-link {
+            color: #0f172a;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+        
+        .b-card-link:hover {
+            color: #0c4aff;
+        }
+        
+        /* Themes Section */
+        .blog-themes {
+            padding: 100px 0;
+            background: #f1f5f9;
+        }
+        
+        .bt-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .bt-header {
+            margin-bottom: 60px;
+        }
+        
+        .bt-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .bt-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+        
+        .bt-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .bt-card {
+            background: transparent;
+        }
+        
+        .bt-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            color: #0c4aff;
+        }
+        
+        .bt-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            fill: none;
+        }
+        
+        .bt-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        
+        /* Observations Section */
+        .blog-obs {
+            padding: 100px 0;
+            background: #ffffff;
+        }
+        
+        .bo-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 80px;
+        }
+        
+        .bo-left {
+            flex: 1;
+            max-width: 450px;
+        }
+        
+        .bo-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .bo-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+        
+        .bo-right {
+            flex: 1.5;
+        }
+        
+        .bo-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .bo-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 0;
+            border-bottom: 1px solid #e2e8f0;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .bo-item:hover .bo-text {
+            color: #0c4aff;
+        }
+        
+        .bo-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .bo-date {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+        
+        .bo-text {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.4;
+            transition: color 0.3s;
+        }
+        
+        .bo-arrow {
+            color: #0c4aff;
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+        
+        /* Newsletter Section */
+        .blog-news {
+            padding: 80px 0;
+            background: #0b1120;
+        }
+        
+        .bn-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .bn-left {
+            max-width: 500px;
+        }
+        
+        .bn-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .bn-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        
+        .bn-desc {
+            font-size: 1.05rem;
+            color: #94a3b8;
+        }
+        
+        .bn-right {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .bn-form {
+            display: flex;
+            align-items: flex-end;
+            gap: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+        }
+        
+        .bn-input-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .bn-label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .bn-input {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 1rem;
+            font-family: inherit;
+            outline: none;
+        }
+        
+        .bn-input::placeholder {
+            color: #64748b;
+        }
+        
+        .bn-btn {
+            background: #0c4aff;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .bn-btn:hover {
+            background: #093bc2;
+        }
+        
+        /* Final CTA */
+        .blog-cta {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+        
+        .bcta-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .bcta-left {
+            max-width: 600px;
+        }
+        
+        .bcta-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+        
+        .bcta-desc {
+            font-size: 1.05rem;
+            color: #64748b;
+        }
+        
+        .bcta-btn {
+            background: #0b1121;
+            color: #ffffff;
+            padding: 18px 36px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        
+        .bcta-btn:hover {
+            background: #0f172a;
+        }
+        
+        /* Responsive Overrides */
+        @media (max-width: 1024px) {
+            .bh-container, .bf-container, .bo-container, .bn-container, .bcta-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .bh-content, .bf-right, .bo-left, .bo-right, .bn-left, .bn-right, .bcta-left {
+                max-width: 100%;
+            }
+            .b-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .bt-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .bn-container, .bcta-container {
+                text-align: center;
+            }
+            .bn-form {
+                justify-content: center;
+            }
+            .bn-input-group {
+                align-items: center;
+            }
+            .bn-input {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .bh-title {
+                font-size: 2.2rem;
+            }
+            .bf-title, .bg-title, .bt-title, .bo-title, .bn-title, .bcta-title {
+                font-size: 2rem;
+            }
+            .b-grid, .bt-grid {
+                grid-template-columns: 1fr;
+            }
+            .bn-form {
+                flex-direction: column;
+                align-items: stretch;
+                border-bottom: none;
+                gap: 20px;
+            }
+            .bn-input {
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+                padding-bottom: 10px;
+                text-align: left;
+            }
+            .bn-input-group {
+                align-items: stretch;
+            }
+            .blog-hero, .blog-featured, .blog-grid-section, .blog-themes, .blog-obs, .blog-news, .blog-cta {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="assets/Brand-logo.webp" alt="Syncy Logo">
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/Brand-logo.webp" alt="Stackly Logo" height="30">
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Service.html">Services</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                    <li><a href="Blog.html" class="active">Blog</a></li>
+                    <li class="mobile-cta-item"><a href="#" class="btn btn-primary">GET STARTED</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <a href="#" class="btn btn-outline">GET STARTED</a>
+                <button class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="blog-hero">
+            <div class="bh-container">
+                <div class="bh-content" data-aos="fade-right">
+                    <span class="bh-tag">INSIGHTS</span>
+                    <h1 class="bh-title">Clarity for leaders accountable for change.</h1>
+                    <p class="bh-desc">Our latest thinking on how to build, run, and scale modern technology, operations, and growth.</p>
+                </div>
+                <div class="bh-image-wrapper" data-aos="fade-left">
+                    <img src="assets/hero-cover-image-Blog-Page.webp" alt="Earth from space" class="bh-image gs-anim" data-speed="0.5">
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Article Section -->
+        <section class="blog-featured">
+            <div class="bf-container">
+                <div class="bf-left" data-aos="fade-right">
+                    <img src="assets/The operating system for enterprise transformation-Blog-Page.webp" alt="Team meeting" class="bf-img gs-anim" data-speed="0.5">
+                </div>
+                <div class="bf-right" data-aos="fade-left">
+                    <span class="bf-tag">FEATURED ARTICLE</span>
+                    <h2 class="bf-title">The operating system for enterprise transformation.</h2>
+                    <p class="bf-desc">Why traditional program management fails when driving change at scale, and what modern transformation offices are doing differently to secure outcomes.</p>
+                    <a href="#" class="bf-btn">READ THE ARTICLE &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="blog-filters">
+            <div class="filter-container">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Architecture</button>
+                <button class="filter-btn">Strategy</button>
+                <button class="filter-btn">Data & AI</button>
+                <button class="filter-btn">Cloud</button>
+                <button class="filter-btn">Operating</button>
+            </div>
+        </section>
+
+        <!-- Grid Section -->
+        <section class="blog-grid-section">
+            <div class="bg-container">
+                <div class="bg-header" data-aos="fade-up">
+                    <span class="bg-tag">LATEST THINKING</span>
+                    <h2 class="bg-title">Ideas designed for decisions.</h2>
+                </div>
+                <div class="b-grid">
+                    <div class="b-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/Why transformation offices must own outcomes, not activity-Blog-Page.webp" alt="Office space" class="b-card-img">
+                        <span class="b-card-tag">OPERATING MODEL</span>
+                        <h3 class="b-card-title">Why transformation offices must own outcomes, not activity</h3>
+                        <p class="b-card-desc">A look at modern change models where teams drive decisions, not just status updates.</p>
+                        <a href="#" class="b-card-link">READ THE ARTICLE &rarr;</a>
+                    </div>
+                    <div class="b-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/The hidden cost of infrastructure decisions made in isolation-Blog-Page.webp" alt="Server room" class="b-card-img">
+                        <span class="b-card-tag">IT INFRASTRUCTURE</span>
+                        <h3 class="b-card-title">The hidden cost of infrastructure decisions made in isolation</h3>
+                        <p class="b-card-desc">How shifting from siloed operations to unified cloud architectures reduces tech debt.</p>
+                        <a href="#" class="b-card-link">READ THE ARTICLE &rarr;</a>
+                    </div>
+                    <div class="b-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="assets/Decision velocity without weaker governance-Blog-Page.webp" alt="Collaboration" class="b-card-img">
+                        <span class="b-card-tag">GOVERNANCE</span>
+                        <h3 class="b-card-title">Decision velocity without weaker governance</h3>
+                        <p class="b-card-desc">Effective frameworks that accelerate innovation safely rather than creating bottlenecks.</p>
+                        <a href="#" class="b-card-link">READ THE ARTICLE &rarr;</a>
+                    </div>
+                    <div class="b-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/The enterprise AI portfolio after the pilot phase-Blog-Page.webp" alt="Earth view" class="b-card-img">
+                        <span class="b-card-tag">DATA & AI</span>
+                        <h3 class="b-card-title">The enterprise AI portfolio after the pilot phase</h3>
+                        <p class="b-card-desc">Transitioning from isolated AI experiments to embedded enterprise scale applications.</p>
+                        <a href="#" class="b-card-link">READ THE ARTICLE &rarr;</a>
+                    </div>
+                    <div class="b-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/Resilience is a business capability, not a recovery plan-Blog-Page.webp" alt="Server room 2" class="b-card-img">
+                        <span class="b-card-tag">STRATEGY</span>
+                        <h3 class="b-card-title">Resilience is a business capability, not a recovery plan</h3>
+                        <p class="b-card-desc">Building systems and operational models that withstand and adapt to macro shocks.</p>
+                        <a href="#" class="b-card-link">READ THE ARTICLE &rarr;</a>
+                    </div>
+                    <div class="b-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="assets/Modernization that customers can actually feel-Blog-Page.webp" alt="Clean office" class="b-card-img">
+                        <span class="b-card-tag">CLOUD</span>
+                        <h3 class="b-card-title">Modernization that customers can actually feel</h3>
+                        <p class="b-card-desc">Prioritizing technical upgrades that translate directly into better customer experiences.</p>
+                        <a href="#" class="b-card-link">READ THE ARTICLE &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Themes Section -->
+        <section class="blog-themes">
+            <div class="bt-container">
+                <div class="bt-header" data-aos="fade-up">
+                    <span class="bt-tag">PRIMARY THEMES</span>
+                    <h2 class="bt-title">Where we are concentrating our attention.</h2>
+                </div>
+                <div class="bt-grid">
+                    <div class="bt-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="bt-icon">
+                            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        </div>
+                        <h3 class="bt-name">Transformation Strategy</h3>
+                    </div>
+                    <div class="bt-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="bt-icon">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        </div>
+                        <h3 class="bt-name">Architecture</h3>
+                    </div>
+                    <div class="bt-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="bt-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        </div>
+                        <h3 class="bt-name">Digital Platforms</h3>
+                    </div>
+                    <div class="bt-card" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="bt-icon">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        </div>
+                        <h3 class="bt-name">Modern Operations</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Observations Section -->
+        <section class="blog-obs">
+            <div class="bo-container">
+                <div class="bo-left" data-aos="fade-right">
+                    <span class="bo-tag">NOTES FROM THE FIELD</span>
+                    <h2 class="bo-title">Short observations from active transformation work.</h2>
+                </div>
+                <div class="bo-right" data-aos="fade-left">
+                    <div class="bo-list">
+                        <a href="#" class="bo-item">
+                            <div class="bo-content">
+                                <span class="bo-date">SEP 18</span>
+                                <span class="bo-text">The real goal is pure ahead and get rid of updating for driving execution</span>
+                            </div>
+                            <div class="bo-arrow">&rarr;</div>
+                        </a>
+                        <a href="#" class="bo-item">
+                            <div class="bo-content">
+                                <span class="bo-date">SEP 12</span>
+                                <span class="bo-text">Why IT governance should accelerate - not slow - responsible deployment</span>
+                            </div>
+                            <div class="bo-arrow">&rarr;</div>
+                        </a>
+                        <a href="#" class="bo-item">
+                            <div class="bo-content">
+                                <span class="bo-date">SEP 05</span>
+                                <span class="bo-text">The metric that reveals whether a team moves quickly, smart moves</span>
+                            </div>
+                            <div class="bo-arrow">&rarr;</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="blog-news">
+            <div class="bn-container">
+                <div class="bn-left" data-aos="fade-right">
+                    <span class="bn-tag">NEWSLETTER</span>
+                    <h2 class="bn-title">A concise monthly briefing.</h2>
+                    <p class="bn-desc">One thought, one case study, one recommendation. No fluff. Delivered quietly.</p>
+                </div>
+                <div class="bn-right" data-aos="fade-left">
+                    <form class="bn-form">
+                        <div class="bn-input-group">
+                            <label class="bn-label">EMAIL</label>
+                            <input type="email" class="bn-input" placeholder="name@company.com">
+                        </div>
+                        <button type="submit" class="bn-btn">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="blog-cta">
+            <div class="bcta-container">
+                <div class="bcta-left" data-aos="fade-right">
+                    <h2 class="bcta-title">Need a perspective grounded in delivery?</h2>
+                    <p class="bcta-desc">We're happy to connect and explore how our specialists can bring clarity to your upcoming decisions.</p>
+                </div>
+                <a href="#" class="bcta-btn" data-aos="fade-left">START A CONVERSATION &rarr;</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand & Tagline -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="assets/Brand-logo.webp" alt="Stackly Logo" class="footer-logo">
+                    </a>
+                    <p class="footer-tagline">A warm signal through the cloud layer - complexity turned into a route your team can walk.</p>
+                </div>
+                <!-- Col 2: Company -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Service.html">Our Solutions</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Col 3: Resources -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog Insights</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Integration</a></li>
+                    </ul>
+                </div>
+                <!-- Col 4: Contact & Social -->
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links contact-info">
+                        <li>hello@stackly.com</li>
+                        <li>+1 (555) 123-4567</li>
+                        <li class="address-li">100 Tech Lane, Suite 400<br>San Francisco, CA 94105<br>United States</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Syncy. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
