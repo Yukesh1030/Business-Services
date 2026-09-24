@@ -770,57 +770,309 @@
             </div>
         </section>
 
-        <!-- Progress Stats -->
-        <section class="progress-stats">
-            <div class="container text-center" data-aos="fade-up">
-                <span class="section-tag" style="margin-bottom:15px; display:inline-block;">OUR TRACK RECORD</span>
-                <h2 class="section-title">Clear targets. Faster execution. Visible progress.</h2>
-            </div>
-            <div class="container p-stats-grid">
-                <div class="p-stat-box" data-aos="fade-up" data-aos-delay="100">
-                    <h3>6 Weeks</h3>
-                    <p>Average time to MVP launch</p>
-                </div>
-                <div class="p-stat-box" data-aos="fade-up" data-aos-delay="200">
-                    <h3>3x</h3>
-                    <p>Faster feature delivery</p>
-                </div>
-                <div class="p-stat-box" data-aos="fade-up" data-aos-delay="300">
-                    <h3>40%</h3>
-                    <p>Reduction in cloud costs</p>
-                </div>
-                <div class="p-stat-box" data-aos="fade-up" data-aos-delay="400">
-                    <h3>99.99%</h3>
-                    <p>System uptime guarantee</p>
+        <!-- How We Work Section -->
+        <style>
+        .how-we-work {
+            background-color: #f3f6fc;
+            padding: 110px 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .hww-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hww-tag {
+            display: block;
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .hww-title {
+            font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+            font-weight: 600;
+            color: #0f172a;
+            line-height: 1.15;
+            margin-bottom: 60px;
+            letter-spacing: -1px;
+            max-width: 700px;
+        }
+
+        .hww-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .hww-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .hww-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hww-num {
+            color: #0c4aff;
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .hww-icon {
+            margin-bottom: 24px;
+        }
+
+        .hww-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #475569;
+            stroke-width: 1.2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .hww-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .hww-card p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Industry Context Section */
+        .industry-context-new {
+            padding: 110px 0;
+            background-color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .icn-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .icn-title {
+            font-size: clamp(2.2rem, 3.2vw, 2.8rem);
+            font-weight: 600;
+            color: #0f172a;
+            line-height: 1.2;
+            margin-bottom: 45px;
+            letter-spacing: -0.5px;
+        }
+
+        .icn-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .icn-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            height: 380px;
+        }
+
+        .icn-card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .icn-card:hover .icn-card-bg {
+            transform: scale(1.08);
+        }
+
+        .icn-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.7) 100%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 24px;
+        }
+
+        .icn-icon {
+            width: 36px;
+            height: 36px;
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icn-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: #ffffff;
+            stroke-width: 1.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .icn-card-title {
+            color: #ffffff;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .hww-grid, .icn-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .how-we-work, .industry-context-new {
+                padding: 70px 0;
+            }
+            .hww-grid, .icn-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        </style>
+
+        <!-- How We Work Section -->
+        <section class="how-we-work">
+            <div class="hww-container">
+                <span class="hww-tag" data-aos="fade-right">HOW WE WORK</span>
+                <h2 class="hww-title" data-aos="fade-right" data-aos-delay="100">Clear stages. Senior attention.<br>Visible progress.</h2>
+                
+                <div class="hww-grid">
+                    <div class="hww-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="hww-num">01</div>
+                        <div class="hww-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="4" y="4" width="5" height="5" rx="1"/>
+                                <rect x="15" y="15" width="5" height="5" rx="1"/>
+                                <path d="M9 6.5h3.5a2 2 0 0 1 2 2v6"/>
+                            </svg>
+                        </div>
+                        <h3>Discover</h3>
+                        <p>Align on outcomes, constraints, and the truth in your data.</p>
+                    </div>
+                    
+                    <div class="hww-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="hww-num">02</div>
+                        <div class="hww-icon">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="5" y1="6" x2="5" y2="18"/>
+                                <line x1="5" y1="6" x2="16" y2="6"/>
+                                <line x1="5" y1="12" x2="14" y2="12"/>
+                                <line x1="5" y1="18" x2="18" y2="18"/>
+                            </svg>
+                        </div>
+                        <h3>Design</h3>
+                        <p>Co-create the roadmap, experience, and technical blueprint.</p>
+                    </div>
+                    
+                    <div class="hww-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="hww-num">03</div>
+                        <div class="hww-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="6" width="12" height="12" rx="1"/>
+                                <path d="M15 8h3l3 4v6h-6"/>
+                                <circle cx="7" cy="18" r="2"/>
+                                <circle cx="17" cy="18" r="2"/>
+                            </svg>
+                        </div>
+                        <h3>Deliver</h3>
+                        <p>Release useful increments with your team, not around them.</p>
+                    </div>
+                    
+                    <div class="hww-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="hww-num">04</div>
+                        <div class="hww-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="4" y="15" width="5" height="5" rx="1"/>
+                                <rect x="15" y="4" width="5" height="5" rx="1"/>
+                                <path d="M9 17.5h3.5a2 2 0 0 0 2-2v-6"/>
+                            </svg>
+                        </div>
+                        <h3>Improve</h3>
+                        <p>Measure adoption, resilience, and value—then compound it.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Industry Context -->
-        <section class="industry-context bg-light">
-            <div class="container">
-                <div class="text-center" data-aos="fade-up">
-                    <h2 class="section-title">Industry context changes everything</h2>
-                </div>
-                <div class="industry-grid">
-                    <div class="ind-card" style="background-image: url('assets/legacy_banking.webp');" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="ind-overlay">
-                            <h3>Financial Services</h3>
+        <!-- Industry Context Section -->
+        <section class="industry-context-new">
+            <div class="icn-container">
+                <h2 class="icn-title" data-aos="fade-right">Industry context changes everything</h2>
+                
+                <div class="icn-grid">
+                    <div class="icn-card" data-aos="zoom-in" data-aos-delay="0">
+                        <img src="assets/legacy_banking.webp" class="icn-card-bg" alt="Financial services">
+                        <div class="icn-overlay">
+                            <div class="icn-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <h3 class="icn-card-title">Financial services</h3>
                         </div>
                     </div>
-                    <div class="ind-card" style="background-image: url('assets/clinical_data.webp');" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="ind-overlay">
-                            <h3>Healthcare</h3>
+                    
+                    <div class="icn-card" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets/clinical_data.webp" class="icn-card-bg" alt="Healthcare">
+                        <div class="icn-overlay">
+                            <div class="icn-icon">
+                                <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M12 9v6M9 12h6"/></svg>
+                            </div>
+                            <h3 class="icn-card-title">Healthcare</h3>
                         </div>
                     </div>
-                    <div class="ind-card" style="background-image: url('assets/Build the right digital foundation-Section-Service-Page.webp');" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="ind-overlay">
-                            <h3>Manufacturing</h3>
+                    
+                    <div class="icn-card" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/ecommerce_network.webp" class="icn-card-bg" alt="Retail & commerce">
+                        <div class="icn-overlay">
+                            <div class="icn-icon">
+                                <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+                            </div>
+                            <h3 class="icn-card-title">Retail & commerce</h3>
                         </div>
                     </div>
-                    <div class="ind-card" style="background-image: url('assets/ecommerce_network.webp');" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="ind-overlay">
-                            <h3>Retail & E-commerce</h3>
+                    
+                    <div class="icn-card" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="assets/Build the right digital foundation-Section-Service-Page.webp" class="icn-card-bg" alt="Industrial">
+                        <div class="icn-overlay">
+                            <div class="icn-icon">
+                                <svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V10l6-4 6 4 4-2v12M9 20v-6h6v6"/></svg>
+                            </div>
+                            <h3 class="icn-card-title">Industrial</h3>
                         </div>
                     </div>
                 </div>
