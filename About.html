@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Syncy</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* About Page Specific Styles */
+        body {
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            padding: 140px 0 80px;
+            background: #ffffff;
+        }
+        
+        .ah-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+        
+        .ah-content {
+            flex: 1;
+            max-width: 580px;
+        }
+        
+        .ah-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+        
+        .ah-title {
+            font-size: clamp(2.8rem, 4vw, 3.8rem);
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+        }
+        
+        .ah-desc {
+            font-size: 1.1rem;
+            color: #475569;
+            line-height: 1.6;
+        }
+        
+        .ah-image-wrapper {
+            flex: 1;
+        }
+        
+        .ah-image {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            display: block;
+        }
+        
+        /* Stats Section */
+        .about-stats {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+        
+        .as-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .as-left {
+            flex: 1;
+            max-width: 400px;
+        }
+        
+        .as-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        
+        .as-desc {
+            font-size: 1.05rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .as-right {
+            flex: 1.5;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .as-card {
+            background: #ffffff;
+            padding: 30px 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            text-align: left;
+        }
+        
+        .as-val {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+        
+        .as-label {
+            font-size: 0.95rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        /* Standards Section */
+        .about-standards {
+            padding: 110px 0;
+            background: #ffffff;
+        }
+        
+        .std-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .std-header {
+            margin-bottom: 60px;
+        }
+        
+        .std-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .std-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            max-width: 600px;
+        }
+        
+        .std-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        
+        .std-card {
+            padding: 0;
+        }
+        
+        .std-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(12, 74, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+        
+        .std-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: #0c4aff;
+            stroke-width: 2;
+            fill: none;
+        }
+        
+        .std-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+        
+        .std-card p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        /* Operating Method */
+        .about-method {
+            padding: 110px 0;
+            background: #f8fafc;
+        }
+        
+        .meth-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .meth-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 60px;
+            gap: 40px;
+        }
+        
+        .meth-header-left {
+            flex: 1;
+        }
+        
+        .meth-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .meth-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            max-width: 500px;
+        }
+        
+        .meth-header-right {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .meth-desc {
+            font-size: 1.05rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .meth-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        .meth-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 40px 30px;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .meth-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.04);
+        }
+        
+        .meth-num {
+            color: #0c4aff;
+            font-size: 0.85rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            display: block;
+        }
+        
+        .meth-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+        
+        .meth-card p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        /* Team Section */
+        .about-team {
+            padding: 110px 0;
+            background: #ffffff;
+            text-align: center;
+        }
+        
+        .team-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .team-tag {
+            display: inline-block;
+            background: #f1f5f9;
+            color: #64748b;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        
+        .team-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        
+        .team-subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+        
+        .team-role {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+        
+        /* Delivery Section */
+        .about-delivery {
+            padding: 110px 0;
+            background: #f8fafc;
+        }
+        
+        .del-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+        
+        .del-left {
+            flex: 1;
+        }
+        
+        .del-img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            display: block;
+        }
+        
+        .del-right {
+            flex: 1;
+            max-width: 550px;
+        }
+        
+        .del-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .del-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        
+        .del-desc {
+            font-size: 1.05rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+        
+        .del-quote {
+            border-left: 3px solid #0c4aff;
+            padding-left: 24px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0f172a;
+            line-height: 1.5;
+        }
+        
+        /* Small Senior Core */
+        .about-core {
+            padding: 110px 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .core-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+        
+        .core-left {
+            flex: 1;
+            max-width: 450px;
+        }
+        
+        .core-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .core-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        
+        .core-desc {
+            font-size: 1.05rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .core-right {
+            flex: 1.2;
+            background: #0b1121;
+            border-radius: 20px;
+            padding: 50px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .core-stat-val {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #0c4aff;
+            margin-bottom: 8px;
+        }
+        
+        .core-stat-val.cyan {
+            color: #00e0b8;
+        }
+        
+        .core-stat-label {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        
+        /* CTA Section */
+        .about-cta {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+        
+        .acta-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .acta-left {
+            max-width: 600px;
+        }
+        
+        .acta-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+        
+        .acta-desc {
+            font-size: 1.05rem;
+            color: #64748b;
+        }
+        
+        .acta-btn {
+            background: #0b1121;
+            color: #ffffff;
+            padding: 18px 36px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        
+        .acta-btn:hover {
+            background: #0f172a;
+        }
+        
+        /* Responsive Overrides */
+        @media (max-width: 1024px) {
+            .ah-container, .as-container, .del-container, .core-container, .meth-header {
+                flex-direction: column;
+                gap: 50px;
+                text-align: center;
+            }
+            .ah-content, .as-left, .as-right, .std-grid, .meth-header-right, .del-right, .core-left {
+                max-width: 100%;
+            }
+            .meth-header {
+                align-items: center;
+            }
+            .std-icon, .meth-num {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .as-right {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .as-card, .meth-card {
+                text-align: center;
+            }
+            .std-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .meth-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .del-quote {
+                text-align: left;
+            }
+            .acta-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .as-right, .std-grid, .meth-grid, .team-grid, .core-right {
+                grid-template-columns: 1fr;
+            }
+            .core-right {
+                padding: 40px 30px;
+                text-align: center;
+            }
+            .ah-title {
+                font-size: 2.2rem;
+            }
+            .about-hero, .about-stats, .about-standards, .about-method, .about-team, .about-delivery, .about-core {
+                padding: 70px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="assets/Brand-logo.webp" alt="Syncy Logo">
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/Brand-logo.webp" alt="Stackly Logo" height="30">
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Service.html">Services</a></li>
+                    <li><a href="About.html" class="active">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li class="mobile-cta-item"><a href="#" class="btn btn-primary">GET STARTED</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <a href="#" class="btn btn-outline">GET STARTED</a>
+                <button class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="ah-container">
+                <div class="ah-content">
+                    <span class="ah-tag" data-aos="fade-up">ABOUT US</span>
+                    <h1 class="ah-title" data-aos="fade-up" data-aos-delay="100">Built for the work between strategy and results.</h1>
+                    <p class="ah-desc" data-aos="fade-up" data-aos-delay="200">We are the global, modern-scale operation shaping the route to clear and actionable outcomes in a rapidly changing world.</p>
+                </div>
+                <div class="ah-image-wrapper" data-aos="fade-left" data-aos-delay="300">
+                    <img src="assets/Cover-Image-About-Page.webp" alt="Team collaborating" class="ah-image gs-anim" data-speed="0.5">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="about-stats">
+            <div class="as-container">
+                <div class="as-left" data-aos="fade-right">
+                    <h2 class="as-title">We are happy to see the number increase</h2>
+                    <p class="as-desc">We deeply believe that every business routine have a flow of days to say presence that can improve the revenue stream.</p>
+                </div>
+                <div class="as-right">
+                    <div class="as-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="as-val">58K</div>
+                        <div class="as-label">Active User</div>
+                    </div>
+                    <div class="as-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="as-val">$28K</div>
+                        <div class="as-label">MRR</div>
+                    </div>
+                    <div class="as-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="as-val">10%</div>
+                        <div class="as-label">Growth</div>
+                    </div>
+                    <div class="as-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="as-val">58K</div>
+                        <div class="as-label">Active User</div>
+                    </div>
+                    <div class="as-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="as-val">$28K</div>
+                        <div class="as-label">MRR</div>
+                    </div>
+                    <div class="as-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="as-val">10%</div>
+                        <div class="as-label">Growth</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standards Section -->
+        <section class="about-standards">
+            <div class="std-container">
+                <div class="std-header" data-aos="fade-up">
+                    <span class="std-tag">OUR VALUES</span>
+                    <h2 class="std-title">The standards behind every engagement.</h2>
+                </div>
+                <div class="std-grid">
+                    <div class="std-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="std-icon">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 22 12 12 22 2 12 12 2"></polygon></svg>
+                        </div>
+                        <h3>Outcome-first</h3>
+                        <p>If it doesn't serve your goals, we don't build it.</p>
+                    </div>
+                    <div class="std-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="std-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                        </div>
+                        <h3>Address core execution</h3>
+                        <p>We tackle complexity head-on, avoiding simple workarounds.</p>
+                    </div>
+                    <div class="std-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="std-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3>Co-create with clients</h3>
+                        <p>We work alongside your teams, not isolated in silos.</p>
+                    </div>
+                    <div class="std-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="std-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                        </div>
+                        <h3>Long-term partnership</h3>
+                        <p>Built for the long haul, focused on scalable success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operating Method -->
+        <section class="about-method">
+            <div class="meth-container">
+                <div class="meth-header">
+                    <div class="meth-header-left" data-aos="fade-right">
+                        <span class="meth-tag">CAPABILITIES</span>
+                        <h2 class="meth-title">Deep specialists, connected by one operating method.</h2>
+                    </div>
+                    <div class="meth-header-right" data-aos="fade-left">
+                        <p class="meth-desc">We are a diverse collective of specialists who know their domains deep and wide. We all share one common aim: to make the complex actionable.</p>
+                    </div>
+                </div>
+                <div class="meth-grid">
+                    <div class="meth-card" data-aos="fade-up" data-aos-delay="100">
+                        <span class="meth-num">01</span>
+                        <h3>Enterprise architecture</h3>
+                        <p>Aligning business structure with resilient, future-ready infrastructure.</p>
+                    </div>
+                    <div class="meth-card" data-aos="fade-up" data-aos-delay="200">
+                        <span class="meth-num">02</span>
+                        <h3>Cyber risk</h3>
+                        <p>Embedding security in design to protect critical assets proactively.</p>
+                    </div>
+                    <div class="meth-card" data-aos="fade-up" data-aos-delay="300">
+                        <span class="meth-num">03</span>
+                        <h3>Data & AI</h3>
+                        <p>Harnessing intelligence to automate, optimize, and scale operations.</p>
+                    </div>
+                    <div class="meth-card" data-aos="fade-up" data-aos-delay="400">
+                        <span class="meth-num">04</span>
+                        <h3>Product delivery</h3>
+                        <p>Bringing ideas to life quickly through agile, iterative deployment.</p>
+                    </div>
+                    <div class="meth-card" data-aos="fade-up" data-aos-delay="500">
+                        <span class="meth-num">05</span>
+                        <h3>Operating model</h3>
+                        <p>Transforming workflows to eliminate friction and empower teams.</p>
+                    </div>
+                    <div class="meth-card" data-aos="fade-up" data-aos-delay="600">
+                        <span class="meth-num">06</span>
+                        <h3>Transformation governance</h3>
+                        <p>Ensuring compliance, alignment, and clear reporting at every step.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="about-team">
+            <div class="team-container">
+                <span class="team-tag" data-aos="fade-up">TEAM</span>
+                <h2 class="team-title" data-aos="fade-up" data-aos-delay="100">The peoples behind our solutions</h2>
+                <p class="team-subtitle" data-aos="fade-up" data-aos-delay="200">Enjoy yourself on an extraordinary journey into the future of technology.</p>
+                
+                <div class="team-grid">
+                    <div class="team-member" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets/Roderick Lucas-CEO-About-Page.webp" alt="Roderick Lucas" class="team-img">
+                        <h3 class="team-name">Roderick Lucas</h3>
+                        <span class="team-role">CEO</span>
+                    </div>
+                    <div class="team-member" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/Evelyn Zoldyck-CPO-About-Page.webp" alt="Evelyn Zoldyck" class="team-img">
+                        <h3 class="team-name">Evelyn Zoldyck</h3>
+                        <span class="team-role">CPO</span>
+                    </div>
+                    <div class="team-member" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="assets/Rodrigo Lores-CCO-About-Page.webp" alt="Rodrigo Lores" class="team-img">
+                        <h3 class="team-name">Rodrigo Lores</h3>
+                        <span class="team-role">CCO</span>
+                    </div>
+                    <div class="team-member" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="assets/Jennifer Luana-People Management-About-Page.webp" alt="Jennifer Luana" class="team-img">
+                        <h3 class="team-name">Jennifer Luana</h3>
+                        <span class="team-role">People Management</span>
+                    </div>
+                    <div class="team-member" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets/Maura Yalah-Product Design-About-Page.webp" alt="Maura Yalah" class="team-img">
+                        <h3 class="team-name">Maura Yalah</h3>
+                        <span class="team-role">Product Design</span>
+                    </div>
+                    <div class="team-member" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/Juan Tiago-Head of Engineer-About-Page.webp" alt="Juan Tiago" class="team-img">
+                        <h3 class="team-name">Juan Tiago</h3>
+                        <span class="team-role">Head of Engineer</span>
+                    </div>
+                    <div class="team-member" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="assets/Rome Juilo-Quality Assurance-About-Page.webp" alt="Rome Juilo" class="team-img">
+                        <h3 class="team-name">Rome Juilo</h3>
+                        <span class="team-role">Quality Assurance</span>
+                    </div>
+                    <div class="team-member" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="assets/Reddington M-Engineer-About-Page.webp" alt="Reddington M" class="team-img">
+                        <h3 class="team-name">Reddington M</h3>
+                        <span class="team-role">Engineer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Delivery Section -->
+        <section class="about-delivery">
+            <div class="del-container">
+                <div class="del-left" data-aos="fade-right">
+                    <img src="assets/Senior attention is part of the delivery model-About-Page.webp" alt="Team discussing" class="del-img gs-anim" data-speed="0.5">
+                </div>
+                <div class="del-right" data-aos="fade-left">
+                    <span class="del-tag">CLIENT SUCCESS</span>
+                    <h2 class="del-title">Senior attention is part of the delivery model.</h2>
+                    <p class="del-desc">The people who design your solution are the people who build it. They stay to ensure it delivers, because we believe that going from idea to action is what matters.</p>
+                    <div class="del-quote">Best advice. Best Answers. Not appending an edge IT cycle.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Small Senior Core Section -->
+        <section class="about-core">
+            <div class="core-container">
+                <div class="core-left" data-aos="fade-right">
+                    <span class="core-tag">OUR NETWORK</span>
+                    <h2 class="core-title">Small senior core. Scaled specialist bench.</h2>
+                    <p class="core-desc">We bring the right team for the right phase of the engagement. From strategy and architecture to delivery pods, you pay exactly for what you need when you need it.</p>
+                </div>
+                <div class="core-right" data-aos="fade-left">
+                    <div class="core-stat">
+                        <div class="core-stat-val blue">18</div>
+                        <div class="core-stat-label">Global Offices</div>
+                    </div>
+                    <div class="core-stat">
+                        <div class="core-stat-val cyan">12</div>
+                        <div class="core-stat-label">Awards Won</div>
+                    </div>
+                    <div class="core-stat">
+                        <div class="core-stat-val blue">86%</div>
+                        <div class="core-stat-label">Client Retention</div>
+                    </div>
+                    <div class="core-stat">
+                        <div class="core-stat-val cyan">4.7/5</div>
+                        <div class="core-stat-label">Average Rating</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="about-cta">
+            <div class="acta-container">
+                <div class="acta-left" data-aos="fade-right">
+                    <h2 class="acta-title">Work with people who stay accountable.</h2>
+                    <p class="acta-desc">Bring us the challenge that keeps you awake. We'll show you what's possible.</p>
+                </div>
+                <a href="#" class="acta-btn" data-aos="fade-left">START A CONVERSATION &rarr;</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand & Tagline -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="assets/Brand-logo.webp" alt="Stackly Logo" class="footer-logo">
+                    </a>
+                    <p class="footer-tagline">A warm signal through the cloud layer - complexity turned into a route your team can walk.</p>
+                </div>
+                <!-- Col 2: Company -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Col 3: Resources -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog Insights</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Integration</a></li>
+                    </ul>
+                </div>
+                <!-- Col 4: Contact & Social -->
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links contact-info">
+                        <li>hello@stackly.com</li>
+                        <li>+1 (555) 123-4567</li>
+                        <li class="address-li">100 Tech Lane, Suite 400<br>San Francisco, CA 94105<br>United States</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Syncy. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

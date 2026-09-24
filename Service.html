@@ -31,7 +31,7 @@
                 <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="Service.html" class="active">Services</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="About.html">About Us</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Pages</a></li>
                     <li class="mobile-cta-item"><a href="#" class="btn btn-primary">GET STARTED</a></li>
@@ -1196,42 +1196,345 @@
             </div>
         </section>
 
-        <!-- FAQs (Accordion) - Reused from index.html -->
-        <section class="faqs">
-            <div class="container faq-container">
-                <div class="faq-left" data-aos="fade-right">
-                    <h2>Common questions<br>answered</h2>
+        <!-- FAQs Section & Final CTA -->
+        <style>
+        /* FAQs Section New */
+        .faqs-new {
+            padding: 100px 0;
+            background-color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .faqs-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 100px;
+            align-items: flex-start;
+        }
+
+        .faqs-left {
+            flex: 1;
+            max-width: 450px;
+        }
+
+        .faqs-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .faqs-title {
+            font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+            font-weight: 600;
+            color: #0f172a;
+            line-height: 1.15;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+
+        .faqs-img {
+            width: 100%;
+            border-radius: 24px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .faqs-right {
+            flex: 1;
+            padding-top: 10px;
+        }
+
+        .faq-item-new {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 28px 0;
+        }
+
+        .faq-item-new:first-child {
+            padding-top: 0;
+        }
+
+        .faq-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            list-style: none;
+            letter-spacing: -0.3px;
+        }
+
+        .faq-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-icon {
+            color: #0c4aff;
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 1;
+            margin-left: 20px;
+        }
+
+        .faq-icon::before {
+            content: '+';
+        }
+        .faq-item-new[open] .faq-icon::before {
+            content: '−';
+        }
+
+        .faq-content-new {
+            padding-top: 16px;
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.6;
+            padding-right: 40px;
+        }
+
+        /* Final CTA Section New */
+        .final-cta-new {
+            padding: 40px 20px 100px;
+            background-color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .fc-card {
+            max-width: 1250px;
+            margin: 0 auto;
+            background-color: #0a8a7a;
+            border-radius: 32px;
+            display: flex;
+            gap: 50px;
+            padding: 70px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .fc-left {
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .fc-tag {
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .fc-title {
+            font-size: clamp(2.2rem, 3.2vw, 2.8rem);
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .fc-desc {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .fc-form {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .fc-input-wrapper {
+            position: relative;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .fc-input-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            stroke: #64748b;
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .fc-input-new {
+            width: 100%;
+            height: 56px;
+            border-radius: 28px;
+            border: none;
+            padding: 0 20px 0 52px;
+            font-size: 0.95rem;
+            color: #0f172a;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .fc-input-new::placeholder {
+            color: #94a3b8;
+        }
+
+        .fc-btn {
+            height: 56px;
+            border-radius: 28px;
+            background-color: #0c4aff;
+            color: #ffffff;
+            border: none;
+            padding: 0 8px 0 28px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background-color 0.3s;
+        }
+
+        .fc-btn:hover {
+            background-color: #093bc2;
+        }
+
+        .fc-btn-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fc-btn-circle svg {
+            width: 16px;
+            height: 16px;
+            stroke: #0c4aff;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .fc-right {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .fc-img {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 991px) {
+            .faqs-container, .fc-card {
+                flex-direction: column;
+            }
+            .faqs-left, .fc-left, .fc-right {
+                max-width: 100%;
+            }
+            .fc-card {
+                padding: 50px 30px;
+            }
+        }
+        @media (max-width: 640px) {
+            .fc-form {
+                flex-direction: column;
+            }
+            .fc-btn {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+        </style>
+
+        <!-- FAQs Section -->
+        <section class="faqs-new">
+            <div class="faqs-container">
+                <div class="faqs-left" data-aos="fade-right">
+                    <span class="faqs-tag">FREQUENTLY ASKED</span>
+                    <h2 class="faqs-title">Good questions<br>lead to better<br>engagements</h2>
+                    <img src="assets/Good questions lead to better engagements-Section-Service-Page.webp" alt="Team meeting" class="faqs-img">
                 </div>
-                <div class="faq-right" data-aos="fade-left">
-                    <details class="faq-item">
-                        <summary>How do you approach a new modernization project?</summary>
-                        <div class="faq-content">We start with a thorough architecture audit, mapping dependencies. We then propose a phased migration strategy, typically utilizing the strangler pattern to mitigate risk.</div>
+                <div class="faqs-right" data-aos="fade-left">
+                    <details class="faq-item-new" open>
+                        <summary class="faq-summary">
+                            Can we start with one service?
+                            <span class="faq-icon"></span>
+                        </summary>
+                        <div class="faq-content-new">Yes. Many partnerships begin with a focused discovery, audit, or delivery pod, then expand only when the value is clear.</div>
                     </details>
-                    <details class="faq-item" open>
-                        <summary>What cloud providers do you specialize in?</summary>
-                        <div class="faq-content">Our certified engineers have deep expertise across AWS, Google Cloud (GCP), and Microsoft Azure, allowing us to build multi-cloud or cloud-native solutions tailored to your needs.</div>
+                    <details class="faq-item-new">
+                        <summary class="faq-summary">
+                            How quickly can you mobilize?
+                            <span class="faq-icon"></span>
+                        </summary>
+                        <div class="faq-content-new">We can typically assemble a specialized pod and begin onboarding within 2-4 weeks, depending on the scope.</div>
                     </details>
-                    <details class="faq-item">
-                        <summary>Do you offer post-deployment managed services?</summary>
-                        <div class="faq-content">Yes, our Managed Operations team provides 24/7 proactive monitoring, security patching, and continuous performance optimization.</div>
+                    <details class="faq-item-new">
+                        <summary class="faq-summary">
+                            Will you work with our internal teams?
+                            <span class="faq-icon"></span>
+                        </summary>
+                        <div class="faq-content-new">Absolutely. We emphasize co-creation and knowledge transfer so your internal teams are empowered.</div>
+                    </details>
+                    <details class="faq-item-new">
+                        <summary class="faq-summary">
+                            How do you price engagements?
+                            <span class="faq-icon"></span>
+                        </summary>
+                        <div class="faq-content-new">Pricing is customized based on scope, timeframe, and team size. We offer both fixed-price and time-and-materials models.</div>
+                    </details>
+                    <details class="faq-item-new">
+                        <summary class="faq-summary">
+                            What about security and compliance?
+                            <span class="faq-icon"></span>
+                        </summary>
+                        <div class="faq-content-new">Security is built-in from day one. We adhere to industry standards and handle compliance requirements for highly regulated sectors.</div>
                     </details>
                 </div>
             </div>
         </section>
 
-        <!-- Final CTA Banner -->
-        <section class="final-cta">
-            <div class="container fc-container">
-                <div class="fc-content" data-aos="fade-right">
-                    <h2>Let's turn your next business priority into progress.</h2>
-                    <p>Talk to our experts about your specific challenges. We'll map out a customized strategy within 48 hours.</p>
-                    <div style="margin-top: 30px; display:flex; gap:10px; align-items:center;">
-                        <input type="email" placeholder="work email address" class="fc-input">
-                        <button class="btn btn-primary" style="white-space:nowrap;">Get in touch</button>
+        <!-- Final CTA Section -->
+        <section class="final-cta-new">
+            <div class="fc-card" data-aos="zoom-in">
+                <div class="fc-left">
+                    <span class="fc-tag">START NOW</span>
+                    <h2 class="fc-title">Let's turn your next business<br>priority into progress.</h2>
+                    <p class="fc-desc">Tell us where you're heading. In a 30-minute working session, we'll map the first practical moves—no pitch deck required.</p>
+                    <div class="fc-form">
+                        <div class="fc-input-wrapper">
+                            <svg class="fc-input-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <input type="email" placeholder="Enter your email to get started" class="fc-input-new">
+                        </div>
+                        <button class="fc-btn">
+                            GET STARTED
+                            <div class="fc-btn-circle">
+                                <svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="9 5 19 5 19 15"/></svg>
+                            </div>
+                        </button>
                     </div>
                 </div>
-                <div class="fc-image" data-aos="fade-left">
-                    <img src="assets/Let's turn your next business priority into progress-Section-Service-Page.webp" alt="Team meeting">
+                <div class="fc-right">
+                    <img src="assets/Let’s turn your next business priority into progress-Section-Service-Page.webp" alt="People celebrating" class="fc-img">
                 </div>
             </div>
         </section>
@@ -1253,7 +1556,7 @@
                 <div class="footer-col">
                     <h4 class="footer-heading">Company</h4>
                     <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="About.html">About Us</a></li>
                         <li><a href="Service.html">Our Solutions</a></li>
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">Contact</a></li>
