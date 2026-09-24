@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syncy - Business Services</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="assets/Brand-logo.webp" alt="Syncy Logo">
+    </div>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="assets/Brand-logo.webp" alt="Stackly Logo" height="30">
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Service.html" class="active">Services</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li class="mobile-cta-item"><a href="#" class="btn btn-primary">GET STARTED</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <a href="#" class="btn btn-outline">GET STARTED</a>
+                <button class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    
+    <main>
+        <!-- Service Hero Section -->
+        <style>
+        .service-hero-new {
+            background-color: #ebfafa;
+            padding: 160px 0 100px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow: hidden;
+        }
+        
+        .shn-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .shn-content {
+            flex: 1;
+            max-width: 580px;
+        }
+        
+        .shn-badge {
+            display: inline-block;
+            background: #ffffff;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #0c4aff;
+            letter-spacing: 0.5px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+        .shn-badge .dot {
+            margin: 0 4px;
+        }
+        
+        .shn-title {
+            font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: #111827;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        
+        .shn-title-blue {
+            color: #0c4aff;
+        }
+        
+        .shn-subtitle {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #556579;
+            margin-bottom: 40px;
+            max-width: 500px;
+            font-weight: 500;
+        }
+        
+        .shn-cta-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        
+        .shn-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            background-color: #0c4aff;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 8px 8px 8px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        .shn-btn-primary:hover {
+            background-color: #0036d6;
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .shn-btn-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: #0c4aff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-left: 16px;
+            font-size: 0.9rem;
+        }
+        
+        .shn-btn-icon i {
+            transform: rotate(-45deg);
+        }
+        
+        .shn-btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #0c4aff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            position: relative;
+            background: transparent;
+        }
+        .shn-btn-outline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            border: 1px solid #b3c6ff;
+            pointer-events: none;
+        }
+        .shn-btn-outline::after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            left: -1px;
+            width: 25px;
+            border: 1.5px solid #0c4aff;
+            border-right: none;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            pointer-events: none;
+        }
+        .shn-btn-outline-right {
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            right: -1px;
+            width: 25px;
+            border: 1.5px solid #0c4aff;
+            border-left: none;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            pointer-events: none;
+        }
+        
+        .shn-btn-outline:hover {
+            background-color: rgba(12, 74, 255, 0.05);
+            color: #0c4aff;
+        }
+        
+        .shn-footer-text {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+        
+        .shn-image-wrap {
+            flex: 1.1;
+            position: relative;
+            width: 100%;
+        }
+        
+        .shn-img-container {
+            background: white;
+            padding: 15px;
+            border-radius: 35px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        }
+        
+        .shn-img {
+            width: 100%;
+            height: auto;
+            border-radius: 25px;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .shn-float-card {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background-color: #0f172a;
+            color: white;
+            padding: 24px 28px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.2);
+            z-index: 2;
+            min-width: 180px;
+        }
+        
+        .shn-fc-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2px;
+        }
+        
+        .shn-fc-desc {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 991px) {
+            .shn-container {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 40px;
+            }
+            .shn-content {
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .shn-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .shn-cta-group {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .shn-float-card {
+                left: 20px;
+                bottom: -20px;
+            }
+        }
+        @media (max-width: 768px) {
+            .service-hero-new {
+                padding: 120px 0 60px;
+            }
+            .shn-title {
+                font-size: 2.8rem;
+            }
+            .shn-float-card {
+                padding: 16px 20px;
+            }
+            .shn-fc-title {
+                font-size: 1.8rem;
+            }
+        }
+        </style>
+        
+        <section class="service-hero-new">
+            <div class="container shn-container">
+                <div class="shn-content" data-aos="fade-right">
+                    <div class="shn-badge">
+                        BUSINESS SERVICES <span class="dot">·</span> BUILT FOR MOMENTUM
+                    </div>
+                    <h1 class="shn-title"><span class="shn-title-blue">Modernize with<br>confidence.</span> Grow<br>without limits.</h1>
+                    <p class="shn-subtitle">
+                        Strategy, engineering, cloud, and operations—one senior team accountable from first decision to measurable outcome.
+                    </p>
+                    <div class="shn-cta-group">
+                        <a href="#" class="shn-btn-primary">GET STARTED <span class="shn-btn-icon"><i class="fas fa-arrow-right"></i></span></a>
+                        <a href="#" class="shn-btn-outline">EXPLORE SERVICES<span class="shn-btn-outline-right"></span></a>
+                    </div>
+                    <p class="shn-footer-text">Trusted by 100+ ambitious teams · 4.9/5 client satisfaction</p>
+                </div>
+                <div class="shn-image-wrap" data-aos="fade-left">
+                    <div class="shn-img-container">
+                        <img src="assets/Service-Page-Hero-Cover.webp" alt="Team meeting" class="shn-img">
+                    </div>
+                    <div class="shn-float-card gs-anim" data-speed="0.8">
+                        <div class="shn-fc-title">42%</div>
+                        <div class="shn-fc-desc">faster release cycles</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Grid Section -->
+        <section class="service-grid-section">
+            <div class="container">
+                <div class="sg-header" data-aos="fade-up">
+                    <span class="section-tag">HOW WE CAN HELP</span>
+                    <h2 class="section-title">Smart strategies to move from ambition to impact.</h2>
+                </div>
+                
+                <div class="s-grid">
+                    <div class="s-card service-card" data-aos="fade-up" data-aos-delay="0">
+                        <img src="assets/IT strategy-Service-Page.webp" alt="IT Strategy" class="s-card-img">
+                        <div class="s-card-content">
+                            <h3>IT Strategy <i class="fas fa-arrow-right s-card-arrow"></i></h3>
+                            <p>Align your technology roadmap with business goals to ensure long-term scalability.</p>
+                        </div>
+                    </div>
+                    <div class="s-card service-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/Product engineering-Service-Page.webp" alt="Product Engineering" class="s-card-img">
+                        <div class="s-card-content">
+                            <h3>Product Engineering <i class="fas fa-arrow-right s-card-arrow"></i></h3>
+                            <p>End-to-end software development focusing on robust architecture and UX.</p>
+                        </div>
+                    </div>
+                    <div class="s-card service-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/Cloud transformation-Service-Page.webp" alt="Cloud Transformation" class="s-card-img">
+                        <div class="s-card-content">
+                            <h3>Cloud Transformation <i class="fas fa-arrow-right s-card-arrow"></i></h3>
+                            <p>Seamlessly migrate, optimize, and manage workloads on AWS, Azure, or GCP.</p>
+                        </div>
+                    </div>
+                    <div class="s-card service-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="assets/Data & AI-Service-Page.webp" alt="Data and AI" class="s-card-img">
+                        <div class="s-card-content">
+                            <h3>Data & AI <i class="fas fa-arrow-right s-card-arrow"></i></h3>
+                            <p>Unlock insights and automate operations with predictive analytics models.</p>
+                        </div>
+                    </div>
+                    <div class="s-card service-card" data-aos="fade-up" data-aos-delay="400">
+                        <img src="assets/Managed operations-Service-Page.webp" alt="Managed Operations" class="s-card-img">
+                        <div class="s-card-content">
+                            <h3>Managed Operations <i class="fas fa-arrow-right s-card-arrow"></i></h3>
+                            <p>24/7 proactive monitoring, maintenance, and optimization of systems.</p>
+                        </div>
+                    </div>
+                    <div class="s-card service-card" data-aos="fade-up" data-aos-delay="500">
+                        <img src="assets/Experience design-Service-Page.webp" alt="Experience Design" class="s-card-img">
+                        <div class="s-card-content">
+                            <h3>Experience Design <i class="fas fa-arrow-right s-card-arrow"></i></h3>
+                            <p>Create intuitive, accessible, and highly engaging user journeys.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Z-Pattern Feature 1 -->
+        <section class="z-feature bg-light">
+            <div class="container z-container">
+                <div class="z-image gs-anim" data-speed="0.5" data-aos="fade-right">
+                    <img src="assets/Build the right digital foundation-Section-Service-Page.webp" alt="Digital foundation">
+                </div>
+                <div class="z-content" data-aos="fade-left">
+                    <span class="z-step">01</span>
+                    <h2>Build the right digital foundation</h2>
+                    <p>Modernization isn’t just about adopting new tools—it’s about restructuring your core to adapt to future demands. We re-architect monoliths into microservices, establishing resilient platforms that scale effortlessly.</p>
+                    <a href="#" class="btn btn-outline" style="margin-top:20px;">Explore Architecture</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Z-Pattern Feature 2 (Dark) -->
+        <section class="z-feature bg-dark text-white">
+            <div class="container z-container reverse">
+                <div class="z-content" data-aos="fade-right">
+                    <span class="z-step" style="color:rgba(255,255,255,0.3);">02</span>
+                    <h2>Core banking, without the big-bang risk</h2>
+                    <p>We decouple legacy systems step-by-step using a strangler fig pattern. This ensures zero downtime and continuous compliance while you transition to a modern, agile financial core.</p>
+                    <a href="#" class="btn btn-primary" style="margin-top:20px; background:white; color:var(--dark-bg);">See Fintech Solutions</a>
+                </div>
+                <div class="z-image gs-anim" data-speed="0.5" data-aos="fade-left">
+                    <img src="assets/Core banking, without the big-bang risk-Service-Page.webp" alt="Core banking" style="border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                </div>
+            </div>
+        </section>
+
+        <!-- Z-Pattern Feature 3 -->
+        <section class="z-feature">
+            <div class="container z-container">
+                <div class="z-image gs-anim" data-speed="0.5" data-aos="fade-right">
+                    <img src="assets/Operate smarter at scale-Section-Service-Page.webp" alt="Operate smarter">
+                </div>
+                <div class="z-content" data-aos="fade-left">
+                    <span class="z-step">03</span>
+                    <h2>Operate smarter at scale</h2>
+                    <p>Harness automation and AI to optimize your workflows. By integrating intelligent observability and automated remediation, we drastically reduce MTTR and free your team to focus on innovation.</p>
+                    <a href="#" class="btn btn-outline" style="margin-top:20px;">View Automation Tools</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Stats -->
+        <section class="progress-stats">
+            <div class="container text-center" data-aos="fade-up">
+                <span class="section-tag" style="margin-bottom:15px; display:inline-block;">OUR TRACK RECORD</span>
+                <h2 class="section-title">Clear targets. Faster execution. Visible progress.</h2>
+            </div>
+            <div class="container p-stats-grid">
+                <div class="p-stat-box" data-aos="fade-up" data-aos-delay="100">
+                    <h3>6 Weeks</h3>
+                    <p>Average time to MVP launch</p>
+                </div>
+                <div class="p-stat-box" data-aos="fade-up" data-aos-delay="200">
+                    <h3>3x</h3>
+                    <p>Faster feature delivery</p>
+                </div>
+                <div class="p-stat-box" data-aos="fade-up" data-aos-delay="300">
+                    <h3>40%</h3>
+                    <p>Reduction in cloud costs</p>
+                </div>
+                <div class="p-stat-box" data-aos="fade-up" data-aos-delay="400">
+                    <h3>99.99%</h3>
+                    <p>System uptime guarantee</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industry Context -->
+        <section class="industry-context bg-light">
+            <div class="container">
+                <div class="text-center" data-aos="fade-up">
+                    <h2 class="section-title">Industry context changes everything</h2>
+                </div>
+                <div class="industry-grid">
+                    <div class="ind-card" style="background-image: url('assets/legacy_banking.webp');" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="ind-overlay">
+                            <h3>Financial Services</h3>
+                        </div>
+                    </div>
+                    <div class="ind-card" style="background-image: url('assets/clinical_data.webp');" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="ind-overlay">
+                            <h3>Healthcare</h3>
+                        </div>
+                    </div>
+                    <div class="ind-card" style="background-image: url('assets/Build the right digital foundation-Section-Service-Page.webp');" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="ind-overlay">
+                            <h3>Manufacturing</h3>
+                        </div>
+                    </div>
+                    <div class="ind-card" style="background-image: url('assets/ecommerce_network.webp');" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="ind-overlay">
+                            <h3>Retail & E-commerce</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outcomes Boardroom -->
+        <section class="outcomes-boardroom">
+            <div class="container">
+                <div class="ob-header" data-aos="fade-right">
+                    <span class="section-tag" style="color:var(--secondary);">BOTTOM LINE</span>
+                    <h2 class="section-title text-white">Outcomes that matter in the boardroom</h2>
+                </div>
+                <div class="ob-grid">
+                    <div class="ob-stat" data-aos="fade-up" data-aos-delay="100">
+                        <h3>40%</h3>
+                        <p>Faster time to market</p>
+                    </div>
+                    <div class="ob-stat" data-aos="fade-up" data-aos-delay="200">
+                        <h3>3x</h3>
+                        <p>ROI in year one</p>
+                    </div>
+                    <div class="ob-stat" data-aos="fade-up" data-aos-delay="300">
+                        <h3>99.99%</h3>
+                        <p>System availability</p>
+                    </div>
+                    <div class="ob-stat" data-aos="fade-up" data-aos-delay="400">
+                        <h3>0.1s</h3>
+                        <p>Response latency</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Impact (Case Studies) -->
+        <section class="business-impact">
+            <div class="container">
+                <div class="text-center" data-aos="fade-up">
+                    <h2 class="section-title">Technology that creates business impact</h2>
+                </div>
+                <div class="bi-grid">
+                    <div class="bi-card impact-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/A checkout built for peak demand-Service-Page.webp" alt="Checkout" class="bi-img">
+                        <div class="bi-content">
+                            <span class="bi-tag">RETAIL</span>
+                            <h4>A checkout built for peak demand</h4>
+                            <div class="bi-metrics">
+                                <div><strong>40%</strong> <span>Conversion up</span></div>
+                                <div><strong>0s</strong> <span>Downtime on BFCM</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bi-card impact-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/One trusted view of every patient-Service-page.webp" alt="Patient view" class="bi-img">
+                        <div class="bi-content">
+                            <span class="bi-tag">HEALTHCARE</span>
+                            <h4>One trusted view of every patient</h4>
+                            <div class="bi-metrics">
+                                <div><strong>100%</strong> <span>HIPAA Compliant</span></div>
+                                <div><strong>50M+</strong> <span>Records synced</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bi-card impact-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="assets/Good questions lead to better engagements-Section-Service-Page.webp" alt="Engagements" class="bi-img">
+                        <div class="bi-content">
+                            <span class="bi-tag">CONSULTING</span>
+                            <h4>Better questions, better engagements</h4>
+                            <div class="bi-metrics">
+                                <div><strong>3x</strong> <span>Faster discovery</span></div>
+                                <div><strong>$2M</strong> <span>Saved annually</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="service-testimonials bg-light">
+            <div class="container">
+                <div class="text-center" data-aos="fade-up">
+                    <span class="section-tag">TESTIMONIALS</span>
+                    <h2 class="section-title">Partnership that feels different</h2>
+                </div>
+                <div class="st-grid">
+                    <div class="st-card testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="st-quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"They actually listened to our unique constraints. The microservices architecture they delivered scaled flawlessly during our series B hypergrowth."</p>
+                        <div class="st-author">
+                            <img src="assets/Maya Chen-COO, Harbor Bank-Service-Page.webp" alt="Maya">
+                            <div>
+                                <strong>Maya Chen</strong>
+                                <span>COO, Harbor Bank</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="st-card testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="st-quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"The team's deep expertise in Azure saved us months of trial and error. They are true engineers who care about code quality."</p>
+                        <div class="st-author">
+                            <img src="assets/David Okafor-VP Digital, Meridian Health-Service-Page.webp" alt="David">
+                            <div>
+                                <strong>David Okafor</strong>
+                                <span>VP Digital, Meridian</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="st-card testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="st-quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"Our legacy systems were holding us back. Syncy systematically modernized our stack without a single minute of unexpected downtime."</p>
+                        <div class="st-author">
+                            <img src="assets/Elena Rossi-Chief Product Officer, Forma-Service-Page.webp" alt="Elena">
+                            <div>
+                                <strong>Elena Rossi</strong>
+                                <span>CPO, Forma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs (Accordion) - Reused from index.html -->
+        <section class="faqs">
+            <div class="container faq-container">
+                <div class="faq-left" data-aos="fade-right">
+                    <h2>Common questions<br>answered</h2>
+                </div>
+                <div class="faq-right" data-aos="fade-left">
+                    <details class="faq-item">
+                        <summary>How do you approach a new modernization project?</summary>
+                        <div class="faq-content">We start with a thorough architecture audit, mapping dependencies. We then propose a phased migration strategy, typically utilizing the strangler pattern to mitigate risk.</div>
+                    </details>
+                    <details class="faq-item" open>
+                        <summary>What cloud providers do you specialize in?</summary>
+                        <div class="faq-content">Our certified engineers have deep expertise across AWS, Google Cloud (GCP), and Microsoft Azure, allowing us to build multi-cloud or cloud-native solutions tailored to your needs.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do you offer post-deployment managed services?</summary>
+                        <div class="faq-content">Yes, our Managed Operations team provides 24/7 proactive monitoring, security patching, and continuous performance optimization.</div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Banner -->
+        <section class="final-cta">
+            <div class="container fc-container">
+                <div class="fc-content" data-aos="fade-right">
+                    <h2>Let's turn your next business priority into progress.</h2>
+                    <p>Talk to our experts about your specific challenges. We'll map out a customized strategy within 48 hours.</p>
+                    <div style="margin-top: 30px; display:flex; gap:10px; align-items:center;">
+                        <input type="email" placeholder="work email address" class="fc-input">
+                        <button class="btn btn-primary" style="white-space:nowrap;">Get in touch</button>
+                    </div>
+                </div>
+                <div class="fc-image" data-aos="fade-left">
+                    <img src="assets/Let's turn your next business priority into progress-Section-Service-Page.webp" alt="Team meeting">
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand & Tagline -->
+                <div class="footer-col footer-col-brand">
+                    <a href="#" class="footer-logo-link">
+                        <img src="assets/Brand-logo.webp" alt="Stackly Logo" class="footer-logo">
+                    </a>
+                    <p class="footer-tagline">A warm signal through the cloud layer - complexity turned into a route your team can walk.</p>
+                </div>
+
+                <!-- Col 2: Company -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="Service.html">Our Solutions</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Resources -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Blogs & Articles</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact -->
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-contact-list">
+                        <li><a href="mailto:hello@Stackly.net.in">hello@Stackly.net.in</a></li>
+                        <li><a href="tel:+918905246537">+91 89052 46537</a></li>
+                        <li class="footer-address">MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2026 Stackly Technologies. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-circle" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-circle" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
