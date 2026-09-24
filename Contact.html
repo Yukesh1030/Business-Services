@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Syncy</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Contact Page Specific Styles */
+        body {
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+        
+        /* Hero Section */
+        .contact-hero {
+            padding: 140px 20px 0;
+            background: #ffffff;
+        }
+        
+        .ch-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 80px 60px;
+        }
+        
+        .ch-content {
+            max-width: 700px;
+        }
+        
+        .ch-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+        
+        .ch-title {
+            font-size: clamp(2.8rem, 4vw, 4rem);
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+        }
+        
+        .ch-desc {
+            font-size: 1.1rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        /* Form Section */
+        .contact-form-section {
+            padding: 40px 20px 100px;
+            background: #ffffff;
+        }
+        
+        .cf-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            display: flex;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+        
+        .cf-left {
+            flex: 1;
+            background: #f1f5f9;
+            padding: 60px;
+        }
+        
+        .cf-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .cf-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .cf-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .cf-label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .cf-input, .cf-textarea {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            background: #ffffff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: #0f172a;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .cf-input:focus, .cf-textarea:focus {
+            border-color: #0c4aff;
+        }
+        
+        .cf-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .cf-btn {
+            background: #0c4aff;
+            color: #ffffff;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-bottom: 16px;
+        }
+        
+        .cf-btn:hover {
+            background: #093bc2;
+        }
+        
+        .cf-disclaimer {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+        
+        .cf-right {
+            flex: 1;
+            padding: 60px;
+            background: #ffffff;
+        }
+        
+        .cf-info-item {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .cf-info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .cf-info-icon {
+            color: #0c4aff;
+            font-size: 1.5rem;
+        }
+        
+        .cf-info-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+        
+        .cf-info-content {
+            flex: 1;
+        }
+        
+        .cf-info-label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .cf-info-val {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #0f172a;
+            line-height: 1.5;
+        }
+        
+        /* Global Delivery Section */
+        .contact-global {
+            padding: 100px 0;
+            background: #0b1120;
+        }
+        
+        .cg-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .cg-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 60px;
+            gap: 40px;
+        }
+        
+        .cg-header-left {
+            flex: 1;
+        }
+        
+        .cg-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .cg-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+        
+        .cg-header-right {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .cg-desc {
+            font-size: 1.05rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        
+        .cg-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        .cg-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        
+        .cg-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .cg-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        
+        .cg-card p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        
+        /* What Happens Next Section */
+        .contact-next {
+            padding: 100px 0;
+            background: #e2e8f0;
+        }
+        
+        .cn-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+        
+        .cn-left {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .cn-tag {
+            color: #0c4aff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .cn-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+        
+        .cn-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .cn-item {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        
+        .cn-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .cn-num {
+            color: #0c4aff;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+        
+        .cn-right {
+            flex: 1;
+        }
+        
+        .cn-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: block;
+        }
+        
+        /* Responsive Overrides */
+        @media (max-width: 1024px) {
+            .ch-container {
+                padding: 60px 40px;
+            }
+            .cf-container, .cg-header, .cn-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .cf-left, .cf-right {
+                padding: 40px;
+            }
+            .cg-header {
+                text-align: left;
+                align-items: flex-start;
+            }
+            .cg-header-right {
+                max-width: 100%;
+            }
+            .cg-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .cn-right, .cn-left {
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .ch-container {
+                padding: 40px 20px;
+            }
+            .ch-title {
+                font-size: 2.2rem;
+            }
+            .cf-left, .cf-right {
+                padding: 30px 20px;
+            }
+            .cf-form-grid {
+                grid-template-columns: 1fr;
+            }
+            .cg-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-global, .contact-next {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="assets/Brand-logo.webp" alt="Syncy Logo">
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/Brand-logo.webp" alt="Stackly Logo" height="30">
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Service.html">Services</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Contact.html" class="active">Contact Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li class="mobile-cta-item"><a href="#" class="btn btn-primary">GET STARTED</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <a href="#" class="btn btn-outline">GET STARTED</a>
+                <button class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="ch-container" data-aos="fade-up">
+                <div class="ch-content">
+                    <span class="ch-tag">CONTACT</span>
+                    <h1 class="ch-title">Start with the decision in front of you.</h1>
+                    <p class="ch-desc">Tell us what is changing, where progress is constrained, and what a better outcome would mean. A senior member of our team will respond within two business days.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="contact-form-section">
+            <div class="cf-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="cf-left">
+                    <form>
+                        <div class="cf-form-grid">
+                            <div class="cf-group">
+                                <label class="cf-label">NAME</label>
+                                <input type="text" class="cf-input" placeholder="Your name">
+                            </div>
+                            <div class="cf-group">
+                                <label class="cf-label">WORK EMAIL</label>
+                                <input type="email" class="cf-input" placeholder="you@company.com">
+                            </div>
+                            <div class="cf-group">
+                                <label class="cf-label">ORGANIZATION</label>
+                                <input type="text" class="cf-input" placeholder="Company name">
+                            </div>
+                            <div class="cf-group">
+                                <label class="cf-label">AREA OF INTEREST</label>
+                                <input type="text" class="cf-input" placeholder="e.g. Cloud modernization">
+                            </div>
+                            <div class="cf-group full-width">
+                                <label class="cf-label">WHAT WOULD YOU LIKE TO CHANGE?</label>
+                                <textarea class="cf-textarea" placeholder="Share the context, constraint, and desired outcome."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="cf-btn">SEND INQUIRY</button>
+                        <p class="cf-disclaimer">By submitting, you agree that Stackly may contact you about this inquiry.</p>
+                    </form>
+                </div>
+                <div class="cf-right">
+                    <div class="cf-info-item">
+                        <div class="cf-info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <div class="cf-info-content">
+                            <span class="cf-info-label">EMAIL</span>
+                            <span class="cf-info-val">hello@stackly.com</span>
+                        </div>
+                    </div>
+                    <div class="cf-info-item">
+                        <div class="cf-info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <div class="cf-info-content">
+                            <span class="cf-info-label">NEW BUSINESS</span>
+                            <span class="cf-info-val">Schedule an introductory call</span>
+                        </div>
+                    </div>
+                    <div class="cf-info-item">
+                        <div class="cf-info-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <div class="cf-info-content">
+                            <span class="cf-info-label">RESPONSE</span>
+                            <span class="cf-info-val">Within two business days</span>
+                        </div>
+                    </div>
+                    <div class="cf-info-item">
+                        <div class="cf-info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <div class="cf-info-content">
+                            <span class="cf-info-label">COVERAGE</span>
+                            <span class="cf-info-val">Serving clients across North America, Europe, and Asia-Pacific</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Delivery Section -->
+        <section class="contact-global">
+            <div class="cg-container">
+                <div class="cg-header">
+                    <div class="cg-header-left" data-aos="fade-right">
+                        <span class="cg-tag">GLOBAL DELIVERY</span>
+                        <h2 class="cg-title">Connected teams. Local context.</h2>
+                    </div>
+                    <div class="cg-header-right" data-aos="fade-left">
+                        <p class="cg-desc">Our distributed model brings the right expertise to each engagement while maintaining one accountable leadership team.</p>
+                    </div>
+                </div>
+                <div class="cg-grid">
+                    <div class="cg-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3>North America</h3>
+                        <p>New York · Toronto</p>
+                    </div>
+                    <div class="cg-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Europe</h3>
+                        <p>London · Amsterdam</p>
+                    </div>
+                    <div class="cg-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3>Asia-Pacific</h3>
+                        <p>Singapore · Bengaluru</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Happens Next Section -->
+        <section class="contact-next">
+            <div class="cn-container">
+                <div class="cn-left" data-aos="fade-right">
+                    <span class="cn-tag">WHAT HAPPENS NEXT</span>
+                    <h2 class="cn-title">A focused first conversation.</h2>
+                    <ul class="cn-list">
+                        <li class="cn-item">
+                            <span class="cn-num">01</span>
+                            <span>We understand the context</span>
+                        </li>
+                        <li class="cn-item">
+                            <span class="cn-num">02</span>
+                            <span>We identify the decision and value at stake</span>
+                        </li>
+                        <li class="cn-item">
+                            <span class="cn-num">03</span>
+                            <span>We recommend a practical next step</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cn-right" data-aos="fade-left">
+                    <img src="assets/A focused first conversation-Contact-Page.webp" alt="Office corridor" class="cn-img gs-anim" data-speed="0.5">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand & Tagline -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="assets/Brand-logo.webp" alt="Stackly Logo" class="footer-logo">
+                    </a>
+                    <p class="footer-tagline">A warm signal through the cloud layer - complexity turned into a route your team can walk.</p>
+                </div>
+                <!-- Col 2: Company -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Service.html">Our Solutions</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Col 3: Resources -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog Insights</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Integration</a></li>
+                    </ul>
+                </div>
+                <!-- Col 4: Contact & Social -->
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links contact-info">
+                        <li>hello@stackly.com</li>
+                        <li>+1 (555) 123-4567</li>
+                        <li class="address-li">100 Tech Lane, Suite 400<br>San Francisco, CA 94105<br>United States</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Syncy. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
