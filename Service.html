@@ -334,101 +334,438 @@
         </section>
 
         <!-- Service Grid Section -->
-        <section class="service-grid-section">
-            <div class="container">
-                <div class="sg-header" data-aos="fade-up">
-                    <span class="section-tag">HOW WE CAN HELP</span>
-                    <h2 class="section-title">Smart strategies to move from ambition to impact.</h2>
+        <style>
+        .service-grid-new {
+            padding: 100px 0;
+            background-color: #fafbfb;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .sgn-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .sgn-header {
+            margin-bottom: 55px;
+        }
+
+        .sgn-tag {
+            display: block;
+            color: #0c4aff;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .sgn-title {
+            font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+            font-weight: 600;
+            color: #0f172a;
+            line-height: 1.15;
+            max-width: 800px;
+            letter-spacing: -1px;
+        }
+
+        .sgn-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .sgn-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sgn-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 8px 16px rgba(0, 0, 0, 0.04);
+            border-color: #cbd5e1;
+        }
+
+        .sgn-card-img-wrap {
+            width: 100%;
+            height: 190px;
+            overflow: hidden;
+        }
+
+        .sgn-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .sgn-card:hover .sgn-card-img {
+            transform: scale(1.03);
+        }
+
+        .sgn-card-content {
+            padding: 32px 28px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sgn-icon {
+            margin-bottom: 24px;
+        }
+        
+        .sgn-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: #475569;
+            stroke-width: 1.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .sgn-card-title {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .sgn-card-desc {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.55;
+            font-weight: 500;
+        }
+
+        @media (max-width: 1024px) {
+            .sgn-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-grid-new {
+                padding: 70px 0;
+            }
+            .sgn-grid {
+                grid-template-columns: 1fr;
+            }
+            .sgn-title {
+                font-size: 2.3rem;
+            }
+        }
+        </style>
+
+        <section class="service-grid-new">
+            <div class="sgn-container">
+                <div class="sgn-header" data-aos="fade-right">
+                    <span class="sgn-tag">END-TO-END CAPABILITY</span>
+                    <h2 class="sgn-title">Everything needed to move from<br>ambition to impact</h2>
                 </div>
                 
-                <div class="s-grid">
-                    <div class="s-card service-card" data-aos="fade-up" data-aos-delay="0">
-                        <img src="assets/IT strategy-Service-Page.webp" alt="IT Strategy" class="s-card-img">
-                        <div class="s-card-content">
-                            <h3>IT Strategy <i class="fas fa-arrow-right s-card-arrow"></i></h3>
-                            <p>Align your technology roadmap with business goals to ensure long-term scalability.</p>
+                <div class="sgn-grid">
+                    <!-- Card 1 -->
+                    <div class="sgn-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="sgn-card-img-wrap">
+                            <img src="assets/IT strategy-Service-Page.webp" alt="IT strategy" class="sgn-card-img">
+                        </div>
+                        <div class="sgn-card-content">
+                            <div class="sgn-icon">
+                                <svg viewBox="0 0 24 24"><path d="M5 8h4a4 4 0 0 1 4 4v0a4 4 0 0 0 4 4h2"/><circle cx="5" cy="8" r="2"/><circle cx="19" cy="16" r="2"/></svg>
+                            </div>
+                            <h3 class="sgn-card-title">IT strategy</h3>
+                            <p class="sgn-card-desc">Turn technology priorities into a practical, funded roadmap.</p>
                         </div>
                     </div>
-                    <div class="s-card service-card" data-aos="fade-up" data-aos-delay="100">
-                        <img src="assets/Product engineering-Service-Page.webp" alt="Product Engineering" class="s-card-img">
-                        <div class="s-card-content">
-                            <h3>Product Engineering <i class="fas fa-arrow-right s-card-arrow"></i></h3>
-                            <p>End-to-end software development focusing on robust architecture and UX.</p>
+
+                    <!-- Card 2 -->
+                    <div class="sgn-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="sgn-card-img-wrap">
+                            <img src="assets/Product engineering-Service-Page.webp" alt="Product engineering" class="sgn-card-img">
+                        </div>
+                        <div class="sgn-card-content">
+                            <div class="sgn-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/></svg>
+                            </div>
+                            <h3 class="sgn-card-title">Product engineering</h3>
+                            <p class="sgn-card-desc">Design and ship secure digital products your customers choose.</p>
                         </div>
                     </div>
-                    <div class="s-card service-card" data-aos="fade-up" data-aos-delay="200">
-                        <img src="assets/Cloud transformation-Service-Page.webp" alt="Cloud Transformation" class="s-card-img">
-                        <div class="s-card-content">
-                            <h3>Cloud Transformation <i class="fas fa-arrow-right s-card-arrow"></i></h3>
-                            <p>Seamlessly migrate, optimize, and manage workloads on AWS, Azure, or GCP.</p>
+
+                    <!-- Card 3 -->
+                    <div class="sgn-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="sgn-card-img-wrap">
+                            <img src="assets/Cloud transformation-Service-Page.webp" alt="Cloud transformation" class="sgn-card-img">
+                        </div>
+                        <div class="sgn-card-content">
+                            <div class="sgn-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 17V8m0 0l-3 3m3-3l3 3M7 18h10a4 4 0 0 0 0-8h-1a6 6 0 1 0-11.5 2 3.5 3.5 0 0 0 2.5 6z"/></svg>
+                            </div>
+                            <h3 class="sgn-card-title">Cloud transformation</h3>
+                            <p class="sgn-card-desc">Modernize infrastructure for resilience, speed, and lower cost.</p>
                         </div>
                     </div>
-                    <div class="s-card service-card" data-aos="fade-up" data-aos-delay="300">
-                        <img src="assets/Data & AI-Service-Page.webp" alt="Data and AI" class="s-card-img">
-                        <div class="s-card-content">
-                            <h3>Data & AI <i class="fas fa-arrow-right s-card-arrow"></i></h3>
-                            <p>Unlock insights and automate operations with predictive analytics models.</p>
+
+                    <!-- Card 4 -->
+                    <div class="sgn-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="sgn-card-img-wrap">
+                            <img src="assets/Data & AI-Service-Page.webp" alt="Data & AI" class="sgn-card-img">
+                        </div>
+                        <div class="sgn-card-content">
+                            <div class="sgn-icon">
+                                <svg viewBox="0 0 24 24"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6M9 18h6M8.1 8.1l7.8 7.8"/></svg>
+                            </div>
+                            <h3 class="sgn-card-title">Data & AI</h3>
+                            <p class="sgn-card-desc">Make trusted data useful with analytics and responsible automation.</p>
                         </div>
                     </div>
-                    <div class="s-card service-card" data-aos="fade-up" data-aos-delay="400">
-                        <img src="assets/Managed operations-Service-Page.webp" alt="Managed Operations" class="s-card-img">
-                        <div class="s-card-content">
-                            <h3>Managed Operations <i class="fas fa-arrow-right s-card-arrow"></i></h3>
-                            <p>24/7 proactive monitoring, maintenance, and optimization of systems.</p>
+
+                    <!-- Card 5 -->
+                    <div class="sgn-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="sgn-card-img-wrap">
+                            <img src="assets/Managed operations-Service-Page.webp" alt="Managed operations" class="sgn-card-img">
+                        </div>
+                        <div class="sgn-card-content">
+                            <div class="sgn-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                            </div>
+                            <h3 class="sgn-card-title">Managed operations</h3>
+                            <p class="sgn-card-desc">Keep critical systems healthy with proactive 24/7 support.</p>
                         </div>
                     </div>
-                    <div class="s-card service-card" data-aos="fade-up" data-aos-delay="500">
-                        <img src="assets/Experience design-Service-Page.webp" alt="Experience Design" class="s-card-img">
-                        <div class="s-card-content">
-                            <h3>Experience Design <i class="fas fa-arrow-right s-card-arrow"></i></h3>
-                            <p>Create intuitive, accessible, and highly engaging user journeys.</p>
+
+                    <!-- Card 6 -->
+                    <div class="sgn-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="sgn-card-img-wrap">
+                            <img src="assets/Experience design-Service-Page.webp" alt="Experience design" class="sgn-card-img">
+                        </div>
+                        <div class="sgn-card-content">
+                            <div class="sgn-icon">
+                                <svg viewBox="0 0 24 24"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/><line x1="13.5" y1="6.5" x2="17.5" y2="10.5"/></svg>
+                            </div>
+                            <h3 class="sgn-card-title">Experience design</h3>
+                            <p class="sgn-card-desc">Create accessible journeys that feel clear at every touchpoint.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Z-Pattern Features -->
+        <style>
+        .z-feature-new {
+            padding: 120px 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow: hidden;
+        }
+
+        .z-feature-new.bg-white {
+            background-color: #ffffff;
+        }
+
+        .z-feature-new.bg-dark {
+            background-color: #0b1121;
+        }
+
+        .zfn-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 80px;
+        }
+
+        .zfn-container.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .zfn-image-col {
+            flex: 1;
+            width: 100%;
+        }
+
+        .zfn-img {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            display: block;
+        }
+
+        .zfn-content-col {
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .zfn-icon {
+            margin-bottom: 24px;
+        }
+
+        .zfn-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke-width: 1.2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .bg-white .zfn-icon svg {
+            stroke: #475569;
+        }
+
+        .bg-dark .zfn-icon svg {
+            stroke: #94a3b8;
+        }
+
+        .zfn-title {
+            font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .bg-white .zfn-title {
+            color: #0f172a;
+        }
+
+        .bg-dark .zfn-title {
+            color: #ffffff;
+        }
+
+        .zfn-desc {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            font-weight: 500;
+        }
+
+        .bg-white .zfn-desc {
+            color: #64748b;
+        }
+
+        .bg-dark .zfn-desc {
+            color: #cbd5e1;
+        }
+
+        .zfn-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .zfn-link:hover {
+            opacity: 0.8;
+        }
+
+        .bg-white .zfn-link {
+            color: #0c4aff;
+        }
+
+        .bg-dark .zfn-link {
+            color: #00e0b8;
+        }
+
+        .zfn-link-icon {
+            margin-left: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        @media (max-width: 991px) {
+            .zfn-container, .zfn-container.reverse {
+                flex-direction: column;
+                text-align: left;
+                gap: 50px;
+            }
+            .zfn-content-col {
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .z-feature-new {
+                padding: 80px 0;
+            }
+            .zfn-title {
+                font-size: 2.2rem;
+            }
+        }
+        </style>
+
         <!-- Z-Pattern Feature 1 -->
-        <section class="z-feature bg-light">
-            <div class="container z-container">
-                <div class="z-image gs-anim" data-speed="0.5" data-aos="fade-right">
-                    <img src="assets/Build the right digital foundation-Section-Service-Page.webp" alt="Digital foundation">
+        <section class="z-feature-new bg-white">
+            <div class="zfn-container">
+                <div class="zfn-image-col" data-aos="fade-right">
+                    <img src="assets/Build the right digital foundation-Section-Service-Page.webp" alt="Build the right digital foundation" class="zfn-img">
                 </div>
-                <div class="z-content" data-aos="fade-left">
-                    <span class="z-step">01</span>
-                    <h2>Build the right digital foundation</h2>
-                    <p>Modernization isn’t just about adopting new tools—it’s about restructuring your core to adapt to future demands. We re-architect monoliths into microservices, establishing resilient platforms that scale effortlessly.</p>
-                    <a href="#" class="btn btn-outline" style="margin-top:20px;">Explore Architecture</a>
+                <div class="zfn-content-col" data-aos="fade-left">
+                    <div class="zfn-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                            <circle cx="12" cy="9" r="2.5"/>
+                        </svg>
+                    </div>
+                    <h2 class="zfn-title">Build the right digital foundation</h2>
+                    <p class="zfn-desc">We connect operating goals to architecture, product roadmaps, and investment choices. Your teams leave with shared priorities, fewer handoffs, and a plan designed to survive real-world change.</p>
+                    <a href="#" class="zfn-link">EXPLORE THIS SERVICE <span class="zfn-link-icon">↗</span></a>
                 </div>
             </div>
         </section>
 
         <!-- Z-Pattern Feature 2 (Dark) -->
-        <section class="z-feature bg-dark text-white">
-            <div class="container z-container reverse">
-                <div class="z-content" data-aos="fade-right">
-                    <span class="z-step" style="color:rgba(255,255,255,0.3);">02</span>
-                    <h2>Core banking, without the big-bang risk</h2>
-                    <p>We decouple legacy systems step-by-step using a strangler fig pattern. This ensures zero downtime and continuous compliance while you transition to a modern, agile financial core.</p>
-                    <a href="#" class="btn btn-primary" style="margin-top:20px; background:white; color:var(--dark-bg);">See Fintech Solutions</a>
+        <section class="z-feature-new bg-dark">
+            <div class="zfn-container reverse">
+                <div class="zfn-image-col" data-aos="fade-left">
+                    <img src="assets/Product engineering-Service-Page.webp" alt="Ship experiences people rely on" class="zfn-img">
                 </div>
-                <div class="z-image gs-anim" data-speed="0.5" data-aos="fade-left">
-                    <img src="assets/Core banking, without the big-bang risk-Service-Page.webp" alt="Core banking" style="border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                <div class="zfn-content-col" data-aos="fade-right">
+                    <div class="zfn-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 12l10 5 10-5M2 17l10 5 10-5"/>
+                            <path d="M18 6v4M16 8h4"/>
+                        </svg>
+                    </div>
+                    <h2 class="zfn-title">Ship experiences people rely on</h2>
+                    <p class="zfn-desc">Cross-functional product pods combine research, service design, software engineering, and quality. We release in small increments, learn quickly, and design accessibility and security in from day one.</p>
+                    <a href="#" class="zfn-link">EXPLORE THIS SERVICE <span class="zfn-link-icon">↗</span></a>
                 </div>
             </div>
         </section>
 
         <!-- Z-Pattern Feature 3 -->
-        <section class="z-feature">
-            <div class="container z-container">
-                <div class="z-image gs-anim" data-speed="0.5" data-aos="fade-right">
-                    <img src="assets/Operate smarter at scale-Section-Service-Page.webp" alt="Operate smarter">
+        <section class="z-feature-new bg-white">
+            <div class="zfn-container">
+                <div class="zfn-image-col" data-aos="fade-right">
+                    <img src="assets/Operate smarter at scale-Section-Service-Page.webp" alt="Operate smarter at scale" class="zfn-img">
                 </div>
-                <div class="z-content" data-aos="fade-left">
-                    <span class="z-step">03</span>
-                    <h2>Operate smarter at scale</h2>
-                    <p>Harness automation and AI to optimize your workflows. By integrating intelligent observability and automated remediation, we drastically reduce MTTR and free your team to focus on innovation.</p>
-                    <a href="#" class="btn btn-outline" style="margin-top:20px;">View Automation Tools</a>
+                <div class="zfn-content-col" data-aos="fade-left">
+                    <div class="zfn-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 17H6a4 4 0 0 1 0-8h1.26a6 6 0 1 1 11.48 1.95A4 4 0 0 1 17 18h-4"/>
+                            <circle cx="10" cy="19" r="2.5"/>
+                        </svg>
+                    </div>
+                    <h2 class="zfn-title">Operate smarter at scale</h2>
+                    <p class="zfn-desc">Cloud, data, automation, and managed operations come together as one improvement system. We reduce toil, strengthen resilience, and create the observability your leaders need to act early.</p>
+                    <a href="#" class="zfn-link">EXPLORE THIS SERVICE <span class="zfn-link-icon">↗</span></a>
                 </div>
             </div>
         </section>
