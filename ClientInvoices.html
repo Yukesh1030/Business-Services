@@ -39,6 +39,9 @@
                     <a href="ClientInvoices.html" class="sidebar-link active">
                         <i class="fas fa-file-invoice-dollar"></i> Invoices
                     </a>
+                    <a href="ClientSupport.html" class="sidebar-link">
+                        <i class="fas fa-life-ring"></i> Support
+                    </a>
                 </div>
             </nav>
             
@@ -163,14 +166,14 @@
                     <!-- 5. MAKE A PAYMENT FORM -->
                     <div class="dash-card" data-aos="fade-up" data-aos-delay="400" style="margin-top:24px; max-width:600px;">
                         <h3 class="dash-card-title" style="margin-bottom: 20px;">Make a Manual Payment</h3>
-                        <form>
+                        <form action="404.html">
                             <div class="dash-form-group">
                                 <label>Amount to Pay ($)</label>
-                                <input type="number" class="dash-input" placeholder="0.00" required="">
+                                <input type="number" class="dash-input" placeholder="0.00" required="required">
                             </div>
                             <div class="dash-form-group">
                                 <label>Payment Method</label>
-                                <select class="dash-input" required="">
+                                <select class="dash-input" required="required">
                                     <option>Visa ending in 4242</option>
                                     <option>Pay with PayPal</option>
                                     <option>Bank Transfer</option>
@@ -180,7 +183,69 @@
                         </form>
                     </div>
 
-                </section>
+                
+        <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 40px; width: 100%;">
+            <!-- 1. Total Spend -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">YTD Investment</h3>
+                </div>
+                <div style="margin-top:20px; text-align:center;">
+                    <h2 style="font-size:2.8rem; margin:0; color:var(--dark-bg);">$42,500</h2>
+                    <p style="margin:5px 0 0; color:var(--text-light);">Total billed in 2026</p>
+                    <div style="margin-top:20px; display:flex; justify-content:center; gap:20px; font-size:0.9rem;">
+                        <div style="text-align:left;">
+                            <span style="color:var(--text-light); display:block; font-size:0.75rem; text-transform:uppercase;">Paid</span>
+                            <span style="font-weight:bold; color:#10b981;">$38,000</span>
+                        </div>
+                        <div style="width:1px; background:#e2e8f0;"></div>
+                        <div style="text-align:left;">
+                            <span style="color:var(--text-light); display:block; font-size:0.75rem; text-transform:uppercase;">Outstanding</span>
+                            <span style="font-weight:bold; color:#ef4444;">$4,500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2. Payment Methods -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="100">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Payment Methods</h3>
+                </div>
+                <div style="margin-top:15px; display:flex; flex-direction:column; gap:12px;">
+                    <div style="display:flex; align-items:center; justify-content:space-between; padding:12px; border:1px solid #e2e8f0; border-radius:8px; background:#f8fafc;">
+                        <div style="display:flex; align-items:center; gap:12px;">
+                            <i class="fab fa-cc-visa" style="font-size:2rem; color:#1a1f71;"></i>
+                            <div>
+                                <h5 style="margin:0; font-size:0.95rem;">Visa ending in 4242</h5>
+                                <span style="font-size:0.75rem; color:var(--text-light);">Expires 12/28</span>
+                            </div>
+                        </div>
+                        <span style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:12px; font-size:0.7rem; font-weight:bold;">DEFAULT</span>
+                    </div>
+                    <a href="404.html" style="display:block; text-align:center; padding:10px; border:1px dashed #cbd5e1; border-radius:8px; color:var(--primary); text-decoration:none; font-weight:600; transition:background 0.2s;">
+                        <i class="fas fa-plus"></i> Add New Method
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3. Update Billing Form -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Update Billing Info</h3>
+                </div>
+                <form action="404.html" style="display:flex; flex-direction:column; gap:12px; margin-top:15px;">
+                    <input type="text" placeholder="Company Legal Name" style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                    <input type="text" placeholder="Billing Address" style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                    <div style="display:flex; gap:10px;">
+                        <input type="text" placeholder="City" style="flex:1; padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                        <input type="text" placeholder="Zip" style="flex:1; padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="padding:10px; border-radius:6px; width:100%;">Save Details</button>
+                </form>
+            </div>
+        </div>
+    </section>
             </div>
         </main>
     </div>

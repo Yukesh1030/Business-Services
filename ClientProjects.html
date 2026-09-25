@@ -39,6 +39,9 @@
                     <a href="ClientInvoices.html" class="sidebar-link">
                         <i class="fas fa-file-invoice-dollar"></i> Invoices
                     </a>
+                    <a href="ClientSupport.html" class="sidebar-link">
+                        <i class="fas fa-life-ring"></i> Support
+                    </a>
                 </div>
             </nav>
             
@@ -127,17 +130,17 @@
                             <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap:16px;">
                                 <div style="border:1px solid var(--border-color); border-radius:8px; padding:16px; text-align:center; transition:0.3s; cursor:pointer;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
                                     <i class="fas fa-file-pdf" style="font-size:2.5rem; color:#ef4444; margin-bottom:10px;"></i>
-                                    <p style="font-weight:bold; font-size:0.85rem; margin-bottom:4px; color:var(--dark-bg);">Contract.pdf</p>
+                                    <p style="font-weight:bold; font-size:0.85rem; margin-bottom:4px; color:var(--dark-bg); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Contract.pdf</p>
                                     <span style="font-size:0.7rem; color:var(--text-light);">Signed Oct 1</span>
                                 </div>
                                 <div style="border:1px solid var(--border-color); border-radius:8px; padding:16px; text-align:center; transition:0.3s; cursor:pointer;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
                                     <i class="fas fa-file-image" style="font-size:2.5rem; color:#8b5cf6; margin-bottom:10px;"></i>
-                                    <p style="font-weight:bold; font-size:0.85rem; margin-bottom:4px; color:var(--dark-bg);">Wireframes.zip</p>
+                                    <p style="font-weight:bold; font-size:0.85rem; margin-bottom:4px; color:var(--dark-bg); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Wireframes.zip</p>
                                     <span style="font-size:0.7rem; color:var(--text-light);">Added Oct 10</span>
                                 </div>
                                 <div style="border:1px solid var(--border-color); border-radius:8px; padding:16px; text-align:center; transition:0.3s; cursor:pointer;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
                                     <i class="fas fa-file-alt" style="font-size:2.5rem; color:#10b981; margin-bottom:10px;"></i>
-                                    <p style="font-weight:bold; font-size:0.85rem; margin-bottom:4px; color:var(--dark-bg);">Project_Brief.docx</p>
+                                    <p style="font-weight:bold; font-size:0.85rem; margin-bottom:4px; color:var(--dark-bg); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Project_Brief.docx</p>
                                     <span style="font-size:0.7rem; color:var(--text-light);">Added Sep 28</span>
                                 </div>
                             </div>
@@ -168,11 +171,11 @@
                     <!-- 5. REQUEST CHANGE FORM -->
                     <div class="dash-card" data-aos="fade-up" data-aos-delay="400" style="margin-top:24px;">
                         <h3 class="dash-card-title" style="margin-bottom: 20px;">Request a Change or Revision</h3>
-                        <form class="split-form">
+                        <form class="split-form" action="404.html">
                             <div class="split-col">
                                 <div class="dash-form-group">
                                     <label>What phase does this relate to?</label>
-                                    <select class="dash-input" required="">
+                                    <select class="dash-input" required="required">
                                         <option>Wireframing</option>
                                         <option selected="">UI Design</option>
                                         <option>Functionality</option>
@@ -182,7 +185,7 @@
                             <div class="split-col">
                                 <div class="dash-form-group">
                                     <label>Detailed Revision Request</label>
-                                    <textarea class="dash-input" rows="3" placeholder="Please describe the changes required..." required=""></textarea>
+                                    <textarea class="dash-input" rows="3" placeholder="Please describe the changes required..." required="required"></textarea>
                                 </div>
                                 <div style="text-align:right;">
                                     <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane" style="margin-right:8px;"></i> Submit Request</button>
@@ -191,7 +194,82 @@
                         </form>
                     </div>
 
-                </section>
+                
+        <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 40px; width: 100%;">
+            <!-- 1. Resource Allocation -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Your Dedicated Team</h3>
+                </div>
+                <div style="margin-top:15px; display:flex; flex-wrap:wrap; gap:15px;">
+                    <div style="display:flex; align-items:center; gap:10px; width:calc(50% - 10px);">
+                        <img src="assets/Reddington M-Engineer-About-Page.webp" alt="Team" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+                        <div>
+                            <h5 style="margin:0; font-size:0.9rem;">Alex M.</h5>
+                            <span style="font-size:0.75rem; color:var(--text-light);">Lead Dev</span>
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:10px; width:calc(50% - 10px);">
+                        <img src="assets/Maura Yalah-Product Design-About-Page.webp" alt="Team" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+                        <div>
+                            <h5 style="margin:0; font-size:0.9rem;">Sam J.</h5>
+                            <span style="font-size:0.75rem; color:var(--text-light);">UI/UX</span>
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:10px; width:100%;">
+                        <div style="width:40px; height:40px; border-radius:50%; background:var(--primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:bold;">RJ</div>
+                        <div>
+                            <h5 style="margin:0; font-size:0.9rem;">Rachel J.</h5>
+                            <span style="font-size:0.75rem; color:var(--text-light);">Project Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2. Phase Completion Status -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="100">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Sprint Breakdown</h3>
+                </div>
+                <div style="margin-top:15px; display:flex; flex-direction:column; gap:15px;">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:0.85rem;">
+                            <span>UI Design</span> <span style="font-weight:bold; color:#10b981;">100%</span>
+                        </div>
+                        <div style="background:#e5e7eb; height:8px; border-radius:4px;"><div style="background:#10b981; width:100%; height:100%; border-radius:4px;"></div></div>
+                    </div>
+                    <div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:0.85rem;">
+                            <span>Backend API</span> <span style="font-weight:bold; color:#3b82f6;">80%</span>
+                        </div>
+                        <div style="background:#e5e7eb; height:8px; border-radius:4px;"><div style="background:#3b82f6; width:80%; height:100%; border-radius:4px;"></div></div>
+                    </div>
+                    <div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:0.85rem;">
+                            <span>Frontend Integration</span> <span style="font-weight:bold; color:#f59e0b;">35%</span>
+                        </div>
+                        <div style="background:#e5e7eb; height:8px; border-radius:4px;"><div style="background:#f59e0b; width:35%; height:100%; border-radius:4px;"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Request Revision Form -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Request Revision</h3>
+                </div>
+                <form action="404.html" style="display:flex; flex-direction:column; gap:12px; margin-top:15px;">
+                    <select style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                        <option value="" disabled="" selected="">Select Milestone</option>
+                        <option value="ui">UI Design Phase</option>
+                        <option value="api">Backend API</option>
+                    </select>
+                    <textarea placeholder="Describe the requested changes..." rows="3" style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit; resize:none;" required="required"></textarea>
+                    <button type="submit" class="btn btn-outline" style="padding:10px; border-radius:6px; width:100%;">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
             </div>
         </main>
     </div>
