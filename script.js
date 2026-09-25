@@ -314,3 +314,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Dynamic Username Update for Dashboards
+document.addEventListener('DOMContentLoaded', () => {
+    const savedUsername = localStorage.getItem('syncy_username');
+    if (savedUsername) {
+        const userNameElems = document.querySelectorAll('.user-name');
+        const userAvatarElems = document.querySelectorAll('.user-avatar');
+        
+        userNameElems.forEach(elem => {
+            elem.textContent = savedUsername;
+        });
+        
+        userAvatarElems.forEach(elem => {
+            const parts = savedUsername.trim().split(' ');
+            let initials = '';
+            if (parts.length >= 2) {
+                initials = parts[0].charAt(0).toUpperCase() + parts[parts.length - 1].charAt(0).toUpperCase();
+            } else if (parts.length === 1 && parts[0].length >= 2) {
+                initials = parts[0].substring(0, 2).toUpperCase();
+            } else if (parts[0].length > 0) {
+                initials = parts[0].charAt(0).toUpperCase();
+            }
+            elem.textContent = initials;
+        });
+    }
+});

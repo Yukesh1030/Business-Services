@@ -382,6 +382,16 @@
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const loginType = document.getElementById('loginType').value;
+            const emailInput = document.querySelector('input[type="email"]').value;
+            
+            // Extract username from email
+            let username = emailInput.split('@')[0];
+            username = username.split('.').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+            if (loginType === 'Admin' && !username.toLowerCase().includes('admin')) {
+                username += ' Admin';
+            }
+            
+            localStorage.setItem('syncy_username', username);
             
             if (loginType === 'Admin') {
                 window.location.href = 'AdminDashboard.html';

@@ -25,7 +25,7 @@
         <!-- Sidebar -->
         <aside class="dashboard-sidebar">
             <div class="sidebar-header">
-                <img src="assets/Brand-logo.webp" alt="Syncy Logo">
+                <a href="AdminDashboard.html"><img src="assets/Brand-logo.webp" alt="Syncy Logo"></a>
             </div>
             
             <nav class="sidebar-menu">
@@ -221,23 +221,36 @@
             </div>
 
             <!-- 3. Custom Report Form -->
-            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
-                <div class="dash-card-header">
-                    <h3 class="dash-card-title">Generate Custom</h3>
-                </div>
-                <form style="display:flex; flex-direction:column; gap:12px; margin-top:10px;" action="404.html">
-                    <select style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
-                        <option value="" disabled="" selected="">Select Dataset</option>
-                        <option value="fin">Financials</option>
-                        <option value="users">User Activity</option>
-                    </select>
-                    <div style="display:flex; gap:10px;">
-                        <input type="date" style="flex:1; padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
-                        <input type="date" style="flex:1; padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="padding:10px; border-radius:6px;">Generate</button>
-                </form>
+            
+        <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
+            <div class="dash-card-header">
+                <h3 class="dash-card-title">Popular Reports</h3>
             </div>
+            <div style="margin-top:15px; display:flex; flex-direction:column; gap:10px;">
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:10px; background:#f9fafb; border-radius:6px; border:1px solid #eee;">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <i class="fas fa-chart-pie" style="color:#3b82f6;"></i>
+                        <span style="font-size:0.9rem; font-weight:600;">Revenue Q3</span>
+                    </div>
+                    <span style="font-size:0.8rem; background:#dbeafe; color:#1e40af; padding:2px 8px; border-radius:12px;">Generated 42x</span>
+                </div>
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:10px; background:#f9fafb; border-radius:6px; border:1px solid #eee;">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <i class="fas fa-users" style="color:#10b981;"></i>
+                        <span style="font-size:0.9rem; font-weight:600;">User Retention</span>
+                    </div>
+                    <span style="font-size:0.8rem; background:#d1fae5; color:#065f46; padding:2px 8px; border-radius:12px;">Generated 28x</span>
+                </div>
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:10px; background:#f9fafb; border-radius:6px; border:1px solid #eee;">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <i class="fas fa-chart-line" style="color:#f59e0b;"></i>
+                        <span style="font-size:0.9rem; font-weight:600;">Sales Growth</span>
+                    </div>
+                    <span style="font-size:0.8rem; background:#fef3c7; color:#92400e; padding:2px 8px; border-radius:12px;">Generated 15x</span>
+                </div>
+            </div>
+        </div>
+    
         </div>
     </section>
             </div>

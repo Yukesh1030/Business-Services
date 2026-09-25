@@ -25,7 +25,7 @@
         <!-- Sidebar -->
         <aside class="dashboard-sidebar">
             <div class="sidebar-header">
-                <img src="assets/Brand-logo.webp" alt="Syncy Logo">
+                <a href="AdminDashboard.html"><img src="assets/Brand-logo.webp" alt="Syncy Logo"></a>
             </div>
             
             <nav class="sidebar-menu">
@@ -267,16 +267,36 @@
             </div>
 
             <!-- 3. Add Client Form -->
-            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
-                <div class="dash-card-header">
-                    <h3 class="dash-card-title">Add New Client</h3>
-                </div>
-                <form style="display:flex; flex-direction:column; gap:12px; margin-top:10px;" action="404.html">
-                    <input type="text" placeholder="Company Name" style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
-                    <input type="email" placeholder="Contact Email" style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
-                    <button type="submit" class="btn btn-primary" style="padding:10px; border-radius:6px;">Add Client</button>
-                </form>
+            
+        <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
+            <div class="dash-card-header">
+                <h3 class="dash-card-title">Client Demographics</h3>
             </div>
+            <div style="margin-top:15px; display:flex; flex-direction:column; gap:12px;">
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <div style="width:30px; font-size:1.2rem; text-align:center;">🇺🇸</div>
+                    <div style="flex:1;">
+                        <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:2px;"><span>North America</span><span>45%</span></div>
+                        <div style="background:#e5e7eb; height:6px; border-radius:3px;"><div style="background:#3b82f6; width:45%; height:100%; border-radius:3px;"></div></div>
+                    </div>
+                </div>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <div style="width:30px; font-size:1.2rem; text-align:center;">🇪🇺</div>
+                    <div style="flex:1;">
+                        <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:2px;"><span>Europe</span><span>30%</span></div>
+                        <div style="background:#e5e7eb; height:6px; border-radius:3px;"><div style="background:#f59e0b; width:30%; height:100%; border-radius:3px;"></div></div>
+                    </div>
+                </div>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <div style="width:30px; font-size:1.2rem; text-align:center;">🌏</div>
+                    <div style="flex:1;">
+                        <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:2px;"><span>Asia Pacific</span><span>25%</span></div>
+                        <div style="background:#e5e7eb; height:6px; border-radius:3px;"><div style="background:#10b981; width:25%; height:100%; border-radius:3px;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
         </div>
     </section>
             </div>

@@ -25,7 +25,7 @@
         <!-- Sidebar -->
         <aside class="dashboard-sidebar">
             <div class="sidebar-header">
-                <img src="assets/Brand-logo.webp" alt="Syncy Logo">
+                <a href="AdminDashboard.html"><img src="assets/Brand-logo.webp" alt="Syncy Logo"></a>
             </div>
             
             <nav class="sidebar-menu">
@@ -272,24 +272,26 @@
             </div>
 
             <!-- 3. Resource Allocation Form -->
-            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
-                <div class="dash-card-header">
-                    <h3 class="dash-card-title">Allocate Resource</h3>
-                </div>
-                <form style="display:flex; flex-direction:column; gap:12px; margin-top:10px;" action="404.html">
-                    <select style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
-                        <option value="" disabled="" selected="">Select Resource</option>
-                        <option value="dev1">Senior Developer</option>
-                        <option value="des1">UI Designer</option>
-                    </select>
-                    <select style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
-                        <option value="" disabled="" selected="">Assign to Project</option>
-                        <option value="p1">Project Titan</option>
-                        <option value="p2">Project Apollo</option>
-                    </select>
-                    <button type="submit" class="btn btn-outline" style="padding:10px; border-radius:6px;">Allocate</button>
-                </form>
+            
+        <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
+            <div class="dash-card-header">
+                <h3 class="dash-card-title">Budget Overview</h3>
             </div>
+            <div style="margin-top:15px; text-align:center;">
+                <div style="font-size:2rem; font-weight:800; color:var(--dark-bg);">$142,000</div>
+                <p style="margin:5px 0 20px; font-size:0.85rem; color:var(--text-light);">Total Allocated Budget</p>
+                
+                <div style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:0.85rem;">
+                    <span style="color:var(--text-light);">Spent: <span style="color:#ef4444; font-weight:600;">$98,500</span></span>
+                    <span style="color:var(--text-light);">Remaining: <span style="color:#10b981; font-weight:600;">$43,500</span></span>
+                </div>
+                <div style="background:#e5e7eb; height:10px; border-radius:5px; display:flex; overflow:hidden;">
+                    <div style="background:#ef4444; width:69%; height:100%;"></div>
+                    <div style="background:#10b981; width:31%; height:100%;"></div>
+                </div>
+            </div>
+        </div>
+    
         </div>
     </section>
             </div>
