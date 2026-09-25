@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Admin Clients | Syncy</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap" rel="stylesheet">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- AOS CSS -->
@@ -190,15 +188,15 @@
                             <div style="padding:10px 20px; border-bottom:2px solid var(--primary); margin-bottom:-2px; color:var(--primary); font-weight:bold;">Step 1: Details</div>
                             <div style="padding:10px 20px; color:var(--text-light); font-weight:bold;">Step 2: Contracts</div>
                         </div>
-                        <form class="split-form">
+                        <form class="split-form" action="404.html">
                             <div class="split-col">
                                 <div class="dash-form-group">
                                     <label>Company Legal Name</label>
-                                    <input type="text" class="dash-input" placeholder="Enter full registered name" required>
+                                    <input type="text" class="dash-input" placeholder="Enter full registered name" required="required">
                                 </div>
                                 <div class="dash-form-group">
                                     <label>Primary Industry</label>
-                                    <select class="dash-input" required>
+                                    <select class="dash-input" required="required">
                                         <option>Technology</option>
                                         <option>Retail/E-commerce</option>
                                         <option>Finance</option>
@@ -208,11 +206,11 @@
                             <div class="split-col">
                                 <div class="dash-form-group">
                                     <label>Primary Contact Name</label>
-                                    <input type="text" class="dash-input" placeholder="Full name" required>
+                                    <input type="text" class="dash-input" placeholder="Full name" required="required">
                                 </div>
                                 <div class="dash-form-group">
                                     <label>Billing Email Address</label>
-                                    <input type="email" class="dash-input" placeholder="billing@company.com" required>
+                                    <input type="email" class="dash-input" placeholder="billing@company.com" required="required">
                                 </div>
                             </div>
                             <div style="width:100%; text-align:right;">
@@ -221,7 +219,66 @@
                         </form>
                     </div>
 
-                </section>
+                
+        <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 40px; width: 100%;">
+            <!-- 1. Client Satisfaction -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Satisfaction Score (CSAT)</h3>
+                </div>
+                <div style="display:flex; justify-content:center; align-items:center; height:120px;">
+                    <div style="position:relative; width:100px; height:100px;">
+                        <svg viewBox="0 0 36 36" style="width:100%; height:100%;">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#eee" stroke-width="3"></path>
+                            <path class="circle" stroke-dasharray="92, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#10b981" stroke-width="3"></path>
+                        </svg>
+                        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-weight:bold; font-size:1.2rem;">92%</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2. Upcoming Meetings -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="100">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Upcoming Meetings</h3>
+                </div>
+                <div style="margin-top:10px; display:flex; flex-direction:column; gap:15px;">
+                    <div style="display:flex; align-items:center; gap:15px;">
+                        <div style="background:#f3f4f6; padding:10px; border-radius:8px; text-align:center; min-width:55px;">
+                            <div style="font-size:0.75rem; font-weight:700; color:var(--text-light); text-transform:uppercase;">Oct</div>
+                            <div style="font-size:1.2rem; font-weight:800; color:var(--dark-bg);">28</div>
+                        </div>
+                        <div>
+                            <h5 style="margin:0;">Quarterly Review</h5>
+                            <p style="margin:0; font-size:0.8rem; color:var(--text-light);">with TechCorp</p>
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:15px;">
+                        <div style="background:#f3f4f6; padding:10px; border-radius:8px; text-align:center; min-width:55px;">
+                            <div style="font-size:0.75rem; font-weight:700; color:var(--text-light); text-transform:uppercase;">Nov</div>
+                            <div style="font-size:1.2rem; font-weight:800; color:var(--dark-bg);">02</div>
+                        </div>
+                        <div>
+                            <h5 style="margin:0;">Onboarding Call</h5>
+                            <p style="margin:0; font-size:0.8rem; color:var(--text-light);">with ApexTech</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Add Client Form -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Add New Client</h3>
+                </div>
+                <form style="display:flex; flex-direction:column; gap:12px; margin-top:10px;" action="404.html">
+                    <input type="text" placeholder="Company Name" style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                    <input type="email" placeholder="Contact Email" style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                    <button type="submit" class="btn btn-primary" style="padding:10px; border-radius:6px;">Add Client</button>
+                </form>
+            </div>
+        </div>
+    </section>
             </div>
         </main>
     </div>
@@ -230,5 +287,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 800, once: true });</script>
     <script src="script.js"></script>
-</body>
-</html>
+
+
+</body></html>

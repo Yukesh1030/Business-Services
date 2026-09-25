@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Admin Projects | Syncy</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap" rel="stylesheet">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- AOS CSS -->
@@ -201,16 +199,16 @@
                     <!-- 5. SPLIT ADD PROJECT FORM -->
                     <div class="dash-card" data-aos="fade-up" data-aos-delay="400" style="margin-top:24px;">
                         <h3 class="dash-card-title" style="margin-bottom: 20px;">Initiate New Project</h3>
-                        <form class="split-form">
+                        <form class="split-form" action="404.html">
                             <div class="split-col">
                                 <div class="dash-form-group">
                                     <label>Project Title</label>
-                                    <input type="text" class="dash-input" placeholder="e.g. Server Upgrades" required>
+                                    <input type="text" class="dash-input" placeholder="e.g. Server Upgrades" required="required">
                                 </div>
                                 <div class="dash-form-group">
                                     <label>Client Details</label>
-                                    <select class="dash-input" required>
-                                        <option value="" disabled selected>Select an active client...</option>
+                                    <select class="dash-input" required="required">
+                                        <option value="" disabled="" selected="">Select an active client...</option>
                                         <option>TechCorp Inc.</option>
                                         <option>Finance Co.</option>
                                     </select>
@@ -220,13 +218,13 @@
                                 <div class="dash-form-group">
                                     <label>Timeline Setup</label>
                                     <div style="display:flex; gap:16px;">
-                                        <input type="date" class="dash-input" required style="flex:1;">
-                                        <input type="date" class="dash-input" required style="flex:1;">
+                                        <input type="date" class="dash-input" required="required" style="flex:1;">
+                                        <input type="date" class="dash-input" required="required" style="flex:1;">
                                     </div>
                                 </div>
                                 <div class="dash-form-group">
                                     <label>Initial Budget ($)</label>
-                                    <input type="number" class="dash-input" placeholder="0.00" required>
+                                    <input type="number" class="dash-input" placeholder="0.00" required="required">
                                 </div>
                             </div>
                             <div style="width:100%; text-align:right;">
@@ -235,7 +233,65 @@
                         </form>
                     </div>
 
-                </section>
+                
+        <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 40px; width: 100%;">
+            <!-- 1. Project Timeline -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Project Milestones</h3>
+                </div>
+                <ul style="list-style:none; padding:0; margin-top:10px; border-left:2px solid #e5e7eb; padding-left:15px;">
+                    <li style="margin-bottom:15px; position:relative;">
+                        <div style="position:absolute; left:-22px; top:2px; width:12px; height:12px; border-radius:50%; background:var(--primary);"></div>
+                        <h5 style="margin:0; font-size:1rem;">Phase 1: Research</h5>
+                        <p style="margin:4px 0 0; font-size:0.85rem; color:var(--text-light);">Completed on Oct 12</p>
+                    </li>
+                    <li style="margin-bottom:15px; position:relative;">
+                        <div style="position:absolute; left:-22px; top:2px; width:12px; height:12px; border-radius:50%; background:#f59e0b;"></div>
+                        <h5 style="margin:0; font-size:1rem;">Phase 2: Prototyping</h5>
+                        <p style="margin:4px 0 0; font-size:0.85rem; color:var(--text-light);">In Progress - Due Oct 30</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- 2. Risk Assessment -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="100">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Risk Assessment</h3>
+                </div>
+                <div style="margin-top:10px; display:flex; flex-direction:column; gap:10px;">
+                    <div style="padding:10px; border-left:4px solid #ef4444; background:#fef2f2; border-radius:4px;">
+                        <h5 style="margin:0; color:#b91c1c;">Budget Overrun</h5>
+                        <p style="margin:0; font-size:0.8rem; color:#7f1d1d;">Project Titan is trending 15% over budget.</p>
+                    </div>
+                    <div style="padding:10px; border-left:4px solid #f59e0b; background:#fffbeb; border-radius:4px;">
+                        <h5 style="margin:0; color:#b45309;">Resource Bottleneck</h5>
+                        <p style="margin:0; font-size:0.8rem; color:#78350f;">QA team at full capacity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Resource Allocation Form -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Allocate Resource</h3>
+                </div>
+                <form style="display:flex; flex-direction:column; gap:12px; margin-top:10px;" action="404.html">
+                    <select style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                        <option value="" disabled="" selected="">Select Resource</option>
+                        <option value="dev1">Senior Developer</option>
+                        <option value="des1">UI Designer</option>
+                    </select>
+                    <select style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                        <option value="" disabled="" selected="">Assign to Project</option>
+                        <option value="p1">Project Titan</option>
+                        <option value="p2">Project Apollo</option>
+                    </select>
+                    <button type="submit" class="btn btn-outline" style="padding:10px; border-radius:6px;">Allocate</button>
+                </form>
+            </div>
+        </div>
+    </section>
             </div>
         </main>
     </div>
@@ -244,5 +300,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 800, once: true });</script>
     <script src="script.js"></script>
-</body>
-</html>
+
+
+</body></html>

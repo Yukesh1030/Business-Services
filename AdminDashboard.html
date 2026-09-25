@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Admin Dashboard | Syncy</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap" rel="stylesheet">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- AOS CSS -->
@@ -211,7 +209,70 @@
                         </div>
                     </div>
 
-                </section>
+                
+        <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 40px; width: 100%;">
+            <!-- 1. Recent Activity -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Recent Activity</h3>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:16px; margin-top:10px;">
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <i class="fas fa-check-circle" style="color:var(--primary);"></i>
+                        <span style="font-size:0.9rem; color:var(--text);">System backup completed.</span>
+                        <span style="font-size:0.8rem; color:var(--text-light); margin-left:auto;">2m ago</span>
+                    </div>
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <i class="fas fa-user-plus" style="color:#10b981;"></i>
+                        <span style="font-size:0.9rem; color:var(--text);">New client 'ApexTech' onboarded.</span>
+                        <span style="font-size:0.8rem; color:var(--text-light); margin-left:auto;">1h ago</span>
+                    </div>
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <i class="fas fa-exclamation-triangle" style="color:#f59e0b;"></i>
+                        <span style="font-size:0.9rem; color:var(--text);">High CPU usage detected.</span>
+                        <span style="font-size:0.8rem; color:var(--text-light); margin-left:auto;">3h ago</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2. Team Performance -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="100">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Team Performance</h3>
+                </div>
+                <div style="margin-top:10px;">
+                    <div style="margin-bottom:12px;">
+                        <div style="display:flex; justify-content:space-between; font-size:0.9rem; margin-bottom:5px;"><span>Design Team</span><span>85%</span></div>
+                        <div style="background:#e5e7eb; height:8px; border-radius:4px;"><div style="background:var(--primary); width:85%; height:100%; border-radius:4px;"></div></div>
+                    </div>
+                    <div style="margin-bottom:12px;">
+                        <div style="display:flex; justify-content:space-between; font-size:0.9rem; margin-bottom:5px;"><span>Dev Team</span><span>92%</span></div>
+                        <div style="background:#e5e7eb; height:8px; border-radius:4px;"><div style="background:#10b981; width:92%; height:100%; border-radius:4px;"></div></div>
+                    </div>
+                    <div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.9rem; margin-bottom:5px;"><span>Marketing</span><span>78%</span></div>
+                        <div style="background:#e5e7eb; height:8px; border-radius:4px;"><div style="background:#f59e0b; width:78%; height:100%; border-radius:4px;"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Quick Actions Form -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Quick Add Task</h3>
+                </div>
+                <form style="display:flex; flex-direction:column; gap:12px; margin-top:10px;" action="404.html">
+                    <input type="text" placeholder="Task Name" style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                    <select style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                        <option value="" disabled="" selected="">Assign To</option>
+                        <option value="john">John Doe</option>
+                        <option value="jane">Jane Smith</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary" style="padding:10px; border-radius:6px;">Add Task</button>
+                </form>
+            </div>
+        </div>
+    </section>
             </div>
         </main>
     </div>
@@ -220,5 +281,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 800, once: true });</script>
     <script src="script.js"></script>
-</body>
-</html>
+
+
+</body></html>

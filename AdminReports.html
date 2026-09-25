@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Admin Reports | Syncy</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap" rel="stylesheet">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- AOS CSS -->
@@ -187,7 +185,61 @@
                         </div>
                     </div>
 
-                </section>
+                
+        <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 40px; width: 100%;">
+            <!-- 1. Scheduled Reports -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Scheduled Reports</h3>
+                </div>
+                <table style="width:100%; text-align:left; margin-top:10px; border-collapse:collapse;">
+                    <tbody><tr style="border-bottom:1px solid #eee;">
+                        <th style="padding:8px 0; font-size:0.85rem; color:var(--text-light);">Name</th>
+                        <th style="padding:8px 0; font-size:0.85rem; color:var(--text-light);">Schedule</th>
+                    </tr>
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:12px 0; font-size:0.9rem; font-weight:600;">Monthly Revenue</td>
+                        <td style="padding:12px 0; font-size:0.85rem;"><span style="background:#e0e7ff; color:#3730a3; padding:2px 6px; border-radius:4px; font-size:0.75rem;">1st of Month</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:12px 0; font-size:0.9rem; font-weight:600;">Weekly Traffic</td>
+                        <td style="padding:12px 0; font-size:0.85rem;"><span style="background:#fce7f3; color:#be185d; padding:2px 6px; border-radius:4px; font-size:0.75rem;">Every Monday</span></td>
+                    </tr>
+                </tbody></table>
+            </div>
+            
+            <!-- 2. Export Formats -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="100">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Quick Export</h3>
+                </div>
+                <p style="font-size:0.9rem; color:var(--text-light); margin-top:10px;">Export the current view data instantly.</p>
+                <div style="display:flex; gap:10px; margin-top:15px; flex-wrap:wrap;">
+                    <a href="404.html" style="display:inline-flex; align-items:center; gap:8px; padding:10px 15px; background:#f3f4f6; border-radius:6px; color:var(--dark-bg); text-decoration:none; font-weight:600; font-size:0.9rem;"><i class="fas fa-file-pdf" style="color:#ef4444;"></i> PDF</a>
+                    <a href="404.html" style="display:inline-flex; align-items:center; gap:8px; padding:10px 15px; background:#f3f4f6; border-radius:6px; color:var(--dark-bg); text-decoration:none; font-weight:600; font-size:0.9rem;"><i class="fas fa-file-excel" style="color:#10b981;"></i> CSV</a>
+                </div>
+            </div>
+
+            <!-- 3. Custom Report Form -->
+            <div class="dash-card" style="flex: 1; min-width: 300px;" data-aos="fade-up" data-aos-delay="200">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Generate Custom</h3>
+                </div>
+                <form style="display:flex; flex-direction:column; gap:12px; margin-top:10px;" action="404.html">
+                    <select style="padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                        <option value="" disabled="" selected="">Select Dataset</option>
+                        <option value="fin">Financials</option>
+                        <option value="users">User Activity</option>
+                    </select>
+                    <div style="display:flex; gap:10px;">
+                        <input type="date" style="flex:1; padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                        <input type="date" style="flex:1; padding:10px; border:1px solid #ddd; border-radius:6px; font-family:inherit;" required="required">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="padding:10px; border-radius:6px;">Generate</button>
+                </form>
+            </div>
+        </div>
+    </section>
             </div>
         </main>
     </div>
@@ -196,5 +248,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 800, once: true });</script>
     <script src="script.js"></script>
-</body>
-</html>
+
+
+</body></html>
