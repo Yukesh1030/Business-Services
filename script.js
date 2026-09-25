@@ -252,4 +252,65 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // FAQ Accordion Logic with GSAP
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length > 0 && typeof gsap !== 'undefined') {
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('active');
+
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        gsap.to(otherItem.querySelector('.faq-answer'), {
+                            height: 0,
+                            duration: 0.4,
+                            ease: 'power2.inOut'
+                        });
+                        gsap.to(otherItem.querySelector('.faq-icon'), {
+                            rotation: 0,
+                            duration: 0.3,
+                            ease: 'power1.inOut'
+                        });
+                    }
+                });
+
+                // Toggle current item
+                if (isOpen) {
+                    item.classList.remove('active');
+                    gsap.to(answer, {
+                        height: 0,
+                        duration: 0.4,
+                        ease: 'power2.inOut'
+                    });
+                    gsap.to(icon, {
+                        rotation: 0,
+                        duration: 0.3,
+                        ease: 'power1.inOut'
+                    });
+                } else {
+                    item.classList.add('active');
+                    gsap.set(answer, { height: 'auto' });
+                    const targetHeight = answer.offsetHeight;
+                    gsap.set(answer, { height: 0 });
+                    gsap.to(answer, {
+                        height: targetHeight,
+                        duration: 0.4,
+                        ease: 'power2.inOut'
+                    });
+                    gsap.to(icon, {
+                        rotation: 45,
+                        duration: 0.3,
+                        ease: 'power1.inOut'
+                    });
+                }
+            });
+        });
+    }
 });
