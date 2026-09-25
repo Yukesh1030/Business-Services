@@ -199,4 +199,57 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Blog Filtering Logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const blogCards = document.querySelectorAll('.b-card');
+
+    if (filterBtns.length > 0 && blogCards.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterText = btn.textContent.trim();
+
+                blogCards.forEach(card => {
+                    if (filterText === 'All') {
+                        card.style.display = 'block';
+                    } else {
+                        // Tag matching logic
+                        const tagMapping = {
+                            'Architecture': 'INFRASTRUCTURE',
+                            'Strategy': 'STRATEGY',
+                            'Data & AI': 'DATA & AI',
+                            'Cloud': 'CLOUD',
+                            'Operating': 'OPERATING'
+                        };
+
+                        const cardTag = card.querySelector('.b-card-tag') ? card.querySelector('.b-card-tag').textContent.trim() : '';
+                        const cardTitle = card.querySelector('.b-card-title') ? card.querySelector('.b-card-title').textContent.trim() : '';
+                        const cardDesc = card.querySelector('.b-card-desc') ? card.querySelector('.b-card-desc').textContent.trim() : '';
+                        
+                        let isMatch = false;
+                        
+                        if (tagMapping[filterText] && cardTag.includes(tagMapping[filterText])) {
+                            isMatch = true;
+                        } else if (cardTag.toLowerCase().includes(filterText.toLowerCase())) {
+                            isMatch = true;
+                        } else if (cardTitle.toLowerCase().includes(filterText.toLowerCase())) {
+                            isMatch = true;
+                        } else if (cardDesc.toLowerCase().includes(filterText.toLowerCase())) {
+                            isMatch = true;
+                        }
+
+                        if (isMatch) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    }
 });
