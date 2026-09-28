@@ -47,6 +47,7 @@
             </nav>
             
             <div class="sidebar-footer">
+                <div class="sidebar-user-email mobile-only"></div>
                 <a href="Login.html" class="logout-btn" onclick="localStorage.removeItem('syncy_username')">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </a>
@@ -60,7 +61,7 @@
                 <button class="mobile-sidebar-toggle">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div style="flex:1"></div>
+                <div style="flex:1; padding-left: 20px; display: flex; align-items: center;"><h3 class="topbar-greeting">Good <span class="dynamic-time-greeting">Morning</span>, <span class="dynamic-greeting-name">User</span>!</h3></div>
                 <div class="user-profile">
                     <div class="user-details">
                         <div class="user-name">Sarah Client</div>
@@ -80,7 +81,7 @@
                     <!-- 1. PERSONALIZED WELCOME HERO -->
                     <div class="dash-hero" data-aos="fade-up" style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);">
                         <div class="dash-hero-content">
-                            <h2>Welcome back to Syncy, Sarah!</h2>
+                            <h2>Welcome back to Syncy, <span class="dynamic-greeting-name">Sarah</span>!</h2>
                             <p style="color:rgba(255,255,255,0.8); margin-bottom:20px;">Your Mobile App Development project is progressing perfectly.</p>
                             <button class="btn btn-primary" style="background:white; color:#2563eb;">View Project Details</button>
                         </div>
@@ -244,6 +245,9 @@
 
 
 </body></html>
+
+
+
 
 
 

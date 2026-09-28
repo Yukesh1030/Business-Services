@@ -368,14 +368,53 @@ document.addEventListener('DOMContentLoaded', () => {
 // Dynamic Username Update for Dashboards
 document.addEventListener('DOMContentLoaded', () => {
     const savedUsername = localStorage.getItem('syncy_username');
+    const savedEmail = localStorage.getItem('syncy_email');
+    
+    // Determine Time Greeting
+    const hour = new Date().getHours();
+    let timeGreeting = 'Evening';
+    if (hour < 12) {
+        timeGreeting = 'Morning';
+    } else if (hour < 18) {
+        timeGreeting = 'Afternoon';
+    }
+    
+    const timeGreetingElems = document.querySelectorAll('.dynamic-time-greeting');
+    timeGreetingElems.forEach(elem => {
+        elem.textContent = timeGreeting;
+    });
+
+    let savedEmail = localStorage.getItem('syncy_email');
+    if (!savedEmail && savedUsername) {
+        // Fallback for users who haven't logged in since the update
+        const base = savedUsername.trim().split(' ')[0].toLowerCase();
+        savedEmail = base + '@syncy.com';
+    }
+
+    if (savedEmail) {
+        const userEmailElems = document.querySelectorAll('.sidebar-user-email');
+        userEmailElems.forEach(elem => {
+            elem.textContent = savedEmail;
+        });
+    }
+
     if (savedUsername) {
         const userNameElems = document.querySelectorAll('.user-name');
         const userAvatarElems = document.querySelectorAll('.user-avatar');
+        const greetingNameElems = document.querySelectorAll('.dynamic-greeting-name');
         
+        // Update full name in profile
         userNameElems.forEach(elem => {
             elem.textContent = savedUsername;
         });
         
+        // Update first name in greetings
+        const firstName = savedUsername.trim().split(' ')[0];
+        greetingNameElems.forEach(elem => {
+            elem.textContent = firstName;
+        });
+        
+        // Update initials
         userAvatarElems.forEach(elem => {
             const parts = savedUsername.trim().split(' ');
             let initials = '';

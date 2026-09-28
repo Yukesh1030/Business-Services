@@ -3436,3 +3436,12 @@ h1, h2, h3, h4 {
     }
 }
 
+
+.topbar-greeting { margin: 0; font-size: 1.1rem; color: var(--dark-bg); font-weight: 700; }
+
+
+
+.sidebar-user-email { color: #94a3b8; font-size: 0.8rem; margin-bottom: 15px; word-break: break-all; font-weight: 500; }
+@media (min-width: 993px) { .sidebar-user-email.mobile-only { display: none; } }
+
+
