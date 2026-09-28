@@ -181,6 +181,12 @@
         
         .std-card {
             padding: 0;
+            transition: transform 0.3s ease;
+            cursor: default;
+        }
+
+        .std-card:hover {
+            transform: translateY(-5px);
         }
         
         .std-icon {
@@ -192,6 +198,13 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .std-card:hover .std-icon {
+            background: #0c4aff;
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(12, 74, 255, 0.2);
         }
         
         .std-icon svg {
@@ -200,6 +213,11 @@
             stroke: #0c4aff;
             stroke-width: 2;
             fill: none;
+            transition: stroke 0.4s ease;
+        }
+        
+        .std-card:hover .std-icon svg {
+            stroke: #ffffff;
         }
         
         .std-card h3 {

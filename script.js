@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // GSAP Counter Animations (using ScrollTrigger for multiple sections)
     gsap.registerPlugin(ScrollTrigger);
-    const statsElements = document.querySelectorAll('.stat-num, .ob-stat h3, .as-val, .bi-metrics strong');
+    const statsElements = document.querySelectorAll('.stat-num, .ob-stat h3, .as-val, .bi-metrics strong, .core-stat-val');
     if (statsElements.length > 0) {
         statsElements.forEach(stat => {
             const targetText = stat.innerText.trim();
