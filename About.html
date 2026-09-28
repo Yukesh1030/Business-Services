@@ -396,14 +396,60 @@
         .team-member {
             text-align: center;
         }
-        
-        .team-img {
+
+        .team-img-wrapper {
+            position: relative;
             width: 150px;
             height: 150px;
+            margin: 0 auto 20px;
             border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .team-img-wrapper .team-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .team-socials {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(12, 74, 255, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .team-socials a {
+            color: #ffffff;
+            font-size: 1.2rem;
+            transform: translateY(20px);
+            transition: transform 0.4s ease, color 0.3s;
+        }
+
+        .team-socials a:hover {
+            color: #5eead4;
+        }
+
+        .team-img-wrapper:hover .team-img {
+            transform: scale(1.1);
+        }
+
+        .team-img-wrapper:hover .team-socials {
+            opacity: 1;
+        }
+
+        .team-img-wrapper:hover .team-socials a {
+            transform: translateY(0);
         }
         
         .team-name {
@@ -850,84 +896,84 @@
                     <div class="team-grid">
                         <!-- Original 8 items -->
                         <div class="team-member">
-                            <img src="assets/Roderick Lucas-CEO-About-Page.webp" alt="Roderick Lucas" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Roderick Lucas-CEO-About-Page.webp" alt="Roderick Lucas" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Roderick Lucas</h3>
                             <span class="team-role">CEO</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Evelyn Zoldyck-CPO-About-Page.webp" alt="Evelyn Zoldyck" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Evelyn Zoldyck-CPO-About-Page.webp" alt="Evelyn Zoldyck" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Evelyn Zoldyck</h3>
                             <span class="team-role">CPO</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Rodrigo Lores-CCO-About-Page.webp" alt="Rodrigo Lores" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Rodrigo Lores-CCO-About-Page.webp" alt="Rodrigo Lores" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Rodrigo Lores</h3>
                             <span class="team-role">CCO</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Jennifer Luana-People Management-About-Page.webp" alt="Jennifer Luana" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Jennifer Luana-People Management-About-Page.webp" alt="Jennifer Luana" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Jennifer Luana</h3>
                             <span class="team-role">People Management</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Maura Yalah-Product Design-About-Page.webp" alt="Maura Yalah" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Maura Yalah-Product Design-About-Page.webp" alt="Maura Yalah" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Maura Yalah</h3>
                             <span class="team-role">Product Design</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Juan Tiago-Head of Engineer-About-Page.webp" alt="Juan Tiago" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Juan Tiago-Head of Engineer-About-Page.webp" alt="Juan Tiago" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Juan Tiago</h3>
                             <span class="team-role">Head of Engineer</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Rome Juilo-Quality Assurance-About-Page.webp" alt="Rome Juilo" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Rome Juilo-Quality Assurance-About-Page.webp" alt="Rome Juilo" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Rome Juilo</h3>
                             <span class="team-role">Quality Assurance</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Reddington M-Engineer-About-Page.webp" alt="Reddington M" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Reddington M-Engineer-About-Page.webp" alt="Reddington M" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Reddington M</h3>
                             <span class="team-role">Engineer</span>
                         </div>
                         
                         <!-- Duplicated 8 items for seamless loop -->
                         <div class="team-member">
-                            <img src="assets/Roderick Lucas-CEO-About-Page.webp" alt="Roderick Lucas" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Roderick Lucas-CEO-About-Page.webp" alt="Roderick Lucas" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Roderick Lucas</h3>
                             <span class="team-role">CEO</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Evelyn Zoldyck-CPO-About-Page.webp" alt="Evelyn Zoldyck" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Evelyn Zoldyck-CPO-About-Page.webp" alt="Evelyn Zoldyck" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Evelyn Zoldyck</h3>
                             <span class="team-role">CPO</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Rodrigo Lores-CCO-About-Page.webp" alt="Rodrigo Lores" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Rodrigo Lores-CCO-About-Page.webp" alt="Rodrigo Lores" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Rodrigo Lores</h3>
                             <span class="team-role">CCO</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Jennifer Luana-People Management-About-Page.webp" alt="Jennifer Luana" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Jennifer Luana-People Management-About-Page.webp" alt="Jennifer Luana" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Jennifer Luana</h3>
                             <span class="team-role">People Management</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Maura Yalah-Product Design-About-Page.webp" alt="Maura Yalah" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Maura Yalah-Product Design-About-Page.webp" alt="Maura Yalah" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Maura Yalah</h3>
                             <span class="team-role">Product Design</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Juan Tiago-Head of Engineer-About-Page.webp" alt="Juan Tiago" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Juan Tiago-Head of Engineer-About-Page.webp" alt="Juan Tiago" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Juan Tiago</h3>
                             <span class="team-role">Head of Engineer</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Rome Juilo-Quality Assurance-About-Page.webp" alt="Rome Juilo" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Rome Juilo-Quality Assurance-About-Page.webp" alt="Rome Juilo" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Rome Juilo</h3>
                             <span class="team-role">Quality Assurance</span>
                         </div>
                         <div class="team-member">
-                            <img src="assets/Reddington M-Engineer-About-Page.webp" alt="Reddington M" class="team-img">
+                            <div class="team-img-wrapper"><img src="assets/Reddington M-Engineer-About-Page.webp" alt="Reddington M" class="team-img"><div class="team-socials"><a href="404.html"><i class="fab fa-linkedin-in"></i></a><a href="404.html"><i class="fab fa-twitter"></i></a></div></div>
                             <h3 class="team-name">Reddington M</h3>
                             <span class="team-role">Engineer</span>
                         </div>
@@ -1060,3 +1106,4 @@
 
 
 </body></html>
+
