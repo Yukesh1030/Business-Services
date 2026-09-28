@@ -2,9 +2,12 @@
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
-        preloader.classList.add('hide');
+        // Enforce a minimum of 0.5 seconds for the loader
         setTimeout(() => {
-            preloader.style.display = 'none';
+            preloader.classList.add('hide');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
         }, 500);
     }
 });
