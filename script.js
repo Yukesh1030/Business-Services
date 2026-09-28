@@ -199,10 +199,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Global Link and Form Redirection Logic for 404 page
     
-    // 1. Redirect all links to 404.html except navbar links
+    // 1. Redirect all links to 404.html except navbar links, dashboard links, and footer links
     document.querySelectorAll('a').forEach(link => {
-        // Exclude links inside the header area (which includes .nav-list, .logo, and header-right CTA)
-        if (!link.closest('.header') && !link.closest('.dashboard-sidebar')) {
+        // Exclude links inside the header area, sidebar, and footer
+        if (!link.closest('.header') && !link.closest('.dashboard-sidebar') && !link.closest('.footer')) {
             link.addEventListener('click', (e) => {
                 // Don't redirect dashboard internal links either
                 if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) return;

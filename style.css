@@ -1342,7 +1342,7 @@ h1, h2, h3, h4 {
    Footer
    ========================================================================== */
 .footer {
-    background-color: #0b1121;
+    background-color: #0f172a;
     padding: 70px 0 35px;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
@@ -1444,13 +1444,13 @@ h1, h2, h3, h4 {
     justify-content: center;
     text-decoration: none;
     font-size: 14px;
-    transition: background-color 0.25s ease, transform 0.2s ease, color 0.2s ease;
+    transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
 .social-circle:hover {
     background: #0c4aff;
-    color: #ffffff;
     transform: translateY(-2px);
+    color: #ffffff;
 }
 
 /* Mobile CTA menu item default hide on desktop */
@@ -1907,10 +1907,8 @@ h1, h2, h3, h4 {
     }
 
     .footer {
-    background-color: #0b1121;
-    padding: 70px 0 35px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
+        padding: 55px 0 30px;
+    }
     
     .footer-grid {
         grid-template-columns: 1fr;
@@ -1921,16 +1919,13 @@ h1, h2, h3, h4 {
     .footer-col-brand .footer-logo,
     .footer-tagline,
     .footer-address {
-    color: #94a3b8;
-    max-width: 260px;
-    line-height: 1.5;
-}
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .footer-divider {
-    border: none;
-    border-top: 1px solid #1e293b;
-    margin: 45px 0 25px;
-}
+        margin: 32px 0 22px;
+    }
     
     .footer-bottom {
         flex-direction: column;
