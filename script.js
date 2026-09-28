@@ -9,8 +9,8 @@ window.addEventListener('load', () => {
     }
 });
 
-// Remove data-aos from cards and images before AOS init to prevent conflict with GSAP
-document.querySelectorAll('.service-card, .impact-card, .testimonial-card, .cta-img-container, .cta-floating-card').forEach(el => {
+// Remove data-aos from cards, images, and hero titles before AOS init to prevent conflict with GSAP
+document.querySelectorAll('.service-card, .impact-card, .testimonial-card, .cta-img-container, .cta-floating-card, .hero-title, .shn-title, .ch-title, .bh-title, .ah-title').forEach(el => {
     el.removeAttribute('data-aos');
     el.removeAttribute('data-aos-delay');
 });
@@ -70,6 +70,55 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.to('.badge-lime', { y: -8, duration: 2.5, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 0.6 });
     gsap.to('.card-investments', { y: -5, duration: 3.4, repeat: -1, yoyo: true, ease: "sine.inOut" });
     gsap.to('.card-wave', { y: 5, duration: 3.8, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 0.4 });
+
+    // GSAP Text Animation for Hero Fonts
+    const heroTitles = document.querySelectorAll('.hero-title, .shn-title, .ch-title, .bh-title, .ah-title');
+    if (heroTitles.length > 0) {
+        // Function to split text nodes into characters safely
+        function splitTextNodes(node) {
+            if (node.nodeType === 3) { // Text node
+                const text = node.nodeValue;
+                if (text.trim() !== '') {
+                    const wrapper = document.createDocumentFragment();
+                    for (let i = 0; i < text.length; i++) {
+                        const char = text[i];
+                        if (char === ' ' || char === '\n' || char === '\t') {
+                            wrapper.appendChild(document.createTextNode(char));
+                        } else {
+                            const span = document.createElement('span');
+                            span.textContent = char;
+                            span.style.display = 'inline-block';
+                            span.classList.add('gsap-char');
+                            wrapper.appendChild(span);
+                        }
+                    }
+                    node.parentNode.replaceChild(wrapper, node);
+                }
+            } else if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') {
+                Array.from(node.childNodes).forEach(child => splitTextNodes(child));
+            }
+        }
+
+        heroTitles.forEach(title => {
+            // Apply split to each title
+            Array.from(title.childNodes).forEach(child => splitTextNodes(child));
+            
+            // Set initial state
+            gsap.set(title, { opacity: 1 });
+            
+            // Animate characters
+            gsap.from(title.querySelectorAll('.gsap-char'), {
+                opacity: 0,
+                y: 30,
+                rotationX: -90,
+                transformOrigin: "0% 50% -50",
+                stagger: 0.02,
+                duration: 0.8,
+                ease: "back.out(1.5)",
+                delay: 0.1
+            });
+        });
+    }
 
     // Parallax effect for hero floating elements on mouse move
     document.addEventListener("mousemove", (e) => {
