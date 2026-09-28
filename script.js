@@ -384,13 +384,6 @@ document.addEventListener('DOMContentLoaded', () => {
         elem.textContent = timeGreeting;
     });
 
-    let savedEmail = localStorage.getItem('syncy_email');
-    if (!savedEmail && savedUsername) {
-        // Fallback for users who haven't logged in since the update
-        const base = savedUsername.trim().split(' ')[0].toLowerCase();
-        savedEmail = base + '@syncy.com';
-    }
-
     if (savedEmail) {
         const userEmailElems = document.querySelectorAll('.sidebar-user-email');
         userEmailElems.forEach(elem => {
