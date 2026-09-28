@@ -136,37 +136,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Animate stats on scroll if stats-section exists
-    const statsSection = document.querySelector('.stats-section');
-    let animated = false;
-
-    if (statsSection) {
-        window.addEventListener('scroll', () => {
-            if(animated) return;
+    // GSAP Counter Animations (using ScrollTrigger for multiple sections)
+    gsap.registerPlugin(ScrollTrigger);
+    const statsElements = document.querySelectorAll('.stat-num, .ob-stat h3, .as-val, .bi-metrics strong');
+    if (statsElements.length > 0) {
+        statsElements.forEach(stat => {
+            const targetText = stat.innerText.trim();
+            // Match prefixes (non-digits), number (with optional decimals), and suffixes
+            const match = targetText.match(/^([^\d]*)(\d+(?:\.\d+)?)([^\d]*)$/);
             
-            const rect = statsSection.getBoundingClientRect();
-            if(rect.top < window.innerHeight && rect.bottom > 0) {
-                animated = true;
+            if (match) {
+                const prefix = match[1] || '';
+                const targetNum = parseFloat(match[2]);
+                const suffix = match[3] || '';
+                const decimals = match[2].includes('.') ? match[2].split('.')[1].length : 0;
                 
-                const stats = document.querySelectorAll('.stat-num');
-                stats.forEach(stat => {
-                    const targetText = stat.innerText;
-                    const isPercentage = targetText.includes('%');
-                    const isPlus = targetText.includes('+');
-                    const target = parseInt(targetText.replace(/\D/g, ''));
-                    
-                    let obj = { val: 0 };
-                    gsap.to(obj, {
-                        val: target,
-                        duration: 2,
-                        ease: "power2.out",
-                        onUpdate: function() {
-                            let finalStr = Math.floor(obj.val);
-                            if(isPlus) finalStr += '+';
-                            if(isPercentage) finalStr += '%';
-                            stat.innerText = finalStr;
-                        }
-                    });
+                let obj = { val: 0 };
+                
+                gsap.to(obj, {
+                    val: targetNum,
+                    duration: 2.5,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: stat,
+                        start: "top 90%",
+                        once: true
+                    },
+                    onUpdate: function() {
+                        stat.innerText = prefix + obj.val.toFixed(decimals) + suffix;
+                    }
                 });
             }
         });

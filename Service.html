@@ -833,14 +833,30 @@
             margin-bottom: 24px;
         }
 
-        .hww-icon svg {
-            width: 28px;
-            height: 28px;
-            stroke: #475569;
-            stroke-width: 1.2;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+        .hww-icon i {
+            font-size: 28px;
+            color: #475569;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .hww-card:hover .hww-icon i {
+            color: #0c4aff;
+            animation: bounce-icon 0.8s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
+        }
+
+        @keyframes bounce-icon {
+            0% { transform: scale(1.1) translateY(0px); }
+            50% { transform: scale(1.1) translateY(-6px); }
+            100% { transform: scale(1.1) translateY(0px); }
+        }
+
+        @media (max-width: 1024px) {
+            .hww-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hww-grid { grid-template-columns: 1fr; }
         }
 
         .hww-card h3 {
@@ -974,11 +990,7 @@
                     <div class="hww-card" data-aos="fade-up" data-aos-delay="0">
                         <div class="hww-num">01</div>
                         <div class="hww-icon">
-                            <svg viewBox="0 0 24 24">
-                                <rect x="4" y="4" width="5" height="5" rx="1"></rect>
-                                <rect x="15" y="15" width="5" height="5" rx="1"></rect>
-                                <path d="M9 6.5h3.5a2 2 0 0 1 2 2v6"></path>
-                            </svg>
+                            <i class="fa-solid fa-compass"></i>
                         </div>
                         <h3>Discover</h3>
                         <p>Align on outcomes, constraints, and the truth in your data.</p>
@@ -987,12 +999,7 @@
                     <div class="hww-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="hww-num">02</div>
                         <div class="hww-icon">
-                            <svg viewBox="0 0 24 24">
-                                <line x1="5" y1="6" x2="5" y2="18"></line>
-                                <line x1="5" y1="6" x2="16" y2="6"></line>
-                                <line x1="5" y1="12" x2="14" y2="12"></line>
-                                <line x1="5" y1="18" x2="18" y2="18"></line>
-                            </svg>
+                            <i class="fa-solid fa-pen-ruler"></i>
                         </div>
                         <h3>Design</h3>
                         <p>Co-create the roadmap, experience, and technical blueprint.</p>
@@ -1001,12 +1008,7 @@
                     <div class="hww-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="hww-num">03</div>
                         <div class="hww-icon">
-                            <svg viewBox="0 0 24 24">
-                                <rect x="3" y="6" width="12" height="12" rx="1"></rect>
-                                <path d="M15 8h3l3 4v6h-6"></path>
-                                <circle cx="7" cy="18" r="2"></circle>
-                                <circle cx="17" cy="18" r="2"></circle>
-                            </svg>
+                            <i class="fa-solid fa-truck-fast"></i>
                         </div>
                         <h3>Deliver</h3>
                         <p>Release useful increments with your team, not around them.</p>
@@ -1015,11 +1017,7 @@
                     <div class="hww-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="hww-num">04</div>
                         <div class="hww-icon">
-                            <svg viewBox="0 0 24 24">
-                                <rect x="4" y="15" width="5" height="5" rx="1"></rect>
-                                <rect x="15" y="4" width="5" height="5" rx="1"></rect>
-                                <path d="M9 17.5h3.5a2 2 0 0 0 2-2v-6"></path>
-                            </svg>
+                            <i class="fa-solid fa-chart-line"></i>
                         </div>
                         <h3>Improve</h3>
                         <p>Measure adoption, resilience, and value—then compound it.</p>

@@ -1342,7 +1342,7 @@ h1, h2, h3, h4 {
    Footer
    ========================================================================== */
 .footer {
-    background-color: #d8d8da;
+    background-color: #0b1121;
     padding: 70px 0 35px;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
@@ -1358,10 +1358,11 @@ h1, h2, h3, h4 {
     width: auto;
     display: block;
     margin-bottom: 20px;
+    filter: brightness(0) invert(1);
 }
 
 .footer-tagline {
-    color: #64748b;
+    color: #94a3b8;
     font-size: 13.5px;
     line-height: 1.6;
     max-width: 250px;
@@ -1392,25 +1393,25 @@ h1, h2, h3, h4 {
 
 .footer-links li a,
 .footer-contact-list li a {
-    color: #64748b;
+    color: #94a3b8;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .footer-links li a:hover,
 .footer-contact-list li a:hover {
-    color: #1e293b;
+    color: #ffffff;
 }
 
 .footer-address {
-    color: #64748b;
+    color: #94a3b8;
     max-width: 260px;
     line-height: 1.5;
 }
 
 .footer-divider {
     border: none;
-    border-top: 1px solid #b4b7bf;
+    border-top: 1px solid #1e293b;
     margin: 45px 0 25px;
 }
 
@@ -1421,7 +1422,7 @@ h1, h2, h3, h4 {
 }
 
 .footer-copy {
-    color: #64748b;
+    color: #94a3b8;
     font-size: 13px;
     margin: 0;
 }
@@ -1436,18 +1437,19 @@ h1, h2, h3, h4 {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: #757575;
-    color: #ffffff;
+    background: #1e293b;
+    color: #cbd5e1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     font-size: 14px;
-    transition: background-color 0.25s ease, transform 0.2s ease;
+    transition: background-color 0.25s ease, transform 0.2s ease, color 0.2s ease;
 }
 
 .social-circle:hover {
-    background: #234e70;
+    background: #0c4aff;
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
@@ -1905,8 +1907,10 @@ h1, h2, h3, h4 {
     }
 
     .footer {
-        padding: 55px 0 30px;
-    }
+    background-color: #0b1121;
+    padding: 70px 0 35px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
     
     .footer-grid {
         grid-template-columns: 1fr;
@@ -1917,13 +1921,16 @@ h1, h2, h3, h4 {
     .footer-col-brand .footer-logo,
     .footer-tagline,
     .footer-address {
-        margin-left: auto;
-        margin-right: auto;
-    }
+    color: #94a3b8;
+    max-width: 260px;
+    line-height: 1.5;
+}
 
     .footer-divider {
-        margin: 32px 0 22px;
-    }
+    border: none;
+    border-top: 1px solid #1e293b;
+    margin: 45px 0 25px;
+}
     
     .footer-bottom {
         flex-direction: column;
@@ -3401,3 +3408,4 @@ h1, h2, h3, h4 {
         flex: 1 1 100% !important;
     }
 }
+
