@@ -369,10 +369,28 @@
             margin: 0 auto 60px;
         }
         
+        .team-marquee-wrapper {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
         .team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 50px 30px;
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+            gap: 60px;
+        }
+        
+        .team-marquee-wrapper:hover .team-grid {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 30px)); }
         }
         
         .team-member {
@@ -828,46 +846,91 @@
                 <h2 class="team-title" data-aos="fade-up" data-aos-delay="100">The peoples behind our solutions</h2>
                 <p class="team-subtitle" data-aos="fade-up" data-aos-delay="200">Enjoy yourself on an extraordinary journey into the future of technology.</p>
                 
-                <div class="team-grid">
-                    <div class="team-member" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="assets/Roderick Lucas-CEO-About-Page.webp" alt="Roderick Lucas" class="team-img">
-                        <h3 class="team-name">Roderick Lucas</h3>
-                        <span class="team-role">CEO</span>
-                    </div>
-                    <div class="team-member" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="assets/Evelyn Zoldyck-CPO-About-Page.webp" alt="Evelyn Zoldyck" class="team-img">
-                        <h3 class="team-name">Evelyn Zoldyck</h3>
-                        <span class="team-role">CPO</span>
-                    </div>
-                    <div class="team-member" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="assets/Rodrigo Lores-CCO-About-Page.webp" alt="Rodrigo Lores" class="team-img">
-                        <h3 class="team-name">Rodrigo Lores</h3>
-                        <span class="team-role">CCO</span>
-                    </div>
-                    <div class="team-member" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="assets/Jennifer Luana-People Management-About-Page.webp" alt="Jennifer Luana" class="team-img">
-                        <h3 class="team-name">Jennifer Luana</h3>
-                        <span class="team-role">People Management</span>
-                    </div>
-                    <div class="team-member" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="assets/Maura Yalah-Product Design-About-Page.webp" alt="Maura Yalah" class="team-img">
-                        <h3 class="team-name">Maura Yalah</h3>
-                        <span class="team-role">Product Design</span>
-                    </div>
-                    <div class="team-member" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="assets/Juan Tiago-Head of Engineer-About-Page.webp" alt="Juan Tiago" class="team-img">
-                        <h3 class="team-name">Juan Tiago</h3>
-                        <span class="team-role">Head of Engineer</span>
-                    </div>
-                    <div class="team-member" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="assets/Rome Juilo-Quality Assurance-About-Page.webp" alt="Rome Juilo" class="team-img">
-                        <h3 class="team-name">Rome Juilo</h3>
-                        <span class="team-role">Quality Assurance</span>
-                    </div>
-                    <div class="team-member" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="assets/Reddington M-Engineer-About-Page.webp" alt="Reddington M" class="team-img">
-                        <h3 class="team-name">Reddington M</h3>
-                        <span class="team-role">Engineer</span>
+                <div class="team-marquee-wrapper">
+                    <div class="team-grid">
+                        <!-- Original 8 items -->
+                        <div class="team-member">
+                            <img src="assets/Roderick Lucas-CEO-About-Page.webp" alt="Roderick Lucas" class="team-img">
+                            <h3 class="team-name">Roderick Lucas</h3>
+                            <span class="team-role">CEO</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Evelyn Zoldyck-CPO-About-Page.webp" alt="Evelyn Zoldyck" class="team-img">
+                            <h3 class="team-name">Evelyn Zoldyck</h3>
+                            <span class="team-role">CPO</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Rodrigo Lores-CCO-About-Page.webp" alt="Rodrigo Lores" class="team-img">
+                            <h3 class="team-name">Rodrigo Lores</h3>
+                            <span class="team-role">CCO</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Jennifer Luana-People Management-About-Page.webp" alt="Jennifer Luana" class="team-img">
+                            <h3 class="team-name">Jennifer Luana</h3>
+                            <span class="team-role">People Management</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Maura Yalah-Product Design-About-Page.webp" alt="Maura Yalah" class="team-img">
+                            <h3 class="team-name">Maura Yalah</h3>
+                            <span class="team-role">Product Design</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Juan Tiago-Head of Engineer-About-Page.webp" alt="Juan Tiago" class="team-img">
+                            <h3 class="team-name">Juan Tiago</h3>
+                            <span class="team-role">Head of Engineer</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Rome Juilo-Quality Assurance-About-Page.webp" alt="Rome Juilo" class="team-img">
+                            <h3 class="team-name">Rome Juilo</h3>
+                            <span class="team-role">Quality Assurance</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Reddington M-Engineer-About-Page.webp" alt="Reddington M" class="team-img">
+                            <h3 class="team-name">Reddington M</h3>
+                            <span class="team-role">Engineer</span>
+                        </div>
+                        
+                        <!-- Duplicated 8 items for seamless loop -->
+                        <div class="team-member">
+                            <img src="assets/Roderick Lucas-CEO-About-Page.webp" alt="Roderick Lucas" class="team-img">
+                            <h3 class="team-name">Roderick Lucas</h3>
+                            <span class="team-role">CEO</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Evelyn Zoldyck-CPO-About-Page.webp" alt="Evelyn Zoldyck" class="team-img">
+                            <h3 class="team-name">Evelyn Zoldyck</h3>
+                            <span class="team-role">CPO</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Rodrigo Lores-CCO-About-Page.webp" alt="Rodrigo Lores" class="team-img">
+                            <h3 class="team-name">Rodrigo Lores</h3>
+                            <span class="team-role">CCO</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Jennifer Luana-People Management-About-Page.webp" alt="Jennifer Luana" class="team-img">
+                            <h3 class="team-name">Jennifer Luana</h3>
+                            <span class="team-role">People Management</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Maura Yalah-Product Design-About-Page.webp" alt="Maura Yalah" class="team-img">
+                            <h3 class="team-name">Maura Yalah</h3>
+                            <span class="team-role">Product Design</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Juan Tiago-Head of Engineer-About-Page.webp" alt="Juan Tiago" class="team-img">
+                            <h3 class="team-name">Juan Tiago</h3>
+                            <span class="team-role">Head of Engineer</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Rome Juilo-Quality Assurance-About-Page.webp" alt="Rome Juilo" class="team-img">
+                            <h3 class="team-name">Rome Juilo</h3>
+                            <span class="team-role">Quality Assurance</span>
+                        </div>
+                        <div class="team-member">
+                            <img src="assets/Reddington M-Engineer-About-Page.webp" alt="Reddington M" class="team-img">
+                            <h3 class="team-name">Reddington M</h3>
+                            <span class="team-role">Engineer</span>
+                        </div>
                     </div>
                 </div>
             </div>

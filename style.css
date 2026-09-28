@@ -1049,10 +1049,29 @@ h1, h2, h3, h4 {
     padding: 80px 0;
 }
 
+.testimonials-marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
 .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    width: max-content;
+    animation: marquee-testimonials 20s linear infinite;
     gap: 30px;
+}
+
+.testimonials-marquee-wrapper:hover .testimonials-grid {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-testimonials {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 15px)); }
 }
 
 .testimonial-card {
@@ -1062,6 +1081,8 @@ h1, h2, h3, h4 {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     position: relative;
     border: 1px solid var(--border-color);
+    width: 350px;
+    flex-shrink: 0;
 }
 
 .author-info {
